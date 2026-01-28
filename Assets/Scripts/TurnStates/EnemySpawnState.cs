@@ -1,0 +1,36 @@
+using UnityEngine;
+
+public class EnemySpawnState : TurnState
+{
+
+    public EnemySpawnState()
+    {
+        title = "Enemy Spawn State";
+    }
+
+    public override void Enter()
+    {
+        Debug.Log("Entering Enemy Spawn State");
+        Update();
+    }
+
+    public override void Exit()
+    {
+        
+    }
+
+    public override TurnState NextState()
+    {
+        PlayState playState = new PlayState();
+        return playState;
+    }
+
+    public override void Update()
+    {
+        //这里从Enemies的注册表里随机抽取敌人
+        
+        int randomIndex = Random.Range(0, Enemies.AllEnemies.Count);
+        Enemy newEnemy = EnemyManager.Instance.CreateEnemy(Enemies.AllEnemies[randomIndex]);
+        
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "cardsInfo": [
+    {
+            "id": "slash_or_resist",
+            "action_name" : "直斩",
+            "action_description": "领袖的 坚定 2力: 258",
+            "bonus_action_name" : "抵剑",
+            "bonus_action_description": "领袖的 坚定\n 1力：168，348，762，942"
+    },
+    {
+            "id": "side_parry_or_sheathe",
+            "action_name" : "侧挡",
+            "action_description": "领袖的 坚定 2力: 258",
+            "bonus_action_name" : "收刀",
+            "bonus_action_description": "领袖的 坚定\n 1力：168，348，762，942"
+    }
+    ]
+}

@@ -1,0 +1,134 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Defense
+{
+    public Defense(Act owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix)
+    {
+        this.owner = owner;
+        this.Prefix = prefix;
+        this.Suffix = suffix;
+    }
+    
+    public int Power = 0;   //防守的力度
+
+    public Act owner;   // 防守来自哪个动作
+
+    //心相
+    public MindPhase.Prefix Prefix;
+    public MindPhase.Suffix Suffix;
+
+    
+    public Vector2Int Position; //设防位置
+}
+
+public class DefenseSequence
+{
+    public List<Defense> Sequence = new List<Defense>();
+
+    public Defense Begin
+    {
+        get
+        {
+            if (Sequence.Count > 0)
+            {
+                return Sequence[0];
+            }
+            return null;
+        }
+    }
+
+    public void Apply()
+    {
+        foreach(Defense def in Sequence)
+            {
+                Beacon.Instance.MoveTo(def.Position);
+                Node node = GridManager.Instance.GetNodeAt(def.Position);
+                node.ApplyDefense(def);
+            }
+    }
+
+    public static List<DefenseSequence> CreateDefenseSequences(
+        string config, 
+        Act owner, 
+        MindPhase.Prefix prefix, 
+        MindPhase.Suffix suffix
+    )
+    {
+        // 支持的字符串格式示例：
+        // "3:258" -> 一个防守序列，位置 2,5,8，力度都是 3
+        // "2:687, 2:489" -> 两个防守序列
+        // "2:687, 1:78-2:9" -> 两个防守序列；第二个序列中 7,8 的力度为 1，9 的力度为 2
+        // 语法：序列由逗号分隔，每个序列内部可由 '-' 分隔多个 "power:positions" 段，positions 为连续的数字字符（1-9）
+
+        var result = new List<DefenseSequence>();
+        if (string.IsNullOrWhiteSpace(config)) return result;
+
+        var sequences = config.Split(',');
+        foreach (var seqRaw in sequences)
+        {
+            var seqTrim = seqRaw.Trim();
+            if (string.IsNullOrEmpty(seqTrim)) continue;
+
+            var defSeq = new DefenseSequence();
+
+            // 每个序列可以包含多个 "power:positions" 段，用 '-' 分隔
+            var segments = seqTrim.Split('-');
+            foreach (var segRaw in segments)
+            {
+                var seg = segRaw.Trim();
+                if (string.IsNullOrEmpty(seg)) continue;
+
+                var colonIndex = seg.IndexOf(':');
+                if (colonIndex <= 0) continue;
+
+                var powerPart = seg.Substring(0, colonIndex).Trim();
+                var posPart = seg.Substring(colonIndex + 1).Trim();
+
+                if (!int.TryParse(powerPart, out var power)) continue;
+                if (string.IsNullOrEmpty(posPart)) continue;
+
+                foreach (var ch in posPart)
+                {
+                    if (char.IsWhiteSpace(ch)) continue;
+                    if (ch < '1' || ch > '9') continue; // 只接受 1-9
+
+                    var pos = NumpadToPosition(ch);
+                    var d = new Defense(owner, prefix, suffix)
+                    {
+                        Power = power,
+                        Position = pos
+                    };
+                    defSeq.Sequence.Add(d);
+                }
+            }
+
+            if (defSeq.Sequence.Count > 0) result.Add(defSeq);
+        }
+
+        return result;
+    }
+
+    // 将小键盘数字（'1'..'9'）映射到局部坐标，5 -> (0,0)
+    private static Vector2Int NumpadToPosition(char d)
+    {
+        // 小键盘布局（视觉化）：
+        // 7 8 9
+        // 4 5 6
+        // 1 2 3
+        // 对应的坐标系：以 5 为 (0,0)，向右 x+，向上 y+
+        switch (d)
+        {
+            case '7': return new Vector2Int(-1, 1);
+            case '8': return new Vector2Int(0, 1);
+            case '9': return new Vector2Int(1, 1);
+            case '4': return new Vector2Int(-1, 0);
+            case '5': return new Vector2Int(0, 0);
+            case '6': return new Vector2Int(1, 0);
+            case '1': return new Vector2Int(-1, -1);
+            case '2': return new Vector2Int(0, -1);
+            case '3': return new Vector2Int(1, -1);
+            default: return new Vector2Int(0, 0);
+        }
+    }
+}

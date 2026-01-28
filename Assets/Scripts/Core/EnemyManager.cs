@@ -1,0 +1,49 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyManager
+{
+    private static EnemyManager instance;
+
+    public static EnemyManager Instance
+    {
+        get
+        {
+            if(instance == null)
+            {
+                instance = new EnemyManager();
+                
+            }
+            return instance;
+        }
+
+    }
+
+    private EnemyManager()
+    {
+        
+    }
+
+    public List<Enemy> enemies = new List<Enemy>();
+
+
+    public Enemy CreateEnemy(Enemy enemyPrototype)
+    {
+        Enemy newEnemy = enemyPrototype.Clone();
+
+        if (!enemies.Contains(newEnemy))
+        {
+            enemies.Add(newEnemy);
+        }
+        
+        return newEnemy;
+    }
+
+    public List<Enemy> GetEnemies()
+    {
+        return enemies;
+    }   
+
+
+    
+}
