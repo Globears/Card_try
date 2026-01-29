@@ -42,6 +42,11 @@ public class EnemyManager
     public List<Enemy> GetEnemies()
     {
         return enemies;
+    }
+
+    public void Remove(Enemy enemy)
+    {
+        enemies.Remove(enemy);
     }   
 
 

@@ -13,6 +13,27 @@
             "action_description": "领袖的 坚定 2力: 258",
             "bonus_action_name" : "收刀",
             "bonus_action_description": "领袖的 坚定\n 1力：168，348，762，942"
+    },
+    {
+            "id": "sword_holding_or_arm_training",
+            "action_name" : "握剑姿态",
+            "action_description": "领袖的 温柔 1力：5-3力：8",
+            "bonus_action_name" : "臂力训练",
+            "bonus_action_description": "领袖的 温柔\n 1力：5632"
+    },
+    {
+            "id": "breath_skill_or_dodge",
+            "action_name" : "呼吸法",
+            "action_description": "领袖的 责任 0力：1，2，3，4，5，6，7，8，9",
+            "bonus_action_name" : "闪避步伐",
+            "bonus_action_description": "领袖的 坚定\n 2力：687，489，987，789，85"
+    },
+    {
+            "id": "cross_slash_or_armed",
+            "action_name" : "十字力斩",
+            "action_description": "领袖的 坚定 4力：456，654, 258, 852",
+            "bonus_action_name" : "付诸武力",
+            "bonus_action_description": "领袖的 坚定\n 3力：5"
     }
     ]
 }

@@ -26,6 +26,7 @@ public class HandLayoutManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+        DiscardEvent.subscriber += OnDiscard;
     }
 
     void Start()
@@ -53,12 +54,23 @@ public class HandLayoutManager : MonoBehaviour
         
     }
 
+    public void OnDiscard(DiscardEvent e)
+    {
+        CardDisplay cardDisplay = CardDisplayManager.GetCardDisplay(e.card);
+        if(cardDisplay != null)
+        {
+            Remove(cardDisplay);
+        }
+
+        
+    }
+
     public void Hold(CardDisplay cardDisplay)
     {
         cardDisplays.Add(cardDisplay);
     }
 
-    public void Release(CardDisplay cardDisplay)
+    public void Remove(CardDisplay cardDisplay)
     {
         cardDisplays.Remove(cardDisplay);
     }

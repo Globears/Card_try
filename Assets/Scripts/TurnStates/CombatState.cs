@@ -21,8 +21,8 @@ public class CombatState : TurnState
 
     public override TurnState NextState()
     {
-        DrawState drawState = new DrawState();
-        return drawState;
+        DiscardState discardState = new DiscardState();
+        return discardState;
     }
 
     public override void Update()
@@ -58,6 +58,12 @@ public class CombatState : TurnState
                 {
                     elapsedRounds += enemy.GetRounds();
                 }
+            }
+
+            //3.清除节点上的所有防御，为下一轮做准备
+            foreach(Node node in GridManager.Instance.Nodes)
+            {
+                node.ClearDefense();
             }
 
         }

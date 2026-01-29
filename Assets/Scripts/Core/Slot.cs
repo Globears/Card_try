@@ -34,4 +34,14 @@ public class Slot
     {
         return card;
     }
+
+    public void Clear()
+    {
+        card = null;
+    }
+
+    public bool Contains(Card card)
+    {
+        return this.card == card;
+    }
 }

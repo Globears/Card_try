@@ -29,30 +29,15 @@ public class Library
 
     public static void Shuffle()
     {
-        
-    }
-
-    public void Draw()
-    {
-        if(Library.Instance.cards.Count == 0){
-            return;
-        }
-        Card card = cards[0];
-        if (!Library.Has(card))
+        //洗牌
+        System.Random random = new System.Random();
+        for (int i = 0; i < Instance.cards.Count; i++)
         {
-            return;
+            int j = random.Next(Instance.cards.Count);
+            Card temp = Instance.cards[i];
+            Instance.cards[i] = Instance.cards[j];
+            Instance.cards[j] = temp;
         }
-        DrawEvent e = new DrawEvent{Card = card};
-        DrawEvent.Publish(e);
-        Debug.Log("card draw, from Library");
-
-        if (e.IsCancled())
-        {
-            return;
-        }
-
-        Library.Remove(card);
-        Hand.Instance.Add(card);
     }
 
     public static void Remove(Card card)
@@ -77,6 +62,20 @@ public class Library
         {
             Add(card);
         }
+    }
+
+    public int Count()
+    {
+        return cards.Count;
+    }
+
+    public Card TopCard()
+    {
+        if (cards.Count == 0)
+        {
+            return null;
+        }
+        return cards[0];
     }
 
 }

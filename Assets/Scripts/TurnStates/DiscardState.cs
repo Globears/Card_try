@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DiscardState : TurnState
@@ -10,17 +11,18 @@ public class DiscardState : TurnState
 
     public override void Enter()
     {
-        throw new System.NotImplementedException();
+        Update();
     }
 
     public override void Exit()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public override TurnState NextState()
     {
-        throw new System.NotImplementedException();
+        ClearState clearState = new ClearState();
+        return clearState;
     }
 
     public override void Update()
@@ -30,7 +32,8 @@ public class DiscardState : TurnState
         int confidenceLevel = 0;
         foreach(Node node in nodes)
         {
-            confidenceLevel += node.MindPhases[MindPhase.Suffix.Confidence];
+            if(node.MindPhases.ContainsKey(MindPhase.Suffix.Confidence))
+                confidenceLevel += node.MindPhases[MindPhase.Suffix.Confidence];
         }
         if (Random.Range(0, 100) < 10 * confidenceLevel)
         {
@@ -40,6 +43,15 @@ public class DiscardState : TurnState
         else
         {
             //丢弃手牌
+            List<Card> cards = new List<Card>();
+            foreach(Card card in Hand.Instance.GetCards())
+            {
+                cards.Add(card);
+            }
+            foreach(Card card in cards)
+            {
+                Player.Instance.Discard(card);
+            }
         }
 
     }

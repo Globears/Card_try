@@ -46,4 +46,14 @@ public class SlotManager
         return bonusActionSlots[index];
     }
 
+    public List<Slot> GetAllActionSlots()
+    {
+        return actionSlots;
+    }
+
+    public List<Slot> GetAllBonusActionSlots()
+    {
+        return bonusActionSlots;
+    }
+
 }

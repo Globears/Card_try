@@ -35,6 +35,7 @@ public class CardDisplayManager : MonoBehaviour
 
         
         cardDisplays.Add(cardDisplay);
+        cardToDisplays.Add(drawEvent.Card, cardDisplay);
         HandLayoutManager.Instance.Hold(cardDisplay);
         
     }
@@ -47,4 +48,6 @@ public class CardDisplayManager : MonoBehaviour
         }
         return null;
     }
+
+    
 }

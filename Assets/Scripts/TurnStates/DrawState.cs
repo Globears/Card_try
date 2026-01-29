@@ -11,7 +11,10 @@ public class DrawState : TurnState
     public override void Enter()
     {
         DrawStateEvent.Pre.Publish(new DrawStateEvent.Pre());
-        Library.Instance.Draw();
+        for(int i = 0 ; i < 5 ; i++)
+        {
+            Player.Instance.Draw();
+        }
         DrawStateEvent.Post.Publish(new DrawStateEvent.Post());
     }
 

@@ -73,6 +73,10 @@ public class Enemy
                     {
                         Debug.Log("Enemy attacking node at index " + idx);
                         node.takeDamage(power);
+                        if (!node.isDefeated())
+                        {
+                            //break;
+                        }
                     }
                 }
                 catch

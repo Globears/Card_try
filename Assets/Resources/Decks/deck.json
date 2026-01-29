@@ -2,6 +2,31 @@
     "deckname":"new deck",
     "cardIds":[
         "slash_or_resist",
-        "slash_or_resist"
+        "slash_or_resist",
+        "slash_or_resist",
+        "slash_or_resist",
+        "side_parry_or_sheathe",
+        "side_parry_or_sheathe",
+        "side_parry_or_sheathe",
+        "side_parry_or_sheathe",
+        "side_parry_or_sheathe",
+        "side_parry_or_sheathe",
+        "sword_holding_or_arm_training",
+        "sword_holding_or_arm_training",
+        "sword_holding_or_arm_training",
+        "sword_holding_or_arm_training",
+        "sword_holding_or_arm_training",
+        "breath_skill_or_dodge",
+        "breath_skill_or_dodge",
+        "breath_skill_or_dodge",
+        "breath_skill_or_dodge",
+        "breath_skill_or_dodge",
+        "breath_skill_or_dodge",
+        "cross_slash_or_armed",
+        "cross_slash_or_armed",
+        "cross_slash_or_armed",
+        "cross_slash_or_armed",
+        "cross_slash_or_armed",
+        "cross_slash_or_armed"
     ]
 }

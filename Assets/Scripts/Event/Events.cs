@@ -34,3 +34,8 @@ public class ActResolveEvent : Event<ActResolveEvent>
 {
     public Act act;
 }
+
+public class DiscardEvent : Event<DiscardEvent>
+{
+    public Card card;
+}

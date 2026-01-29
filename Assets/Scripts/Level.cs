@@ -20,6 +20,7 @@ public class Level : MonoBehaviour
         //从套牌json读取套牌到内存中
         Deck deck = DeckLoader.LoadDeckFromResources("Decks/deck");
         Library.Instance.LoadDeck(deck);
+        Library.Shuffle();
 
         //回合进入抓牌阶段
         TurnStateMachine.Instance.TransitState(new DrawState());
@@ -43,10 +44,6 @@ public class Level : MonoBehaviour
         TurnStateMachine.Instance.GoNextState();
     }
 
-    public void Draw()
-    {
-        Library.Instance.Draw();
-    }
 
     
 }

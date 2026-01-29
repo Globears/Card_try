@@ -2,18 +2,19 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hand
+public class Graveyard
 {
-    public static Action<HandAddEvent> HandAddEvent;
-    private static Hand instance;
+    private static Graveyard instance;
 
-    public static Hand Instance
+    private List<Card> cards = new List<Card>();
+
+    public static Graveyard Instance
     {
         get
         {
             if(instance == null)
             {
-                instance = new Hand();
+                instance = new Graveyard();
                 
             }
             return instance;
@@ -21,31 +22,26 @@ public class Hand
 
     }
 
-    private Hand()
+    private Graveyard()
     {
         
     }
 
-    public List<Card> cards = new List<Card>();
-
     public void Add(Card card)
     {
         cards.Add(card);
-        HandAddEvent?.Invoke(new HandAddEvent { card = card });
     }
 
     public void Remove(Card card)
     {
-        cards.Remove(card);
+        if(cards.Contains(card))
+        {
+            cards.Remove(card);
+        }
     }
 
     internal bool Contains(Card card)
     {
         return cards.Contains(card);
-    }
-
-    public List<Card> GetCards()
-    {
-        return cards;
     }
 }

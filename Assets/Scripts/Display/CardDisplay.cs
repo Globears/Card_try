@@ -24,7 +24,10 @@ public class CardDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Graveyard.Instance.Contains(Card))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnMouseEnter()
@@ -40,7 +43,7 @@ public class CardDisplay : MonoBehaviour
     void OnMouseDown()
     {
         offset = transform.position - GetMouseWorldPos();
-        HandLayoutManager.Instance.Release(this);
+        HandLayoutManager.Instance.Remove(this);
         if(currentSlot != null)
         {
             currentSlot.Release(this);

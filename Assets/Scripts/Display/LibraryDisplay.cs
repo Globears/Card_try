@@ -14,8 +14,4 @@ public class LibraryDisplay : MonoBehaviour
         
     }
 
-    public void Draw()
-    {
-        Library.Instance.Draw();
-    }
 }
