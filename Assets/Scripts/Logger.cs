@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 记录历史卡牌的类
+/// </summary>
 public class Logger
 {
 

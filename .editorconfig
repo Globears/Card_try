@@ -1,0 +1,12 @@
+# .editorconfig
+root = true
+
+[*.cs]
+charset = utf-8
+indent_size = 4
+indent_style = space
+end_of_line = crlf
+csharp_new_line_before_open_brace = none
+csharp_new_line_before_else = false
+csharp_new_line_before_catch = false
+csharp_new_line_before_finally = false

@@ -3,13 +3,32 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+/// 卡牌基类
+/// </summary>
 public class Card
 {
+
     public String Id;
+
+    /// <summary>
+    /// 卡牌的前缀心相
+    /// </summary>
     public MindPhase.Prefix Prefix;
+    
+    /// <summary>
+    /// 卡牌的后缀心相
+    /// </summary>
     public MindPhase.Suffix Suffix;
 
+    /// <summary>
+    /// 卡牌的动作
+    /// </summary>
     public Act action;
+
+    /// <summary>
+    /// 卡牌的附赠动作
+    /// </summary>
     public BonusAct bonusAction;
 
     public delegate void DrawEventHandler(DrawEvent e);
