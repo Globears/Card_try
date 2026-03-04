@@ -12,7 +12,6 @@ public class SlotManager
             if(instance == null)
             {
                 instance = new SlotManager();
-                
             }
             return instance;
         }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CardDisplayManager : MonoBehaviour
+public class CardDisplayManager : SingletonBehaviour<CardDisplayManager>
 {
     private static List<CardDisplay> cardDisplays = new List<CardDisplay>();
 
@@ -10,9 +10,9 @@ public class CardDisplayManager : MonoBehaviour
 
     public CardDisplay cardDisplayPrefab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         DrawEvent.subscriber += OnDraw;
     }
 
@@ -21,7 +21,6 @@ public class CardDisplayManager : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -32,7 +31,6 @@ public class CardDisplayManager : MonoBehaviour
         Debug.Log("card draw, from carddisplay manager");
         CardDisplay cardDisplay = Instantiate(cardDisplayPrefab);
         cardDisplay.Bind(drawEvent.Card);
-
         
         cardDisplays.Add(cardDisplay);
         cardToDisplays.Add(drawEvent.Card, cardDisplay);

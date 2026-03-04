@@ -1,21 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandLayoutManager : MonoBehaviour
+public class HandLayoutManager : SingletonBehaviour<HandLayoutManager>
 {
-
-    private static HandLayoutManager instance;  
-
-    public static HandLayoutManager Instance
-    {
-        get
-        {
-
-            return instance;
-        }
-
-    }
-
     public static List<CardDisplay> cardDisplays = new List<CardDisplay>();
 
     private float width = 16, height = 2;
@@ -23,9 +10,9 @@ public class HandLayoutManager : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    protected override void Awake() 
     {
-        instance = this;
+        base.Awake();
         DiscardEvent.subscriber += OnDiscard;
     }
 

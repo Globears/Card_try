@@ -1,22 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridLayoutManager : MonoBehaviour
+public class GridLayoutManager : SingletonBehaviour<GridLayoutManager>
 {
-    private static GridLayoutManager instance;  
-
-    public static GridLayoutManager Instance
-    {
-        get
-        {
-
-            return instance;
-        }
-
-    }
-
-
-
     public List<NodeDisplay> nodeDisplays = new List<NodeDisplay>();
 
     private float width = 16, height = 8;
@@ -25,11 +11,6 @@ public class GridLayoutManager : MonoBehaviour
 
     [SerializeField]
     private NodeDisplay nodeDisplayPrefab;
-
-    void Awake()
-    {
-        instance = this;
-    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

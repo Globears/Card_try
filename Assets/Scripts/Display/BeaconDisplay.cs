@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class BeaconDisplay : MonoBehaviour
 {
-
-    
-
     public Beacon beacon;
 
     void Start()
