@@ -9,13 +9,11 @@ public class DiscardState : TurnState
         title = "Discard State";
     }
 
-    public override void Enter()
-    {
-        Update();
+    public override void Enter() {
+        
     }
 
-    public override void Exit()
-    {
+    public override void Exit() {
         
     }
 
@@ -25,8 +23,11 @@ public class DiscardState : TurnState
         return clearState;
     }
 
-    public override void Update()
-    {
+    public override void Update() {
+        
+    }
+
+    public void Discard() {
         //实现自信的特殊效果：回合结束时，有10x%的概率不丢弃手牌
         List<Node> nodes = GridManager.Instance.Nodes;
         int confidenceLevel = 0;
@@ -53,6 +54,5 @@ public class DiscardState : TurnState
                 Player.Instance.Discard(card);
             }
         }
-
     }
 }

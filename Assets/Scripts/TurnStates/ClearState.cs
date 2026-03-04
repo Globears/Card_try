@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClearState : TurnState
@@ -10,9 +11,8 @@ public class ClearState : TurnState
         title = "Clear State";
     }
 
-    public override void Enter()
-    {
-        Update();
+    public override void Enter() {
+        Clear();
     }
 
     public override void Exit()
@@ -26,8 +26,12 @@ public class ClearState : TurnState
         return drawState;
     }
 
-    public override void Update()
-    {
+    public override void Update() {
+        
+    }
+
+    public void Clear() {
+        
         //1.清除所有槽位里的卡牌，把它们置入坟墓
         List<Slot> actionSlots = SlotManager.Instance.GetAllActionSlots();
         foreach(Slot slot in actionSlots)

@@ -11,7 +11,7 @@ public class EnemySpawnState : TurnState
     public override void Enter()
     {
         Debug.Log("Entering Enemy Spawn State");
-        Update();
+        EnemySpawn();
     }
 
     public override void Exit()
@@ -25,8 +25,11 @@ public class EnemySpawnState : TurnState
         return playState;
     }
 
-    public override void Update()
-    {
+    public override void Update() {
+        
+    }
+
+    public void EnemySpawn() {
         //这里从Enemies的注册表里随机抽取敌人
         
         int randomIndex = Random.Range(0, Enemies.AllEnemies.Count);

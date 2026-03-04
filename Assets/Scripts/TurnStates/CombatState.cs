@@ -25,9 +25,11 @@ public class CombatState : TurnState
         return discardState;
     }
 
-    public override void Update()
-    {
+    public override void Update() {
+        
+    }
 
+    public void Combat() {
         //获取所有敌人
         List<Enemy> enemies = EnemyManager.Instance.GetEnemies();
 
