@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 操控信标的显示的物体的脚本
+/// </summary>
 public class BeaconDisplay : MonoBehaviour
 {
     public Beacon beacon;

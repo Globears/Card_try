@@ -3,7 +3,7 @@ using UnityEngine;
 public class SwordHoldingOrArmTraining : Card
 {
     public SwordHoldingOrArmTraining()
-     : base("sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
+    : base("sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
     {
         action.CreateDefenseSequence("1:5-3:8");
         bonusAction.CreateDefenseSequence("1:5632");

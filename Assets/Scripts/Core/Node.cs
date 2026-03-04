@@ -29,7 +29,6 @@ public class Node
             //如果附赠和动作重合，则使它+1力
             this.Defense.Power += 1;
         }
-       
     }
 
     public Node(Vector2Int position)

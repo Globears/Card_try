@@ -4,7 +4,7 @@ public class SideParryOrSheathe : Card
 {
     public Effect bloom, vibration;
     public SideParryOrSheathe()
-     : base("side_parry_or_sheathe", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
+    : base("side_parry_or_sheathe", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
     {
         action.CreateDefenseSequence("1:56341");
         bonusAction.CreateDefenseSequence("1:15, 1:25, 1:35, 1:45, 1:55, 1:65, 1:75, 1:85, 1:95");

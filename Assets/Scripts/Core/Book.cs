@@ -8,6 +8,9 @@ public class Book
 
     public List<Card> Cards = new List<Card>();
 
+    /// <summary>
+    /// 封底卡
+    /// </summary>
     public List<Card> FinalCards = new List<Card>();
 
     public int FinishThreshold = 0;

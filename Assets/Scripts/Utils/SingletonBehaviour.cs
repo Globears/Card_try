@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// 单例 Behaviour
+/// 单例基类
 /// 注意：该基类未在Awake定义DontDestroyOnLoad
 /// </summary>
 public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<T>
@@ -19,7 +19,6 @@ public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonB
         if (Instance == this) return;
         if (Instance != null) {
             Debug.Log($"[{GetType().Name}] Instance already exists");
-            Destroy(gameObject);
             return;
         }
 

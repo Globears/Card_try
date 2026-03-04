@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// 操控卡牌的Object的脚本
+/// </summary>
 public class CardDisplay : MonoBehaviour
 {
     public Card Card;
