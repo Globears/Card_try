@@ -50,11 +50,12 @@ public class ClearState : TurnState
         }
 
         //2.清除所有敌人
-        List<Enemy> enemies = EnemyManager.Instance.GetEnemies();
-        foreach(Enemy enemy in enemies)
-        {
-            EnemyManager.Instance.Remove(enemy);
-        }
+        // List<Enemy> enemies = EnemyManager.Instance.GetEnemies();
+        // foreach(Enemy enemy in enemies)
+        // {
+        //     EnemyManager.Instance.Remove(enemy);
+        // }
+        EnemyManager.Instance.ClearEnemies();
 
         //3.清除所有的设防
         List<Node> nodes = GridManager.Instance.Nodes;

@@ -7,11 +7,28 @@ public class Node
     // 节点具有位置、当前持有的心相及层数、以及挂载的防御
     public Vector2Int Position;
 
+    /// <summary>
+    /// 节点持有的心相及层数
+    /// </summary>
     public Dictionary<MindPhase.Suffix, int> MindPhases = new Dictionary<MindPhase.Suffix, int>();
     
+    /// <summary>
+    /// 节点挂载的防御
+    /// </summary>
     public Defense Defense;
 
     public int damage = 0;
+
+    /// <summary>
+    /// 初始化节点的心相状态，默认为0
+    /// </summary>
+    public void InitializeMindPhases()
+    {
+        foreach (MindPhase.Suffix suffix in System.Enum.GetValues(typeof(MindPhase.Suffix)))
+        {
+            MindPhases[suffix] = 0;
+        }
+    }
 
     public void ApplyDefense(Defense defense)
     {

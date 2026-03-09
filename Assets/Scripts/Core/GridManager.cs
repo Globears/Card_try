@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// GridManager负责管理节点（Node）的状态，包括心相和防御。
+/// 它提供了接口来应用防御序列和清除防御。
+/// </summary>
 public class GridManager
 {
     public static event Action<ApplyDefenseSequenceEvent> applyDefenseSequenceEvent;
@@ -23,6 +27,10 @@ public class GridManager
 
     }
 
+    /// <summary>
+    /// GridManager的构造函数，初始化一个3x3的节点网格，坐标范围从(-1, -1)到(1, 1)，
+    /// 并初始化每个节点的心相状态。
+    /// </summary>
     private GridManager()
     {
         for (int x = -1 ; x < 2 ; x++)
@@ -31,6 +39,9 @@ public class GridManager
             {
                 nodes[new Vector2Int(x, y)] = new Node(x,y);
                 nodes[new Vector2Int(x, y)].Position = new Vector2Int(x, y);
+
+                //初始化节点的心相状态
+                nodes[new Vector2Int(x, y)].InitializeMindPhases();
             }
         }
     }
@@ -44,6 +55,9 @@ public class GridManager
         
     }
 
+    /// <summary>
+    /// 清除所有Node上的防御
+    /// </summary>
     public void ClearDefenses()
     {
         foreach (Node node in nodes.Values)

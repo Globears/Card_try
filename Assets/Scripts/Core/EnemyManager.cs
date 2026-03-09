@@ -47,8 +47,10 @@ public class EnemyManager
     public void Remove(Enemy enemy)
     {
         enemies.Remove(enemy);
-    }   
+    }
 
-
-    
+    public void ClearEnemies()
+    {
+        enemies.Clear();
+    }
 }

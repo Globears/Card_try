@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Level : MonoBehaviour
+public class GameManager : SingletonBehaviour<GameManager>
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +23,7 @@ public class Level : MonoBehaviour
         Library.Shuffle();
 
         //回合进入抓牌阶段
-        TurnStateMachine.Instance.TransitState(new DrawState());
+        TurnStateMachine.Instance.TransitState(new StartState());
 
 
     }
