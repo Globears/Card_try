@@ -2,10 +2,16 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 敌人基类
+/// </summary>
 public class Enemy
 {
     public String Id;
 
+    /// <summary>
+    /// 危险等级，用于随机出怪
+    /// </summary>
     public int dangerLevel = 0;
 
     //索引表示轮次
