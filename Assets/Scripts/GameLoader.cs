@@ -25,6 +25,9 @@ public class GameLoader : SingletonBehaviour<GameLoader>
         Enemies.Load();
         //敌人还没有什么描述信息
 
+        //加载关卡数据
+        Levels.Load();
+
         //初始化日志
         Logger.Init();
 
