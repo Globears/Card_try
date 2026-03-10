@@ -24,6 +24,10 @@ public class GameLoader : SingletonBehaviour<GameLoader>
         //初始化所有敌人
         Enemies.Load();
         //敌人还没有什么描述信息
+        
+        //加载书籍数据
+        Books.Load();
+        //加载书籍描述数据
 
         //加载关卡数据
         Levels.Load();

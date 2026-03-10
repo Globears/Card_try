@@ -1,0 +1,9 @@
+{
+    "levelId": "1_3",
+    "levelName":"无法信任的神明",
+    "passiveEffectDescription": "初始手牌-1",
+    "missonsDescription": [
+        "目标1：在被施加“摧毁”小于等于3层的情况下结束游戏",
+        "目标2：不受到来自“蹒跚乞丐”的“摧毁”影响"
+    ]
+}

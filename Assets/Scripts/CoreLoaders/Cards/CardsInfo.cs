@@ -8,6 +8,11 @@ public class CardInfo
     /// 卡牌的ID
     /// </summary>
     public string id;
+
+    /// <summary>
+    /// 卡牌的描述
+    /// </summary>
+    public string card_description;
     
     /// <summary>
     /// 卡牌的动作名称

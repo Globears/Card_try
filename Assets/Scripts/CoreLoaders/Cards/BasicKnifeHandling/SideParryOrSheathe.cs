@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class SideParryOrSheathe : Card
 {
+    // 侧挡（正）
+    // 领袖的 自信
+    // 1力：56341
+    // 绽放（2坚定）：具有+2力度
+    // 收刀（反）
+    // 领袖的 自信
+    // 1力：15，25，35，45，55，65，75，85，95
+    // 共鸣（领袖的）：具有力度+1
+    // 共鸣（自信）：具有力度+1
     public Effect bloom, vibration;
     public SideParryOrSheathe()
     : base("side_parry_or_sheathe", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)

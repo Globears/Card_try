@@ -1,0 +1,9 @@
+{
+    "levelId": "1_2",
+    "levelName":"未有目标的迷茫",
+    "passiveEffectDescription": "无",
+    "missonsDescription": [
+        "目标1：在被施加“摧毁”小于等于5层的情况下结束游戏",
+        "目标2：在被施加“摧毁”小于等于3层的情况下结束游戏"
+    ]
+}

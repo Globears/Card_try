@@ -7,12 +7,19 @@ public class Level {
     /// <summary>
     /// 关卡编号
     /// </summary>
-    public int levelNumber;
+    public int levelId;
+    /// <summary>
+    /// 关卡名称
+    /// </summary>
+    public string levelName;
+    /// <summary>
+    /// 关卡的被动效果描述
+    /// </summary>
+    public string passiveEffectDescription;
     /// <summary>
     /// 关卡包含的敌人列表
     /// </summary>
     public List<Enemy> enemies = new List<Enemy>();
-    public int dangerLevel = 0;
     /// <summary>
     /// 关卡的轮次数
     /// </summary>

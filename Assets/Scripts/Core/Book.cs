@@ -16,6 +16,10 @@ public class Book
     public int FinishThreshold = 0;
 
     //检测是否完书，以及完书时的效果函数
+
+    public Book(string Id) {
+        this.Id = Id;
+    }
 }
 
 public class BookData
