@@ -9,6 +9,9 @@ public class DeckJsonData
     public string[] cardIds;
 }
 
+/// <summary>
+/// DeckLoader负责从资源文件夹中的json文件加载套牌数据
+/// </summary>
 public class DeckLoader
 {
     public static Deck LoadDeckFromResources(string deckPath)

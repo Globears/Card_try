@@ -34,9 +34,7 @@ public class SideParryOrSheathe : Card
 
         }
 
-        public void Cast()
-        {
-            
+        public void Cast() {
             GridManager.applyDefenseEvent += Trigger;
         }
 

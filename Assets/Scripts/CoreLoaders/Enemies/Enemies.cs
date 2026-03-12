@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 负责加载所有敌人数据的静态类
+/// </summary>
 public static class Enemies
 {
     //所有敌人原型的注册表

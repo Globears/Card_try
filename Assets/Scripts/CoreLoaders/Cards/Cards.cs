@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 负责加载所有卡牌数据的静态类
+/// </summary>
 public static class Cards
 {
     public static Dictionary<string, Card> CardPrototypes = new Dictionary<string, Card>();
@@ -21,11 +24,19 @@ public static class Cards
     /// <summary>
     /// 加载卡牌数据 其他的CoreLoader的XXXs.cs的Load也同理
     /// </summary>
-    public static void Load()
-    {
+    public static void Load(){
+        //《心镇设定集》
+        LoadBook1();
+        //《基础持刀》
+        LoadBook2();
+    }
+
+    private static void LoadBook1() {
         //《心镇设定集》
         //精神世界 & 心镇
         spiritOrHeartLib = new Card("spirit_or_heartlib", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
+        spiritOrHeartLib.action.CreateDefenseSequence("2:13579");
+        spiritOrHeartLib.bonusAction.CreateDefenseSequence("1:2456");
         CardPrototypes["spirit_or_heartlib"] = spiritOrHeartLib;
 
         //知识 & 书籍
@@ -42,8 +53,12 @@ public static class Cards
 
         //未来 & 结局
         futureOrEnding = new Card("future_or_ending", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
+        futureOrEnding.IsCoverCard = true; //设定为封底牌
         CardPrototypes["future_or_ending"] = futureOrEnding;
 
+    }
+
+    public static void LoadBook2() {
         //《基础持刀》
         //直斩 & 抵剑
         slashOrResist = new Card("slash_or_resist", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
@@ -71,7 +86,7 @@ public static class Cards
         crossSlashOrArmed = new Card("cross_slash_or_armed", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
         crossSlashOrArmed.action.CreateDefenseSequence("4:456, 4:654, 4:852, 4:258");
         crossSlashOrArmed.bonusAction.CreateDefenseSequence("3:5");
+        crossSlashOrArmed.IsCoverCard = true; //设定为封底牌
         CardPrototypes["cross_slash_or_armed"] = crossSlashOrArmed;
-
     }
 }

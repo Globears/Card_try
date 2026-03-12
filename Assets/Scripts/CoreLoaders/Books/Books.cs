@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
+/// <summary>
+/// 负责加载所有书籍数据的静态类
+/// </summary>
 public static class Books {
     public static Dictionary<string, Book> books = new Dictionary<string, Book>();
     public static Book heartLibSet, basicKnifeHandling;

@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class CardGameManager : SingletonBehaviour<CardGameManager>
 {
     void Start() {
-        //检查当前场景名称
         StartGame();
     }
 
@@ -25,7 +24,11 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     public void StartGame() {
         //初始化挪到了GameLoader中，这里只负责游戏（指游戏内卡牌对战的环节）开始时的逻辑
         Debug.Log("CardGameManager: 开始游戏");
-        if(SceneManager.GetActiveScene().name != "CardGameScene") return;
+        //检查当前场景名称
+        if(SceneManager.GetActiveScene().name != "CardGameScene") {
+            Debug.LogError($"{this}:当前场景不是CardGameScene");
+            return;
+        }
         if(GameLoader.Instance == null) {
             Debug.LogError($"{this}:GameLoader的Instance为空");
             return;

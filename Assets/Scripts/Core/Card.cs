@@ -31,6 +31,7 @@ public class Card
     /// </summary>
     public BonusAct bonusAction;
 
+    public bool IsCoverCard = false; //是否为封底牌
     public delegate void DrawEventHandler(DrawEvent e);
     public event DrawEventHandler DrawEvent;
 
