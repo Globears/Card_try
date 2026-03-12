@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
 
-
 /// <summary>
-/// 即刻
-/// 共鸣、气场等效果不单独设立基类，因为特例太多
+/// 绽放，传递的E是节点信息
 /// </summary>
-public class Instant : Effect
+public class Blossom : Effect
 {
-    private System.Action action;
-    public Instant(Action action) : base() {
+    private System.Func<ApplyDefenseEvent, bool> action;
+    public Blossom(Func<ApplyDefenseEvent, bool> action) : base() {
         this.action = action;
     }
 
@@ -18,6 +16,6 @@ public class Instant : Effect
     }
 
     public void Trigger(ApplyDefenseEvent e) {
-        action();
+        action(e);
     }
 }

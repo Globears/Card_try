@@ -34,25 +34,55 @@ public static class Cards
     private static void LoadBook1() {
         //《心镇设定集》
         //精神世界 & 心镇
+        // 精神世界（正）
+        // 领袖的 坚定
+        // 2力：13579
+        // 心镇（反）
+        // 领袖的 坚定
+        // 1力：2456
         spiritOrHeartLib = new Card("spirit_or_heartlib", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
         spiritOrHeartLib.action.CreateDefenseSequence("2:13579");
         spiritOrHeartLib.bonusAction.CreateDefenseSequence("1:2456");
         CardPrototypes["spirit_or_heartlib"] = spiritOrHeartLib;
 
         //知识 & 书籍
-        knowledgeOrBook = new Card("knowledge_or_book", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence);
+        knowledgeOrBook = new KnowledgeOrBook();
         CardPrototypes["knowledge_or_book"] = knowledgeOrBook;
 
         //羁绊关系 & 协助者
+        // 羁绊关系（正）
+        // 领袖的 温柔
+        // 1力：536842
+        // 协助者（反）
+        // 领袖的 温柔
+        // 3力：5
         bondOrSupporter = new Card("bond_or_supporter", MindPhase.Prefix.Leadership, MindPhase.Suffix.Tenderness);
+        bondOrSupporter.action.CreateDefenseSequence("1:536842");
+        bondOrSupporter.bonusAction.CreateDefenseSequence("3:5");
         CardPrototypes["bond_or_supporter"] = bondOrSupporter;
 
         //改变 & 关卡
+        // 改变（正）
+        // 领袖的 责任
+        // 2力：1651
+        // 关卡（反）
+        // 领袖的 责任
+        // 2力：24，86
         changeOrLevel = new Card("change_or_level", MindPhase.Prefix.Leadership, MindPhase.Suffix.Responsibility);
+        changeOrLevel.action.CreateDefenseSequence("2:1651");
+        changeOrLevel.bonusAction.CreateDefenseSequence("2:24,2:86");
         CardPrototypes["change_or_level"] = changeOrLevel;
 
         //未来 & 结局
+        // 封底（4/4）
+        // 未来（正）
+        // 领袖的坚定
+        // 3力：123456789
+        // 结局（反）
+        // 6力：1，5，9
         futureOrEnding = new Card("future_or_ending", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
+        futureOrEnding.action.CreateDefenseSequence("3:123456789");
+        futureOrEnding.bonusAction.CreateDefenseSequence("6:1,6:5,6:9");
         futureOrEnding.IsCoverCard = true; //设定为封底牌
         CardPrototypes["future_or_ending"] = futureOrEnding;
 
@@ -61,9 +91,15 @@ public static class Cards
     public static void LoadBook2() {
         //《基础持刀》
         //直斩 & 抵剑
+        // 直斩（正）
+        // 领袖的 坚定
+        // 2力：258
+        // 抵剑（反）
+        // 领袖的 坚定
+        // 1力：168，348
         slashOrResist = new Card("slash_or_resist", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
-        slashOrResist.action.CreateDefenseSequence("2:258, 2:852");
-        slashOrResist.bonusAction.CreateDefenseSequence("1:168, 1:348, 1:762, 1:942");
+        slashOrResist.action.CreateDefenseSequence("2:258");
+        slashOrResist.bonusAction.CreateDefenseSequence("1:168, 1:348,");
         CardPrototypes["slash_or_resist"] = slashOrResist;
 
         //侧挡 & 收刀

@@ -42,7 +42,7 @@ public class CardsInfo
 
     public static void Load()
     {
-        cardInfos = CardInfoLoader.LoadFromResources("CardsInfo");
+        cardInfos = CardInfoLoader.LoadFromResources("CardsInfos/Cardsinfo");
         Debug.Log("Loaded card info");
 
         //输出字典中所有的键

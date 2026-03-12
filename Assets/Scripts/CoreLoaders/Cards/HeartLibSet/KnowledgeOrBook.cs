@@ -9,12 +9,17 @@ public class KnowledgeOrBook : Card
 // 书籍（反）
 // 领袖的 自信
 // 1力：521
-    public Effect bloom, vibration;
+    public Effect instantEffect;
     public KnowledgeOrBook()
     : base("knowledge_or_book", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
     {
         action.CreateDefenseSequence("1:5");
         bonusAction.CreateDefenseSequence("1:521");
+
+        instantEffect = new Instant(() => {
+            Player.Instance.Draw();
+        });
+        action.AddEffect(instantEffect);
     }
 
     
