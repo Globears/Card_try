@@ -12,8 +12,4 @@ public abstract class Effect
     public virtual void Cast() {
         //可能负责订阅事件之类的
     }
-
-    
-
-
 }

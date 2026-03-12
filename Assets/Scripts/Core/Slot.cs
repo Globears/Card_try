@@ -17,11 +17,11 @@ public class Slot
 
         if (isActionSlot)
         {
-            card.ResolveAction();
+            card.ResolveActionDefence();
         }
         else
         {
-            card.ResolveBonusAction();
+            card.ResolveBonusActionDefence();
         }
     }
 

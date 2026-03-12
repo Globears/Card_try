@@ -21,6 +21,4 @@ public class KnowledgeOrBook : Card
         });
         action.AddEffect(instantEffect);
     }
-
-    
 }

@@ -14,10 +14,6 @@ public class Instant : Effect
     }
 
     public override void Cast() {
-        GridManager.applyDefenseEvent += Trigger;
-    }
-
-    public void Trigger(ApplyDefenseEvent e) {
         action();
     }
 }

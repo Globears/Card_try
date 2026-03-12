@@ -35,15 +35,23 @@ public class Card
     public delegate void DrawEventHandler(DrawEvent e);
     public event DrawEventHandler DrawEvent;
 
-
-    public virtual void ResolveAction()
+    public virtual void ResolveActionEffects()
     {
-        action.Resolve();
+        action.ResolveEffects();
+    }
+    public virtual void ResolveBonusActionEffects()
+    {
+        bonusAction.ResolveEffects();
     }
 
-    public virtual void ResolveBonusAction()
+    public virtual void ResolveActionDefence()
     {
-        bonusAction.Resolve();
+        action.ResolveDefence();
+    }
+
+    public virtual void ResolveBonusActionDefence()
+    {
+        bonusAction.ResolveDefence();
     }
 
     public Card(string Id, MindPhase.Prefix Prefix, MindPhase.Suffix Suffix)
@@ -64,8 +72,4 @@ public class Card
 
         return clone;
     }
-
-    
-
-    
 }

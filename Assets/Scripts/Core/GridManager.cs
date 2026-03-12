@@ -8,9 +8,6 @@ using UnityEngine;
 /// </summary>
 public class GridManager
 {
-    public static event Action<ApplyDefenseSequenceEvent> applyDefenseSequenceEvent;
-    public static event Action<ApplyDefenseEvent> applyDefenseEvent;
-
     private static GridManager instance;
 
     public static GridManager Instance

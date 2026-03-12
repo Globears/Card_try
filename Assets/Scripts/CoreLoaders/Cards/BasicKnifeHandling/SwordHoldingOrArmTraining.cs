@@ -10,34 +10,16 @@ public class SwordHoldingOrArmTraining : Card
     // 领袖的 温柔
     // 1力：5632
     // 气场：“领袖的”卡牌具有力度+1
+    public static Effect instantEffect;
     public SwordHoldingOrArmTraining()
     : base("sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
     {
         action.CreateDefenseSequence("1:5-3:8");
         bonusAction.CreateDefenseSequence("1:5632");
+
+        instantEffect = new NextTurnBeginEffect(() => {
+            //TODO:抽取一张“领袖的”卡牌
+            Player.Instance.Draw();
+        });
     }
-
-    public class Instant : Effect
-    {
-        public Instant()
-        {
-            
-        }
-
-        public void Cast()
-        {
-            
-        }
-
-        public void Trigger()
-        {
-            
-        }
-
-        public void Affect()
-        {
-            //滤抽
-        }
-    }
-
 }

@@ -10,6 +10,7 @@ public class DrawState : TurnState
 
     public override void Enter()
     {
+        TurnBeginEvent.Publish(new TurnBeginEvent());
         DrawStateEvent.Pre.Publish(new DrawStateEvent.Pre());
         for(int i = 0 ; i < 5 ; i++)
         {

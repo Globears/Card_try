@@ -22,7 +22,15 @@ public class Act
         Suffix = suffix;
     }
 
-    public void Resolve()
+    public void ResolveEffects()
+    {
+        foreach (Effect effect in Effects)
+        {
+            effect.Cast();
+        }
+    }
+    
+    public void ResolveDefence()
     {
         //基类可以实现基本的设防逻辑
         foreach (DefenseSequence defenseSequence in DefenseSequences)
@@ -45,6 +53,16 @@ public class Act
         }
     }
 
+    public void AddPowerOnDefenseSequences(int power) {
+        foreach (DefenseSequence defenseSequence in DefenseSequences)
+        {
+            for (int i = 0; i < defenseSequence.Sequence.Count; i++)
+            {
+                defenseSequence.Sequence[i].Power += power;
+            }
+        }
+    }
+    
     public void CreateDefenseSequence(string config)
     {
         DefenseSequences = DefenseSequence.CreateDefenseSequences(config, this, Prefix, Suffix);
