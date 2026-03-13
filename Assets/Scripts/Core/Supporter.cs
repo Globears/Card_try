@@ -7,6 +7,10 @@ using System.Collections.Generic;
 /// </summary>
 public class Supporter {
     /// <summary>
+    /// 协助者的Id
+    /// </summary>
+    public int Id;
+    /// <summary>
     /// 协助者的名字
     /// </summary>
     public string Name;
@@ -17,7 +21,7 @@ public class Supporter {
     /// <summary>
     /// 协助者的认知等级范围
     /// </summary>
-    public int CogMinLevel, CogMaxLevel;
+    public int CogMinLevel, CogMaxLevel,CogCurrentLevel;
     /// <summary>
     /// 协助者的升级任务描述
     /// </summary>

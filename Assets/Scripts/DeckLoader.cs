@@ -6,6 +6,8 @@ using UnityEngine;
 public class DeckJsonData
 {
     public string deckName;
+    public int supporterId;
+    public string cogCardIds;
     public string[] cardIds;
 }
 
@@ -33,11 +35,37 @@ public class DeckLoader
         //解析json文件
         DeckJsonData deckData = JsonUtility.FromJson<DeckJsonData>(jsonFile.text);
 
-        //根据json文件创建套牌
-        Deck deck = new Deck();
+        Deck deck = new Deck {
+            //根据json文件创建套牌
+            //套牌名称
+            name = deckData.deckName,
+        };
+        
+        //协助者
+        if(deckData.supporterId != 0) {
+            Supporter supporter = Supporters.supporters[deckData.supporterId];
+            deck.supporter = supporter;
+            Debug.Log($"协助者为{supporter.Name},认知等级为{supporter.CogCurrentLevel}");
 
-        foreach(string cardId in deckData.cardIds)
-        {
+            //添加认知卡
+            int cogLevelAmount = 0;
+            foreach (int cogCardId in deckData.cogCardIds) {
+                CogCard cogCard = CogCards.cogCards[cogCardId];
+                if(cogCard != null) {
+                    deck.cogCards.Add(cogCard);
+                    Debug.Log($"加入了认知卡{cogCard.Name},认知等级为{cogCard.CogLevel}");
+                    cogLevelAmount += cogCard.CogLevel;
+                }
+            }
+
+            //检查认知卡合法性
+            if(cogLevelAmount >= supporter.CogCurrentLevel) {
+                Debug.LogWarning("套牌认知等级不合法");
+            }
+        }
+
+        //加载套牌的卡牌列表
+        foreach (string cardId in deckData.cardIds) {
             // Load each card by ID
             Card card = CardFactory.CreateCard(cardId);
             if (card != null)
@@ -48,5 +76,5 @@ public class DeckLoader
         }
 
         return deck;
-    } 
+    }
 }
