@@ -26,8 +26,6 @@ public class SideParryOrSheathe : Card
                 action.AddPowerOnDefenseSequences(2);
             }
         });
-        action.AddEffect(blossom);
-        bonusAction.AddEffect(vibration);
         vibration = new Instant(() => {
             // 共鸣（领袖的）：具有力度+1
             // 共鸣（自信）：具有力度+1
@@ -41,5 +39,7 @@ public class SideParryOrSheathe : Card
                 bonusAction.AddPowerOnDefenseSequences(1);
             }
         });
+        action.AddEffect(blossom);
+        bonusAction.AddEffect(vibration);
     }
 }
