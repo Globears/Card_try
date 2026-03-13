@@ -1,41 +1,94 @@
 {
-    "cardsInfo": [
-    {
-            "id": "slash_or_resist",
-            "action_name" : "直斩",
-            "action_description": "领袖的 坚定 2力: 258",
-            "bonus_action_name" : "抵剑",
-            "bonus_action_description": "领袖的 坚定\n 1力：168，348，762，942",
-            "card_description": " "
-    },
-    {
-            "id": "side_parry_or_sheathe",
-            "action_name" : "侧挡",
-            "action_description": "领袖的 自信 1力：56341",
-            "bonus_action_name" : "收刀",
-            "bonus_action_description": "领袖的 自信\n 1力：15，25，35，45，55，65，75，85，95\n共鸣（领袖的）：具有力度+1\n共鸣（自信）：具有力度+1",
-            "card_description": " "
-    },
-    {
-            "id": "sword_holding_or_arm_training",
-            "action_name" : "握剑姿态",
-            "action_description": "领袖的 温柔 1力：5-3力：8",
-            "bonus_action_name" : "臂力训练",
-            "bonus_action_description": "领袖的 温柔\n 1力：5632"
-    },
-    {
-            "id": "breath_skill_or_dodge",
-            "action_name" : "呼吸法",
-            "action_description": "领袖的 责任 0力：1，2，3，4，5，6，7，8，9",
-            "bonus_action_name" : "闪避步伐",
-            "bonus_action_description": "领袖的 坚定\n 2力：687，489，987，789，85"
-    },
-    {
-            "id": "cross_slash_or_armed",
-            "action_name" : "十字力斩",
-            "action_description": "领袖的 坚定 4力：456，654, 258, 852",
-            "bonus_action_name" : "付诸武力",
-            "bonus_action_description": "领袖的 坚定\n 3力：5"
-    }
-    ]
+        "cardsInfo": [
+        {
+                "id": "B01C01",
+                "card_name" : "精神世界 & 心镇",
+                "action_name" : "精神世界（正）",
+                "action_description": "领袖的 坚定\n 2力：13579",
+                "bonus_action_name" : "心镇（反）",
+                "bonus_action_description": "领袖的 坚定\n 1力：2456",
+                "card_description": "“心镇”是外面那位“玩家名”的“思绪”的体现，这也同样包含对概念的“认知”和社会关系所提供的“协助”"
+        },
+        {
+                "id": "B01C02",
+                "card_name" : "知识 & 书籍",
+                "action_name" : "知识（正）",
+                "action_description": "领袖的 自信\n1力：5\n即刻：抽一张牌",
+                "bonus_action_name" : "书籍（反）",
+                "bonus_action_description": "领袖的 自信\n 1力：521",
+                "card_description": "每一本书都代表“玩家名”的思考和所学习的知识，我的行为其实是在借助知识以应对问题"
+        },
+        {
+                "id": "B01C03",
+                "card_name" : "羁绊关系 & 协助者",
+                "action_name" : "羁绊关系（正）",
+                "action_description": "领袖的 温柔\n 1力：536842",
+                "bonus_action_name" : "协助者（反）",
+                "bonus_action_description": "领袖的 温柔\n 3力：5",
+                "card_description": "每一位协助者，都代表“玩家名”在外面认识的人？他的亲人，朋友，老师……那么，是否存在会产生负面影响的社会关系？心镇中并不是所有人都可信。"
+        },
+        {
+                "id": "B01C04",
+                "card_name" : "改变 & 关卡",
+                "action_name" : "改变（正）",
+                "action_description": "领袖的 责任\n 2力：1651",
+                "bonus_action_name" : "关卡（反）",
+                "bonus_action_description": "领袖的 坚定\n 2力：24，86",
+                "card_description": "每一关，都是他要面对的挑战，不管成功还是失败，都会为他带来改变。小到赖床这样的小事，大到婚娶抉择，面对生死"
+        },
+        {
+                "id": "B01C05",
+                "card_name" : "未来 & 结局",
+                "action_name" : "未来（正）",
+                "action_description": "领袖的 坚定\n3力：123456789",
+                "bonus_action_name" : "结局（反）",
+                "bonus_action_description": "领袖的 坚定\n 6力：1，5，9",
+                "card_description": "最后，我们终将走向自己选择的未来"
+        },
+        {
+                "id": "B02C01",
+                "card_name" : "直斩 & 抵剑",
+                "action_name" : "直斩（正）",
+                "action_description": "领袖的 坚定\n2力: 258",
+                "bonus_action_name" : "抵剑（反）",
+                "bonus_action_description": "领袖的 坚定\n 1力：168，348",
+                "card_description": "仅仅“触碰”到这张书页，挥剑的动作就如同电影一般在眼前闪过。这是我认知*玩家名*的记忆的方式么"
+        },
+        {
+                "id": "B02C02",
+                "card_name" : "侧挡 & 收刀",
+                "action_name" : "侧挡（正）",
+                "action_description": "领袖的 自信\n1力：5634\n绽放（2坚定）：具有+2力度",
+                "bonus_action_name" : "收刀（反）",
+                "bonus_action_description": "领袖的 自信\n1力：51，52，54，56\n共鸣（领袖的）：具有力度+1\n共鸣（自信）：具有力度+1",
+                "card_description": "略显生疏，想必*玩家名*也没碰过真正的刀剑，在漫画和游戏中见过的剑客，勇者和战士汇聚成了这本书"
+        },
+        {
+                "id": "B02C03",
+                "card_name" : "握剑姿态 & 臂力训练",
+                "action_name" : "握剑姿态（正）",
+                "action_description": "领袖的 温柔\n1力：2-3力：8\n即刻：下回合开始时抽取一张“领袖的”卡牌",
+                "bonus_action_name" : "臂力训练（反）",
+                "bonus_action_description": "领袖的 温柔\n 1力：5632\n气场：“领袖的”卡牌具有力度+1",
+                "card_description": "我可以借助这种记忆，运用到属于我的战斗中。无论是面对外来的“影响”，又或者是心镇中的“其他人”，运用知识可以将它们转化为被“解构”的模样"
+        },
+        {
+                "id": "B02C04",
+                "card_name" : "呼吸法 & 闪避步伐",
+                "action_name" : "呼吸法（正）",
+                "action_description": "领袖的 责任\n0力：5\n即刻：下回合开始时抽两张牌",
+                "bonus_action_name" : "闪避步伐（反）",
+                "bonus_action_description": "领袖的 坚定\n 2力：687，489\n气场：你的卡牌无法再施加影响",
+                "card_description": "如果我用书页的力量，杀死了心镇中的其他人会怎样？这样的可能性让我有些害怕。"
+        },
+        {
+                "id": "B02C05",
+                "card_name" : "十字力斩 & 付诸武力",
+                "action_name" : "十字力斩（正）",
+                "action_description": "领袖的 坚定\n5力：456，258",
+                "bonus_action_name" : "付诸武力（反）",
+                "bonus_action_description": "领袖的 坚定\n 3力：5\n气场：具有力度+2",
+                "card_description": "付诸武力……是一种选择，抗争和面对是必然的过程，对我和“玩家名”来说都是这样"
+        }
+        ]
 }

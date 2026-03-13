@@ -6,6 +6,7 @@ using UnityEngine;
 public class CardInfoJsonData
 {
     public string id;
+    public string card_name;
     public string action_name;
     public string action_description;
     public string bonus_action_name;
@@ -43,6 +44,7 @@ public class CardInfoLoader
             cardInfos[cardInfo.id] = new CardInfo
             {
                 id = cardInfo.id,
+                card_name = cardInfo.card_name,
                 action_name = cardInfo.action_name,
                 action_description = cardInfo.action_description,
                 bonus_action_name = cardInfo.bonus_action_name,

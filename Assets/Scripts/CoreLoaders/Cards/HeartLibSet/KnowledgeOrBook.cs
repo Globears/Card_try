@@ -11,7 +11,7 @@ public class KnowledgeOrBook : Card
 // 1力：521
     public Effect instantEffect;
     public KnowledgeOrBook()
-    : base("B00C02","knowledge_or_book", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
+    : base("B01C02","knowledge_or_book", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
     {
         action.CreateDefenseSequence("1:5");
         bonusAction.CreateDefenseSequence("1:521");

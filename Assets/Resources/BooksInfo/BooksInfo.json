@@ -1,0 +1,41 @@
+{
+    "BooksInfo":[
+    {
+        "id" : "01",
+        "book_name" : "心镇设定集",
+        "book_description" : "那位叶落秋并没有解释太多，但这本书能为我提供我所想要的答案",
+        "book_prefix_description" : "领袖的 书籍",
+        "book_unlock_misson" : "解锁：初始解锁",
+        "cards_contain": ["B01C01","B01C02","B01C03","B01C04","B01C05"],
+        "cover_card": ["B01C05"],
+        "cover_threshold": 4
+    },
+    {
+        "id" : "02",
+        "book_name" : "基础持刀",
+        "book_description" : "记载了直来直往的剑招，属于入门修习的领域，我是否准备好去迎接战斗了？",
+        "book_prefix_description" : "领袖的 书籍",
+        "book_unlock_misson" : "解锁：完成第一关",
+        "cards_contain": ["B02C01","B02C02","B02C03","B02C04","B02C05"],
+        "cover_card": ["B02C05"],
+        "cover_threshold": 3
+    },
+    {
+        "id" : "03",
+        "book_name" : "高中数学必修下",
+        "book_description" : "数学，描绘了对世界的一种抽象的，基于逻辑推理的理解方式。而教科书，则告诉你该怎么用它来解决卷子上的问题",
+        "book_prefix_description" : "守护者的 书籍",
+        "book_unlock_misson" : "解锁：完成第一关",
+        "cards_contain": ["B03C01","B03C02","B03C03","B03C04","B03C05"],
+        "cover_card": ["B03C05"],
+        "cover_threshold": 4
+    },
+    {
+        "id" : "04",
+        "book_name" : "植树节日志",
+        "book_description" : "一段不太美好的回忆，“玩家名”似乎很厌倦这段时光，但还是把植树的每一步都记了下来",
+        "book_prefix_description" : "朋友的 书籍",
+        "book_unlock_misson" : "解锁：完成第一关"
+    }
+    ]
+}
