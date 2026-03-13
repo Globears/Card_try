@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Book
 {
-    public String Id;
+    public int Id;
+    public String Name;
 
     public List<Card> Cards = new List<Card>();
 
@@ -17,8 +18,9 @@ public class Book
 
     //检测是否完书，以及完书时的效果函数
 
-    public Book(string Id) {
+    public Book(int Id,string Name) {
         this.Id = Id;
+        this.Name = Name;
     }
 }
 

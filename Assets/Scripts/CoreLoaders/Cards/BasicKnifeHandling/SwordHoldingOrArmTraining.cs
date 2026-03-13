@@ -12,7 +12,7 @@ public class SwordHoldingOrArmTraining : Card
     // 气场：“领袖的”卡牌具有力度+1
     public static Effect instantEffect;
     public SwordHoldingOrArmTraining()
-    : base("sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
+    : base("B01C03","sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
     {
         action.CreateDefenseSequence("1:5-3:8");
         bonusAction.CreateDefenseSequence("1:5632");

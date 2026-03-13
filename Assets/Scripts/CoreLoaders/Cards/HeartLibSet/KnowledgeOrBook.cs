@@ -11,12 +11,13 @@ public class KnowledgeOrBook : Card
 // 1力：521
     public Effect instantEffect;
     public KnowledgeOrBook()
-    : base("knowledge_or_book", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
+    : base("B00C02","knowledge_or_book", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
     {
         action.CreateDefenseSequence("1:5");
         bonusAction.CreateDefenseSequence("1:521");
 
         instantEffect = new Instant(() => {
+            Debug.Log("知识 & 书籍 即刻效果：抽一张牌");
             Player.Instance.Draw();
         });
         action.AddEffect(instantEffect);

@@ -8,7 +8,7 @@ public static class Books {
     public static Dictionary<string, Book> books = new Dictionary<string, Book>();
     public static Book heartLibSet, basicKnifeHandling;
     public static void Load() {
-        heartLibSet = new Book("HeartLibSet");
+        heartLibSet = new Book(01,"HeartLibSet");
         heartLibSet.Cards.Add(Cards.spiritOrHeartLib);
         heartLibSet.Cards.Add(Cards.knowledgeOrBook);
         heartLibSet.Cards.Add(Cards.bondOrSupporter);
@@ -16,7 +16,7 @@ public static class Books {
         heartLibSet.FinalCards.Add(Cards.futureOrEnding);
         heartLibSet.FinishThreshold = 4;
 
-        basicKnifeHandling = new Book("BasicKnifeHandling");
+        basicKnifeHandling = new Book(02,"BasicKnifeHandling");
         basicKnifeHandling.Cards.Add(Cards.slashOrResist);
         basicKnifeHandling.Cards.Add(Cards.sideParryOrSheathe);
         basicKnifeHandling.Cards.Add(Cards.swordHoldingOrArmTraining);

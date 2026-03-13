@@ -8,8 +8,14 @@ using UnityEngine;
 /// </summary>
 public class Card
 {
-
+    /// <summary>
+    /// 卡牌ID，唯一标识符
+    /// </summary>
     public String Id;
+    /// <summary>
+    /// 卡牌名称
+    /// </summary>
+    public string Name;
 
     /// <summary>
     /// 卡牌的前缀心相
@@ -54,9 +60,10 @@ public class Card
         bonusAction.ResolveDefence();
     }
 
-    public Card(string Id, MindPhase.Prefix Prefix, MindPhase.Suffix Suffix)
+    public Card(string Id,string Name, MindPhase.Prefix Prefix, MindPhase.Suffix Suffix)
     {
         this.Id = Id;
+        this.Name = Name;
         this.Prefix = Prefix;
         this.Suffix = Suffix;
         action = new Act(this, Prefix, Suffix);
