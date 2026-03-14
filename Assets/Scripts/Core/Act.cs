@@ -53,6 +53,10 @@ public class Act
         }
     }
 
+    /// <summary>
+    /// 为防御序列添加力度
+    /// </summary>
+    /// <param name="power"></param>
     public void AddPowerOnDefenseSequences(int power) {
         foreach (DefenseSequence defenseSequence in DefenseSequences)
         {

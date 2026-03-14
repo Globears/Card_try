@@ -49,6 +49,7 @@ public class CombatState : TurnState
             //结算卡牌效果
             actionCard?.ResolveActionEffects();
             bonusActionCard?.ResolveBonusActionEffects();
+            CardResolveEvent.Publish(new CardResolveEvent{card = actionCard});
 
             //结算卡牌防御
             actionCard?.ResolveActionDefence();

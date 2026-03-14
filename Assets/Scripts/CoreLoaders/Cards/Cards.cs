@@ -104,10 +104,28 @@ public static class Cards
         CardPrototypes.Add("B02C01", "slash_or_resist", slashOrResist);
 
         //侧挡 & 收刀
+        // 侧挡（正）
+        // 领袖的 自信
+        // 1力：56341
+        // 绽放（2坚定）：具有+2力度
+        // 收刀（反）
+        // 领袖的 自信
+        // 1力：51，52，54，56
+        // 共鸣（领袖的）：具有力度+1
+        // 共鸣（自信）：具有力度+1
         sideParryOrSheathe = new SideParryOrSheathe();
         CardPrototypes.Add("B02C02", "side_parry_or_sheathe", sideParryOrSheathe);
 
         //握剑姿态 & 臂力训练
+        // 侧挡（正）
+        // 领袖的 自信
+        // 1力：56341
+        // 绽放（2坚定）：具有+2力度
+        // 收刀（反）
+        // 领袖的 自信
+        // 1力：51，52，54，56
+        // 共鸣（领袖的）：具有力度+1
+        // 共鸣（自信）：具有力度+1
         swordHoldingOrArmTraining = new Card("B02C03","sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Tenderness);
         swordHoldingOrArmTraining.action.CreateDefenseSequence("1:5-3:8");
         swordHoldingOrArmTraining.bonusAction.CreateDefenseSequence("1:5632");
@@ -125,5 +143,9 @@ public static class Cards
         crossSlashOrArmed.bonusAction.CreateDefenseSequence("3:5");
         crossSlashOrArmed.IsCoverCard = true; //设定为封底牌
         CardPrototypes.Add("B02C05", "cross_slash_or_armed", crossSlashOrArmed);
+    }
+
+    public static void LoadBook3() {
+        
     }
 }
