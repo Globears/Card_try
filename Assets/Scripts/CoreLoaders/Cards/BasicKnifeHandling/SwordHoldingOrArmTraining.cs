@@ -17,7 +17,7 @@ public class SwordHoldingOrArmTraining : Card
         action.CreateDefenseSequence("1:5-3:8");
         bonusAction.CreateDefenseSequence("1:5632");
 
-        instantEffect = new NextTurnBeginEffect(() => {
+        instantEffect = new NextEventEffect<TurnBeginEvent>(() => {
             //TODO:抽取一张“领袖的”卡牌
             Player.Instance.Draw();
         });

@@ -78,4 +78,18 @@ public class Library
         return cards[0];
     }
 
+    public Card SearchWithTag(CARD_TAG tag) {
+        if (cards.Count == 0)
+        {
+            Debug.Log("牌库无牌");
+            return null;
+        }
+        foreach(Card card in cards) {
+            if (card.cardTags.Contains(tag)) {
+                return card;
+            }
+        }
+        Debug.Log("牌库没有符合条件的牌");
+        return null;
+    }
 }

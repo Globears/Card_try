@@ -36,6 +36,10 @@ public class Card
     /// 卡牌的附赠动作
     /// </summary>
     public BonusAct bonusAction;
+    /// <summary>
+    /// 卡牌的Tag
+    /// </summary>
+    public List<CARD_TAG> cardTags = new List<CARD_TAG>();
 
     public bool IsCoverCard = false; //是否为封底牌
     public delegate void DrawEventHandler(DrawEvent e);
@@ -68,6 +72,8 @@ public class Card
         this.Suffix = Suffix;
         action = new Act(this, Prefix, Suffix);
         bonusAction = new BonusAct(this, Prefix, Suffix);
+        cardTags.Add(CardTag.PrefixToTag(Prefix));
+        cardTags.Add(CardTag.SuffixToTag(Suffix));
     }
 
     public virtual Card Clone()

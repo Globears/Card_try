@@ -23,6 +23,28 @@ public class Player
         
     }
 
+    public void Draw(CARD_TAG tag) {
+        if(Library.Instance.Count() == 0){
+            Debug.Log("No cards in library");
+            return;
+        }
+        
+        Card card = Library.Instance.SearchWithTag(tag);
+
+        DrawEvent e = new DrawEvent{Card = card};
+        DrawEvent.Publish(e);
+        Debug.Log("card draw, from player");
+
+        if (e.IsCancled())
+        {
+            return;
+        }
+
+        Library.Remove(card);
+        Hand.Instance.Add(card);
+        
+    }
+
     public void Draw()
     {
         if(Library.Instance.Count() == 0){
