@@ -11,8 +11,8 @@ public class CombatState : TurnState
 
     public override void Enter()
     {
-        Debug.Log("Enterting Combat State");
-        Update();
+        Debug.Log("进入战斗阶段");
+        Combat();
     }
 
     public override void Exit()
@@ -49,16 +49,18 @@ public class CombatState : TurnState
 
             //结算卡牌效果
             if(actionCard != null) {
+                Debug.Log("主要行动卡牌："+actionCard.Name);
                 CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = actionCard});
                 actionCard?.ResolveActionEffects();
                 CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = actionCard});
-            }
+            } else { Debug.Log("无主要行动卡牌！"); }
             //结算额外卡牌效果
             if(bonusActionCard != null) {
+                Debug.Log("附赠行动卡牌："+bonusActionCard.Name);
                 CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = bonusActionCard});
                 bonusActionCard?.ResolveBonusActionEffects();
                 CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = bonusActionCard});
-            }
+            } else { Debug.Log("无附赠行动卡牌！"); }
 
             //结算卡牌防御
             if(actionCard != null) {

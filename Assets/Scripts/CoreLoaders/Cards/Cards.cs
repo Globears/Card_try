@@ -16,11 +16,11 @@ public static class Cards
     }
 
     //基础持刀
-    private static Card slashOrResist, sideParryOrSheathe, swordHoldingOrArmTraining,
+    public static Card slashOrResist, sideParryOrSheathe, swordHoldingOrArmTraining,
         breathSkillOrDodge, crossSlashOrArmed;
 
     //心镇设定集
-    private static Card spiritOrHeartLib ,  knowledgeOrBook , bondOrSupporter ,
+    public static Card spiritOrHeartLib ,  knowledgeOrBook , bondOrSupporter ,
         changeOrLevel , futureOrEnding;
 
     /// <summary>
@@ -49,7 +49,7 @@ public static class Cards
 
         //知识 & 书籍
         knowledgeOrBook = new KnowledgeOrBook();
-        CardPrototypes.Add("B02C02", "knowledge_or_book", knowledgeOrBook);
+        CardPrototypes.Add("B01C02", "knowledge_or_book", knowledgeOrBook);
 
         //羁绊关系 & 协助者
         // 羁绊关系（正）
@@ -86,6 +86,7 @@ public static class Cards
         futureOrEnding.action.CreateDefenseSequence("3:123456789");
         futureOrEnding.bonusAction.CreateDefenseSequence("6:1,6:5,6:9");
         futureOrEnding.IsCoverCard = true; //设定为封底牌
+        futureOrEnding.cardTags.Add(CARD_TAG.COVER);
         CardPrototypes.Add("B01C05", "future_or_ending", futureOrEnding);
     }
 

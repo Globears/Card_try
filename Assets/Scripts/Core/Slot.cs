@@ -32,6 +32,7 @@ public class Slot
 
     public Card GetCard()
     {
+        Debug.Log(card?.Name);
         return card;
     }
 

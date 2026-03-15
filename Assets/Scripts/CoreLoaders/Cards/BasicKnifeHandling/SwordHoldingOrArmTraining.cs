@@ -22,7 +22,7 @@ public class SwordHoldingOrArmTraining : Card
             Debug.Log("下回合开始时,抽取一张“领袖的”卡牌");
             Player.Instance.Draw(CARD_TAG.LEADERSHIP);
         });
-        aruaEffect = new EventUntilEventEffect<CardResolveEvent, TurnEndEvent>((CardResolveEvent e) => {
+        aruaEffect = new EventUntilEventEffect<CardResolveEvent.Pre, TurnEndEvent>((CardResolveEvent.Pre e) => {
             if(e.card.cardTags.Contains(CARD_TAG.LEADERSHIP)){
                 Debug.Log("“领袖的”卡牌具有力度+1");
                 e.card.action.AddPowerOnDefenseSequences(1);

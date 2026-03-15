@@ -1,3 +1,6 @@
+
+using System.Diagnostics;
+
 public class MultiKeyDictionary<TKey1, TKey2, TValue>
 {
     private System.Collections.Generic.Dictionary<TKey1, TValue> dict1 = new();
@@ -9,7 +12,14 @@ public class MultiKeyDictionary<TKey1, TKey2, TValue>
         keyMapping[key2] = key1;
     }
     
-    public TValue GetByKey1(TKey1 key) => dict1[key];
-    
-    public TValue GetByKey2(TKey2 key) => dict1[keyMapping[key]];
+    public TValue GetByKey1(TKey1 key) {
+        if(dict1[key] != null) return dict1[key];
+        UnityEngine.Debug.LogWarning("未找到Key1: " + key);
+        return default;
+    }
+    public TValue GetByKey2(TKey2 key) {
+        if(dict1[keyMapping[key]] != null) return dict1[keyMapping[key]];
+        UnityEngine.Debug.LogWarning("未找到Key2: " + key);
+        return default;
+    }
 }

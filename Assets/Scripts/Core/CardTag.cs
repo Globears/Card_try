@@ -40,6 +40,11 @@ public enum CARD_TAG {
     /// 责任
     /// </summary>
     RESPONSIBILITY,
+    
+    /// <summary>
+    /// 封底牌
+    /// </summary>
+    COVER
 }
 
 public static class CardTag {

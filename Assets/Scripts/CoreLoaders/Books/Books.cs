@@ -9,19 +9,19 @@ public static class Books {
     public static Book heartLibSet, basicKnifeHandling;
     public static void Load() {
         heartLibSet = new Book(01,"HeartLibSet");
-        heartLibSet.Cards.Add(Cards.spiritOrHeartLib);
-        heartLibSet.Cards.Add(Cards.knowledgeOrBook);
-        heartLibSet.Cards.Add(Cards.bondOrSupporter);
-        heartLibSet.Cards.Add(Cards.changeOrLevel);
-        heartLibSet.FinalCards.Add(Cards.futureOrEnding);
+        heartLibSet.Cards.Add(Cards.GetPrototypeById("B01C01"));
+        heartLibSet.Cards.Add(Cards.GetPrototypeById("B01C02"));
+        heartLibSet.Cards.Add(Cards.GetPrototypeById("B01C03"));
+        heartLibSet.Cards.Add(Cards.GetPrototypeById("B01C04"));
+        heartLibSet.FinalCards.Add(Cards.GetPrototypeById("B01C05"));
         heartLibSet.FinishThreshold = 4;
 
         basicKnifeHandling = new Book(02,"BasicKnifeHandling");
-        basicKnifeHandling.Cards.Add(Cards.slashOrResist);
-        basicKnifeHandling.Cards.Add(Cards.sideParryOrSheathe);
-        basicKnifeHandling.Cards.Add(Cards.swordHoldingOrArmTraining);
-        basicKnifeHandling.Cards.Add(Cards.breathSkillOrDodge);
-        basicKnifeHandling.FinalCards.Add(Cards.crossSlashOrArmed);
+        basicKnifeHandling.Cards.Add(Cards.GetPrototypeById("B02C01"));
+        basicKnifeHandling.Cards.Add(Cards.GetPrototypeById("B02C02"));
+        basicKnifeHandling.Cards.Add(Cards.GetPrototypeById("B02C03"));
+        basicKnifeHandling.Cards.Add(Cards.GetPrototypeById("B02C04"));
+        basicKnifeHandling.FinalCards.Add(Cards.GetPrototypeById("B02C05"));
         basicKnifeHandling.FinishThreshold = 3;
 
     }
