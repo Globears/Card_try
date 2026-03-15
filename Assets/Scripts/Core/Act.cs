@@ -36,6 +36,8 @@ public class Act
         foreach (DefenseSequence defenseSequence in DefenseSequences)
         {
             Defense defense = defenseSequence.Begin;
+            //TODO:这里需要改成Beacon的位置在序列中就可以跑通，但是效果是在序列中的Beacon位置（包括）的后续才会设防，在这之前（不包括）的就不会
+            //比如说1力123456789 beacon在5 那就会给1力56789，1234不会给防御
             if(defense.Position == Beacon.Instance.Position)
             {
                 //该设防序列是可用的，结算它
@@ -46,7 +48,6 @@ public class Act
                     {
                         defenseSequence.Sequence[i].Power += 1;
                     }
-                    
                 }
                 defenseSequence.Apply();
             }

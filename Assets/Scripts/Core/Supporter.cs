@@ -34,4 +34,12 @@ public class Supporter {
     /// 协助者的公共认知卡列表
     /// </summary>
     public List<CogCard> publicCogCards = new List<CogCard>();
+
+    public Supporter(string name,MindPhase.Prefix prefix,int min,int max) {
+        this.Name = name;
+        this.Prefix = prefix;
+        this.CogMinLevel = min;
+        this.CogMaxLevel = max;
+        this.CogCurrentLevel = min;
+    }
 }

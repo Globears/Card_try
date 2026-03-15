@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CombatState : TurnState
@@ -47,14 +48,24 @@ public class CombatState : TurnState
             Card bonusActionCard = bonusActionSlot.GetCard();
 
             //结算卡牌效果
-            actionCard?.ResolveActionEffects();
-            bonusActionCard?.ResolveBonusActionEffects();
-            CardResolveEvent.Publish(new CardResolveEvent{card = actionCard});
+            if(actionCard != null) {
+                CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = actionCard});
+                actionCard?.ResolveActionEffects();
+                CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = actionCard});
+            }
+            //结算额外卡牌效果
+            if(bonusActionCard != null) {
+                CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = bonusActionCard});
+                bonusActionCard?.ResolveBonusActionEffects();
+                CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = bonusActionCard});
+            }
 
             //结算卡牌防御
-            actionCard?.ResolveActionDefence();
+            if(actionCard != null) {
+                actionCard?.ResolveActionDefence();
+                ActResolveEvent.Publish(new ActResolveEvent{act = actionCard.action});
+            }
             bonusActionCard?.ResolveBonusActionDefence();
-            ActResolveEvent.Publish(new ActResolveEvent{act = actionCard.action});
 
             //令该轮次的敌人攻击
             int elapsedRounds = 0;

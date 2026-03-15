@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public static class Cards
 {
-    public static MultiKeyDictionary<string, string, Card> CardPrototypes = new MultiKeyDictionary<string, string, Card>();
+    private static MultiKeyDictionary<string, string, Card> CardPrototypes = new MultiKeyDictionary<string, string, Card>();
     public static Card GetPrototypeById(string id){
         return CardPrototypes.GetByKey1(id);
     }
@@ -16,11 +16,11 @@ public static class Cards
     }
 
     //基础持刀
-    public static Card slashOrResist, sideParryOrSheathe, swordHoldingOrArmTraining,
+    private static Card slashOrResist, sideParryOrSheathe, swordHoldingOrArmTraining,
         breathSkillOrDodge, crossSlashOrArmed;
 
     //心镇设定集
-    public static Card spiritOrHeartLib ,  knowledgeOrBook , bondOrSupporter ,
+    private static Card spiritOrHeartLib ,  knowledgeOrBook , bondOrSupporter ,
         changeOrLevel , futureOrEnding;
 
     /// <summary>

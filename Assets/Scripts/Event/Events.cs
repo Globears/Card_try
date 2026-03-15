@@ -25,13 +25,18 @@ public class DrawStateEvent
 
 }
 
-public class CardResolveEvent : Event<CardResolveEvent>
+public class CardResolveEvent
 {
-    public Card card;
+    public class Pre : Event<Pre>{
+        public Card card;
+    }
+
+    public class Post : Event<Post> {
+        public Card card;
+    }
 }
 
-public class ActResolveEvent : Event<ActResolveEvent>
-{
+public class ActResolveEvent : Event<ActResolveEvent>{
     public Act act;
 }
 

@@ -7,10 +7,10 @@ public class CardFactory
     {
         Card prototype = null;
         try {
-            prototype = Cards.CardPrototypes.GetByKey1(cardId);
+            prototype = Cards.GetPrototypeById(cardId);
         } catch (KeyNotFoundException) {
             try {
-                prototype = Cards.CardPrototypes.GetByKey2(cardId);
+                prototype = Cards.GetPrototypeByName(cardId);
             } catch {
                 Debug.LogWarning(cardId + "没有找到对应的键值");
                 prototype = null;
