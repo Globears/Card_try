@@ -2,7 +2,7 @@
 using UnityEngine;
 using Unity.VisualScripting;
 
-public enum CARD_TAG {
+public enum TAGS {
     NULL,
     /// <summary>
     /// 领袖
@@ -48,36 +48,36 @@ public enum CARD_TAG {
 }
 
 public static class CardTag {
-    public static CARD_TAG SuffixToTag(MindPhase.Suffix suffix) {
+    public static TAGS SuffixToTag(MindPhase.Suffix suffix) {
         switch (suffix) {
             case MindPhase.Suffix.Destoryed:
-                return CARD_TAG.DESTORYED;
+                return TAGS.DESTORYED;
             case MindPhase.Suffix.Firmness:
-                return CARD_TAG.FIRMNESS;
+                return TAGS.FIRMNESS;
             case MindPhase.Suffix.Tenderness:
-                return CARD_TAG.TENDERNESS;
+                return TAGS.TENDERNESS;
             case MindPhase.Suffix.Confidence:
-                return CARD_TAG.CONFIDENCE;
+                return TAGS.CONFIDENCE;
             case MindPhase.Suffix.Responsibility:
-                return CARD_TAG.RESPONSIBILITY;
+                return TAGS.RESPONSIBILITY;
             default:
                 Debug.LogError(suffix + "未找到对应的CardTag");
-                return CARD_TAG.NULL; //默认标签
+                return TAGS.NULL; //默认标签
         }
     }
-    public static CARD_TAG PrefixToTag(MindPhase.Prefix prefix) {
+    public static TAGS PrefixToTag(MindPhase.Prefix prefix) {
         switch (prefix) {
             case MindPhase.Prefix.Leadership:
-                return CARD_TAG.LEADERSHIP;
+                return TAGS.LEADERSHIP;
             case MindPhase.Prefix.Friendship:
-                return CARD_TAG.FRIENDSHIP;
+                return TAGS.FRIENDSHIP;
             case MindPhase.Prefix.Guardianship:
-                return CARD_TAG.GUARDIANSHIP;
+                return TAGS.GUARDIANSHIP;
             case MindPhase.Prefix.Speculator:
-                return CARD_TAG.SPECULATOR;
+                return TAGS.SPECULATOR;
             default:
                 Debug.LogError(prefix + "未找到对应的CardTag");
-                return CARD_TAG.NULL; //默认标签
+                return TAGS.NULL; //默认标签
         }
     }
 }

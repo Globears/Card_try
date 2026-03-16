@@ -86,7 +86,7 @@ public static class Cards
         futureOrEnding.action.CreateDefenseSequence("3:123456789");
         futureOrEnding.bonusAction.CreateDefenseSequence("6:1,6:5,6:9");
         futureOrEnding.IsCoverCard = true; //设定为封底牌
-        futureOrEnding.cardTags.Add(CARD_TAG.COVER);
+        futureOrEnding.cardTags.Add(TAGS.COVER);
         CardPrototypes.Add("B01C05", "future_or_ending", futureOrEnding);
     }
 

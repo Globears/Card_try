@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class CardGameManager : SingletonBehaviour<CardGameManager>
 {
+    protected bool IsStarted = false;
+    protected override void Awake() {
+        base.Awake();
+        GameStartEvent.subscriber += OnGameStart;
+    }
     void Start() {
         StartGame();
     }
@@ -21,8 +26,17 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         
     }
 
+    public void OnGameStart(GameStartEvent e) {
+        StartGame();
+    }
+
     public void StartGame() {
         //初始化挪到了GameLoader中，这里只负责游戏（指游戏内卡牌对战的环节）开始时的逻辑
+        if(IsStarted) {
+            Debug.LogError("IsStarted为真，检查代码");
+            return;
+        }
+        IsStarted = true;
         Debug.Log("CardGameManager: 开始游戏");
         //检查当前场景名称
         if(SceneManager.GetActiveScene().name != "CardGameScene") {
@@ -49,5 +63,11 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     public void NextState()
     {
         TurnStateMachine.Instance.GoNextState();
+    }
+
+    protected override void OnDestroy() {
+        IsStarted = false;
+        GameStartEvent.subscriber -= OnGameStart;
+        base.OnDestroy();
     }
 }

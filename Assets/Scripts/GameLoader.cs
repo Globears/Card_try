@@ -16,6 +16,10 @@ public class GameLoader : SingletonBehaviour<GameLoader>
     }
 
     private void LoadInfo() {
+        if(isLoaded) {
+            Debug.LogError("isLoaded为真，不要重复调用LoadInfo()");
+            return;
+        }
         Debug.Log("GameLoader: 开始加载游戏");
         //初始化所有卡牌
         Cards.Load();

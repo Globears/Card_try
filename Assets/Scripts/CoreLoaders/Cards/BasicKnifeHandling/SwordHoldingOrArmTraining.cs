@@ -20,10 +20,10 @@ public class SwordHoldingOrArmTraining : Card
         instantEffect = new NextEventEffect<TurnBeginEvent>(() => {
             //抽取一张“领袖的”卡牌
             Debug.Log("下回合开始时,抽取一张“领袖的”卡牌");
-            Player.Instance.Draw(CARD_TAG.LEADERSHIP);
+            Player.Instance.Draw(TAGS.LEADERSHIP);
         });
         aruaEffect = new EventUntilEventEffect<CardResolveEvent.Pre, TurnEndEvent>((CardResolveEvent.Pre e) => {
-            if(e.card.cardTags.Contains(CARD_TAG.LEADERSHIP)){
+            if(e.card.cardTags.Contains(TAGS.LEADERSHIP)){
                 Debug.Log("“领袖的”卡牌具有力度+1");
                 e.card.action.AddPowerOnDefenseSequences(1);
                 e.card.bonusAction.AddPowerOnDefenseSequences(1);

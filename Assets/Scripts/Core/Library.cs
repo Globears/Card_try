@@ -78,7 +78,7 @@ public class Library
         return cards[0];
     }
 
-    public Card SearchWithTag(CARD_TAG tag) {
+    public Card SearchWithTag(TAGS tag) {
         if (cards.Count == 0)
         {
             Debug.Log("牌库无牌");

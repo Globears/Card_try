@@ -23,7 +23,7 @@ public class Player
         
     }
 
-    public void Draw(CARD_TAG tag) {
+    public void Draw(TAGS tag) {
         if(Library.Instance.Count() == 0){
             Debug.Log("No cards in library");
             return;

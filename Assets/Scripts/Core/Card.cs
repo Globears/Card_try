@@ -39,7 +39,7 @@ public class Card
     /// <summary>
     /// 卡牌的Tag
     /// </summary>
-    public List<CARD_TAG> cardTags = new List<CARD_TAG>();
+    public List<TAGS> cardTags = new List<TAGS>();
 
     public bool IsCoverCard = false; //是否为封底牌
     public delegate void DrawEventHandler(DrawEvent e);
@@ -74,6 +74,24 @@ public class Card
         bonusAction = new BonusAct(this, Prefix, Suffix);
         cardTags.Add(CardTag.PrefixToTag(Prefix));
         cardTags.Add(CardTag.SuffixToTag(Suffix));
+    }
+
+    public Card(string Id,string Name, MindPhase.Prefix Prefix, MindPhase.Suffix Suffix,List<TAGS> actTags,List<TAGS> bonusActTags)
+    {
+        this.Id = Id;
+        this.Name = Name;
+        this.Prefix = Prefix;
+        this.Suffix = Suffix;
+        action = new Act(this, Prefix, Suffix, actTags);
+        bonusAction = new BonusAct(this, Prefix, Suffix,bonusActTags);
+        cardTags.Add(CardTag.PrefixToTag(Prefix));
+        cardTags.Add(CardTag.SuffixToTag(Suffix));
+        foreach(TAGS tag in actTags) {
+            cardTags.Add(tag);
+        }
+        foreach(TAGS tag in bonusActTags) {
+            cardTags.Add(tag);
+        }
     }
 
     public virtual Card Clone()

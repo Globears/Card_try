@@ -5,8 +5,12 @@ using UnityEngine;
 public class BonusAct : Act
 {
     public BonusAct(Card owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix)
-        : base(owner, prefix, suffix)
-    {
+        : base(owner, prefix, suffix) {
+        
+    }
+
+    public BonusAct(Card owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix,List<TAGS> tags)
+        : base(owner, prefix, suffix, tags) {
         
     }
 

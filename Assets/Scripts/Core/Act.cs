@@ -10,6 +10,7 @@ public class Act
     //心相
     public MindPhase.Prefix Prefix;
     public MindPhase.Suffix Suffix;
+    public List<TAGS> tags = new List<TAGS>();
 
     public List<DefenseSequence> DefenseSequences = new List<DefenseSequence>();
 
@@ -20,6 +21,16 @@ public class Act
         this.owner = owner;
         Prefix = prefix;
         Suffix = suffix;
+    }
+
+    public Act(Card owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix,List<TAGS> tAGS)
+    {
+        this.owner = owner;
+        Prefix = prefix;
+        Suffix = suffix;
+        tags = tAGS;
+        tags.Add(CardTag.PrefixToTag(prefix));
+        tags.Add(CardTag.SuffixToTag(suffix));
     }
 
     public void ResolveEffects()
