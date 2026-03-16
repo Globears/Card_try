@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -291470958546567616, guid: 73e1087407be558479408ec41d52e76f, type: 2}
+  - {fileID: 5993085001381504083, guid: a7e206356e0e32e4ba23b9f9c0942ddb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sample text
+  m_text: SAMPLE TEXTSAMPLE TEXTSAMPLE TEXT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 73e1087407be558479408ec41d52e76f, type: 2}
-  m_sharedMaterial: {fileID: -291470958546567616, guid: 73e1087407be558479408ec41d52e76f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7e206356e0e32e4ba23b9f9c0942ddb, type: 2}
+  m_sharedMaterial: {fileID: 5993085001381504083, guid: a7e206356e0e32e4ba23b9f9c0942ddb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -129,8 +129,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.2
-  m_fontSizeBase: 1.2
+  m_fontSize: 1.6
+  m_fontSizeBase: 1.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -139,9 +139,9 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 5.74
+  m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -206,8 +206,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 905.5652, y: 432.0051, z: 0}
-  m_LocalScale: {x: 1.236, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.44, y: 2.4, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9134225177052356515}
   m_Father: {fileID: 0}
