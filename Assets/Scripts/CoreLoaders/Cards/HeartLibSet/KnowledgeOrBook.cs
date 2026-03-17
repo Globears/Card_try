@@ -21,5 +21,6 @@ public class KnowledgeOrBook : Card
             Player.Instance.Draw();
         });
         action.AddEffect(instantEffect);
+        action.AddTag(TAGS.DRAWCARD);
     }
 }

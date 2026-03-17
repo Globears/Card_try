@@ -4,22 +4,26 @@ public class SwordHoldingOrArmTraining : Card
 {
     // 握剑姿态（正）
     // 领袖的 温柔
-    // 1力：5-3力：8
-    // 即刻：下回合开始时抽取一张“领袖的”卡牌
+    // 1力：2-3力：8
+    // 即刻：抽一张“领袖的”卡牌
+    // tag：抽牌
+
     // 臂力训练（反）
     // 领袖的 温柔
     // 1力：5632
     // 气场：“领袖的”卡牌具有力度+1
+    // tag：气场
+
     public static Effect instantEffect,aruaEffect;
     public SwordHoldingOrArmTraining()
-    : base("B01C03","sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
+    : base("B02C03","sword_holding_or_arm_training", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
     {
-        action.CreateDefenseSequence("1:5-3:8");
+        action.CreateDefenseSequence("1:2-3:8");
         bonusAction.CreateDefenseSequence("1:5632");
 
         instantEffect = new NextEventEffect<TurnBeginEvent>(() => {
             //抽取一张“领袖的”卡牌
-            Debug.Log("下回合开始时,抽取一张“领袖的”卡牌");
+            Debug.Log("抽取一张“领袖的”卡牌");
             Player.Instance.Draw(TAGS.LEADERSHIP);
         });
         aruaEffect = new EventUntilEventEffect<CardResolveEvent.Pre, TurnEndEvent>((CardResolveEvent.Pre e) => {
@@ -31,5 +35,8 @@ public class SwordHoldingOrArmTraining : Card
         },(TurnEndEvent e) => {
             
         });
+        action.AddEffect(instantEffect);
+        bonusAction.AddEffect(aruaEffect);
+        bonusAction.AddTag(TAGS.AURA);
     }
 }

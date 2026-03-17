@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 牌库 注意不要和套牌Deck混淆
+/// </summary>
 public class Library
 {
     //游戏中只有一个牌库，牌库是所有牌的集合
@@ -40,9 +43,12 @@ public class Library
         }
     }
 
-    public static void Remove(Card card)
+    public static void Remove(Card cardRemove)
     {
-        Instance.cards.Remove(card);
+        Instance.cards.Remove(cardRemove);
+        CardRemoveFromLibEvent.Publish(new CardRemoveFromLibEvent() {
+            card = cardRemove
+        });
     }
 
     public static bool Has(Card card)
@@ -78,6 +84,11 @@ public class Library
         return cards[0];
     }
 
+    /// <summary>
+    /// 根据卡牌的TAG搜索
+    /// </summary>
+    /// <param name="tag"></param>
+    /// <returns></returns>
     public Card SearchWithTag(TAGS tag) {
         if (cards.Count == 0)
         {

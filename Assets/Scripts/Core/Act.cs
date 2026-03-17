@@ -33,6 +33,17 @@ public class Act
         tags.Add(CardTag.SuffixToTag(suffix));
     }
 
+    public bool HasTag(TAGS tAGS) {
+        if(tags.Contains(tAGS)) return true;
+        return false;
+    }
+    public void AddTag(params TAGS[] tAGS) {
+        foreach(TAGS tag in tAGS) {
+            this.tags.Add(tag);
+            this.owner.cardTags.Add(tag);
+        }
+    }
+
     public void ResolveEffects()
     {
         foreach (Effect effect in Effects)

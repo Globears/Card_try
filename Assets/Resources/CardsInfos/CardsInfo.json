@@ -4,10 +4,10 @@
             "id": "B01C01",
             "card_name": "精神世界 & 心镇",
             "action_name": "精神世界（正）",
-            "action_description": "领袖的 坚定\n 2力：13579",
+            "action_description": "领袖的 坚定\n2力：13579",
             "bonus_action_name": "心镇（反）",
-            "bonus_action_description": "领袖的 坚定\n 1力：2456",
-            "card_description": "“心镇”是外面那位“玩家名”的“思绪”的体现，这也同样包含对概念的“认知”和社会关系所提供的“协助”"
+            "bonus_action_description": "领袖的 坚定\n1力：2456",
+            "card_description": "“心镇”是外面那位“玩家名”的“思绪”的体现，若是那位“玩家名”生命中第一次学会了做蛋炒饭，就会有一栋建筑在心镇中拔地而起，承载了他对蛋炒饭的认识"
         },
         {
             "id": "B01C02",
@@ -15,88 +15,88 @@
             "action_name": "知识（正）",
             "action_description": "领袖的 自信\n1力：5\n即刻：抽一张牌",
             "bonus_action_name": "书籍（反）",
-            "bonus_action_description": "领袖的 自信\n 1力：521",
-            "card_description": "每一本书都代表“玩家名”的思考和所学习的知识，我的行为其实是在借助知识以应对问题"
+            "bonus_action_description": "领袖的 自信\n1力：521",
+            "card_description": "图书馆里的书高耸入云，我刚才还差点被掉落的《水龙头基础原理》给砸晕。"
         },
         {
             "id": "B01C03",
             "card_name": "羁绊关系 & 协助者",
             "action_name": "羁绊关系（正）",
-            "action_description": "领袖的 温柔\n 1力：536842",
+            "action_description": "领袖的 温柔\n1力：536842",
             "bonus_action_name": "协助者（反）",
-            "bonus_action_description": "领袖的 温柔\n 3力：5",
-            "card_description": "每一位协助者，都代表“玩家名”在外面认识的人？他的亲人，朋友，老师……那么，是否存在会产生负面影响的社会关系？心镇中并不是所有人都可信。"
+            "bonus_action_description": "领袖的 温柔\n3力：5",
+            "card_description": "我"
         },
         {
             "id": "B01C04",
             "card_name": "改变 & 关卡",
             "action_name": "改变（正）",
-            "action_description": "领袖的 责任\n 2力：1651",
+            "action_description": "领袖的 责任\n2力：15，26，48，59",
             "bonus_action_name": "关卡（反）",
-            "bonus_action_description": "领袖的 坚定\n 2力：24，86",
-            "card_description": "每一关，都是他要面对的挑战，不管成功还是失败，都会为他带来改变。小到赖床这样的小事，大到婚娶抉择，面对生死"
+            "bonus_action_description": "领袖的 责任\n2力：24，86",
+            "card_description": "关"
         },
         {
             "id": "B01C05",
             "card_name": "未来 & 结局",
             "action_name": "未来（正）",
-            "action_description": "领袖的 坚定\n3力：123456789",
+            "action_description": "领袖的 责任\n3力：126547",
             "bonus_action_name": "结局（反）",
-            "bonus_action_description": "领袖的 坚定\n 6力：1，5，9",
+            "bonus_action_description": "领袖的 责任\n6力：1，5，9",
             "card_description": "最后，我们终将走向自己选择的未来"
         },
         {
             "id": "B02C01",
             "card_name": "直斩 & 抵剑",
             "action_name": "直斩（正）",
-            "action_description": "领袖的 坚定\n2力: 258",
+            "action_description": "领袖的 坚定\n2力：258",
             "bonus_action_name": "抵剑（反）",
-            "bonus_action_description": "领袖的 坚定\n 1力：168，348",
+            "bonus_action_description": "领袖的 坚定\n1力：168，348",
             "card_description": "仅仅“触碰”到这张书页，挥剑的动作就如同电影一般在眼前闪过。这是我认知*玩家名*的记忆的方式么"
         },
         {
             "id": "B02C02",
             "card_name": "侧挡 & 收刀",
             "action_name": "侧挡（正）",
-            "action_description": "领袖的 自信\n1力：56341\n绽放（2坚定）：具有+2力度",
+            "action_description": "领袖的 坚定\n1力：56341\n绽放（2坚定）：具有+2力度",
             "bonus_action_name": "收刀（反）",
-            "bonus_action_description": "领袖的 自信\n1力：51，52，54，56\n共鸣（领袖的）：具有力度+1\n共鸣（自信）：具有力度+1",
+            "bonus_action_description": "领袖的 坚定\n1力：51，52，54，56\n共鸣（领袖的）：具有力度+1\n共鸣（自信）：具有力度+1",
             "card_description": "略显生疏，想必*玩家名*也没碰过真正的刀剑，在漫画和游戏中见过的剑客，勇者和战士汇聚成了这本书"
         },
         {
             "id": "B02C03",
             "card_name": "握剑姿态 & 臂力训练",
             "action_name": "握剑姿态（正）",
-            "action_description": "领袖的 温柔\n1力：2-3力：8\n即刻：下回合开始时抽取一张“领袖的”卡牌",
+            "action_description": "领袖的 温柔\n1力：2-3力：8\n即刻：抽一张“领袖的”卡牌",
             "bonus_action_name": "臂力训练（反）",
-            "bonus_action_description": "领袖的 温柔\n 1力：5632\n气场：“领袖的”卡牌具有力度+1",
+            "bonus_action_description": "领袖的 温柔\n1力：5632\n气场：“领袖的”卡牌具有力度+1",
             "card_description": "我可以借助这种记忆，运用到属于我的战斗中。无论是面对外来的“影响”，又或者是心镇中的“其他人”，运用知识可以将它们转化为被“解构”的模样"
         },
         {
             "id": "B02C04",
             "card_name": "呼吸法 & 闪避步伐",
             "action_name": "呼吸法（正）",
-            "action_description": "领袖的 责任\n0力：5\n即刻：下回合开始时抽两张牌",
+            "action_description": "领袖的 责任\n0力：5\n即刻：抽两张牌",
             "bonus_action_name": "闪避步伐（反）",
-            "bonus_action_description": "领袖的 坚定\n 2力：687，489\n气场：你的卡牌无法再施加影响",
+            "bonus_action_description": "领袖的 责任\n3力：687，489\n气场：你的卡牌具有力度-1",
             "card_description": "如果我用书页的力量，杀死了心镇中的其他人会怎样？这样的可能性让我有些害怕。"
         },
         {
             "id": "B02C05",
             "card_name": "十字力斩 & 付诸武力",
             "action_name": "十字力斩（正）",
-            "action_description": "领袖的 坚定\n5力：456，258",
+            "action_description": "领袖的坚定\n5力：456，258\n气场：你的卡牌具有力度+2",
             "bonus_action_name": "付诸武力（反）",
-            "bonus_action_description": "领袖的 坚定\n 3力：5\n气场：具有力度+2",
+            "bonus_action_description": "领袖的坚定\n3力：5\n即刻：在本局游戏中，你的卡牌具有力度+1",
             "card_description": "付诸武力……是一种选择，抗争和面对是必然的过程，对我和“玩家名”来说都是这样"
         },
         {
             "id": "B03C01",
             "card_name": "等比数列 & 枚举法",
             "action_name": "等比数列（正）",
-            "action_description": "守护者的 责任\n1力：1248，369\n共鸣（高中数学必修下书页）：力度翻倍",
+            "action_description": "守护者的 责任\n1力：1248，369\n共鸣（高中数学必修教科书书页）：力度翻倍",
             "bonus_action_name": "枚举法（反）",
-            "bonus_action_description": "守护者的 责任\n1力：123456789",
+            "bonus_action_description": "守护者的 责任\n0力：123456789",
             "card_description": "令人疑惑的是，我真的是“玩家名”心中的一部分么？为何我一道题也不会做？"
         },
         {
@@ -112,18 +112,18 @@
             "id": "B03C03",
             "card_name": "二次求导 & 练习题",
             "action_name": "二次求导（正）",
-            "action_description": "守护者的 责任\n3力：248\n共鸣（高中数学必修下书页）：追加：3力6",
+            "action_description": "守护者的坚定\n3力：2\n共鸣（高中数学必修教科书书页）：追加：3力48",
             "bonus_action_name": "练习题（反）",
-            "bonus_action_description": "守护者的 自信\n1力：957412",
+            "bonus_action_description": "守护者的坚定\n1力：957412",
             "card_description": "可是既然我持有了知识，把知识捧在手里，一份一份切成书页的形式阅读……我难道不该掌握他们么？不然学习知识又是为了什么呢？"
         },
         {
             "id": "B03C04",
             "card_name": "求值域 & 放缩",
             "action_name": "求值域（正）",
-            "action_description": "守护者的 责任\n3力：123",
+            "action_description": "守护者的坚定\n2力：123",
             "bonus_action_name": "放缩（反）",
-            "bonus_action_description": "守护者的 自信\n1力：1239\n气场：施加的影响层数变为原先的两倍（对双方都生效！）",
+            "bonus_action_description": "守护者的坚定\n1力：1239\n气场：施加的影响层数变为原先的两倍（对双方都生效！）",
             "card_description": "又或者，就像这一页一样，这本书只有“解题技巧”而没有真正的知识……"
         },
         {
@@ -139,28 +139,28 @@
             "id": "B04C01",
             "card_name": "树种 & 取根",
             "action_name": "树种（正）",
-            "action_description": "朋友的 温柔\n2力：789\n气场：你施加的影响层数+2",
+            "action_description": "朋友的 温柔\n2力：789\n气场：当你将要施加影响时，施加的影响增加2层",
             "bonus_action_name": "取根（反）",
-            "bonus_action_description": "朋友的 温柔\n1力：258\n即刻：下回合开始时，抽取2张“温柔的”卡牌",
-            "card_description": "首先，将树种取出……啧，这树种一看就是上批学生回收利用下来的。哎"
+            "bonus_action_description": "朋友的 温柔\n1力：258\n绽放（2温柔）：下回合开始时，抽取2张“温柔的”卡牌",
+            "card_description": "首先，将树种取出……啧，这树种一看就是上批学生回收利用下来的。"
         },
         {
             "id": "B04C02",
             "card_name": "肥料 & 埋根",
             "action_name": "肥料（正）",
-            "action_description": "朋友的 坚定\n2力：147，258，369\n即刻：使对应节点的已有的影响翻倍",
+            "action_description": "朋友的 坚定\n2力：147，258，369\n即刻：使当前节点的已有的影响翻倍",
             "bonus_action_name": "埋根（反）",
             "bonus_action_description": "朋友的 坚定\n1力：15987",
-            "card_description": "所以，所谓的植树，对于一个小学生而言确实是无用功。"
+            "card_description": "对"
         },
         {
             "id": "B04C03",
             "card_name": "浇水 & 向下生长",
             "action_name": "浇水（正）",
-            "action_description": "朋友的 自信\n1力：123654\n绽放（4温柔的）：力度+3",
+            "action_description": "朋友的 自信\n1力：123654\n绽放（4温柔）：力度+4",
             "bonus_action_name": "向下生长（反）",
             "bonus_action_description": "朋友的 自信\n1力：25+4力：8",
-            "card_description": "尽管在这里的植树确实没有意义，但是枝桠总会生长，即便不是在这里……"
+            "card_description": "3月10日，用喷水壶滋同学被请家长，屡教不改\n3月11日，进行第一单元测试，成绩发挥稳定，因为马虎而扣了几分\n3月12日，卷子反思和改错\n3月13日，数学第一单元考试卷子发下去改错，英语考unit1单词\n3月14日，用水壶滋同学被请家长，屡教不改"
         },
         {
             "id": "B04C04",
@@ -169,7 +169,7 @@
             "action_description": "朋友的 温柔\n3力：456\n共鸣（气场）：具有相同的气场",
             "bonus_action_name": "拔叶（反）",
             "bonus_action_description": "朋友的 温柔\n1力：15，26\n即刻：为所有节点附加3层温柔影响",
-            "card_description": "这就是他学习这些知识的意义？不在于应付这敷衍的植树节，而是真的想去种树？"
+            "card_description": "这就是他学习这些知识的意义？他真想去种树么？"
         },
         {
             "id": "B04C05",
@@ -178,7 +178,7 @@
             "action_description": "朋友的 责任\n2力：521\n绽放（2坚定）：具有+1力\n绽放（2自信）：追加2力：46\n绽放（2温柔）：下回合开始时抽一张牌\n绽放（2责任）：气场：所有朋友的卡牌具有+1力",
             "bonus_action_name": "不再需要（反）",
             "bonus_action_description": "朋友的 责任\n1力：138，792",
-            "card_description": "精神教育就这样完成了，一如既往，和所有其他学生一样"
+            "card_description": "不对"
         },
         {
             "id": "B04C06",
@@ -191,6 +191,51 @@
         },
         {
             "id": "B05C01",
+            "card_name": "用恶魔之力灌注的大剑 & 旋转劈砍",
+            "action_name": "用恶魔之力灌注的大剑（正）",
+            "action_description": "守护者的责任\n0力：51248\n代偿（朋友的）：具有+2力",
+            "bonus_action_name": "旋转劈砍（反）",
+            "bonus_action_description": "守护者的责任\n3力：51",
+            "card_description": ""
+        },
+        {
+            "id": "B05C02",
+            "card_name": "将天堂之星射穿的短弓 & 集中射击",
+            "action_name": "将天堂之星射穿的短弓（正）",
+            "action_description": "守护者的责任\n0力：2468\n即刻：目前每经过一个回合，便获得+1力",
+            "bonus_action_name": "集中射击（反）",
+            "bonus_action_description": "守护者的责任\n1力：147，258，369\n共鸣（代偿）：抽三张牌",
+            "card_description": ""
+        },
+        {
+            "id": "B05C03",
+            "card_name": "与群星之云共舞的手套 & 汇聚魔法",
+            "action_name": "与群星之云共舞的手套（正）",
+            "action_description": "守护者的温柔\n4力：4\n代偿：（领袖的）：追加23\n代偿：（投机者的）：追加56\n代偿：（朋友的）：追加78",
+            "bonus_action_name": "汇聚魔法（反）",
+            "bonus_action_description": "守护者的温柔\n1力：781\n即刻：抽两张",
+            "card_description": ""
+        },
+        {
+            "id": "B05C04",
+            "card_name": "望万相之光共舞的长鞭 & 团结一致",
+            "action_name": "望万相之光共舞的长鞭（正）",
+            "action_description": "守护者的自信\n1力：123\n代偿（领袖的）：追加456\n代偿（守护者的）：追加789",
+            "bonus_action_name": "团结一致（反）",
+            "bonus_action_description": "守护者的自信\n1力：321，741，951",
+            "card_description": ""
+        },
+        {
+            "id": "B05C05",
+            "card_name": "至高力量的终点 & 纯净的世界",
+            "action_name": "至高力量的终点（正）",
+            "action_description": "守护者的自信\n3力：987654321",
+            "bonus_action_name": "纯净的世界（反）",
+            "bonus_action_description": "守护者的自信\n3力：1456\n即刻：在本局对战中，插页具有全部的8种心相",
+            "card_description": ""
+        },
+        {
+            "id": "B06C01",
             "card_name": "青蛙王子 & 白雪公主",
             "action_name": "青蛙王子（正）",
             "action_description": "投机者的 自信\n1力：87536\n即刻：下回合开始时抽两张牌",
@@ -199,7 +244,7 @@
             "card_description": "如果他们没能遇到那个命中注定的另一位，没能得到贵人相助的话……"
         },
         {
-            "id": "B05C02",
+            "id": "B06C02",
             "card_name": "小红帽 & 灰姑娘",
             "action_name": "小红帽（正）",
             "action_description": "投机者的 温柔\n1力：25\n共鸣（抽牌）：追加3力：465",
@@ -208,58 +253,103 @@
             "card_description": "如果她们没被救出那个地狱，没能在压迫下逃离……"
         },
         {
-            "id": "B05C03",
+            "id": "B06C03",
             "card_name": "莴苣姑娘 & 睡美人",
             "action_name": "莴苣姑娘（正）",
-            "action_description": "投机者的 温柔\n2力：2369\n即刻：如果你的剩余手牌至少有2张，则具有+1力",
+            "action_description": "投机者的 自信\n2力：2361",
             "bonus_action_name": "睡美人（反）",
-            "bonus_action_description": "投机者的 温柔\n0力：456\n气场：当你将要施加影响时，施加的影响增加2层",
+            "bonus_action_description": "投机者的 自信\n0力：456\n气场：当你将要施加影响时，施加的影响增加2层",
             "card_description": "如果没有人欣赏她们的美，没人来认可他们的价值……"
         },
         {
-            "id": "B05C04",
+            "id": "B06C04",
             "card_name": "张冠李戴 & 美好的幻景",
             "action_name": "张冠李戴（正）",
             "action_description": "投机者的 坚定\n3力：7526\n即刻：在本轮战斗中，你的回合结束时不再弃牌，且所有行动具有“绽放（6自信）：具有+2力”",
             "bonus_action_name": "美好的幻景（反）",
-            "bonus_action_description": "投机者的 坚定\n1力：1，2，3，4，6\n即刻：将“安徒生童话”的三张书页的复制置入手牌，然后为所有节点施加3温柔，3自信",
+            "bonus_action_description": "投机者的 坚定\n1力：1，2，3，4，6\n即刻：将“安徒生童话”的三张书页从弃牌堆中置入手牌，然后为所有节点施加3温柔，3自信",
             "card_description": "所以，这本书确实应该被称为格林童话。但事到如今，真的还有必要去严谨的纠正这件事么？"
         },
         {
-            "id": "B06C01",
+            "id": "B07C01",
             "card_name": "茅庐知遇之恩 & 白帝托孤之念",
             "action_name": "茅庐知遇之恩（正）",
-            "action_description": "投机者的 责任\n1力：98765，1234\n共鸣（封底）：具有+4力",
+            "action_description": "投机者的责任\n1力：98765，1234\n共鸣（封底）：具有+3力",
             "bonus_action_name": "白帝托孤之念（反）",
-            "bonus_action_description": "投机者的 责任\n1力：3684\n共鸣（封底）：抽两张牌",
-            "card_description": "三顾频烦天下计，两朝开济老臣心。这份知遇之恩，托孤之念，构成了*玩家名*心中对“忠义”与“责任”的理解。"
+            "bonus_action_description": "投机者的责任\n1力：3684\n共鸣（代偿）：抽两张牌",
+            "card_description": ""
         },
         {
-            "id": "B06C02",
-            "card_name": "赤壁千古一战 & 赔妹又折三军",
+            "id": "B07C02",
+            "card_name": "赤壁千古一战 & 垂死周瑜三气",
             "action_name": "赤壁千古一战（正）",
-            "action_description": "投机者的 坚定\n2力：45+1力268",
-            "bonus_action_name": "赔妹又折三军（反）",
-            "bonus_action_description": "投机者的 坚定\n1力：381\n绽放（3自信）：将弃牌堆中的一张随机封底卡置入手牌",
-            "card_description": "赤壁的辉煌与荆州的失利，胜利与挫败总是交织在一起。这也许就是*玩家名*对“成王败寇”的认知。"
+            "action_description": "投机者的坚定\n2力：45+1力268",
+            "bonus_action_name": "垂死周瑜三气（反）",
+            "bonus_action_description": "投机者的坚定\n1力：381\n绽放（5自信）：将弃牌堆中的一张随机非投机者的封底卡置入手牌",
+            "card_description": ""
         },
         {
-            "id": "B06C03",
+            "id": "B07C03",
             "card_name": "绝句诗成七步 & 司马终揽三家",
             "action_name": "绝句诗成七步（正）",
-            "action_description": "投机者的 温柔\n2力：1234567",
+            "action_description": "投机者的温柔\n1力：7654321",
             "bonus_action_name": "司马终揽三家（反）",
-            "bonus_action_description": "投机者的 温柔\n2力：75，45，15\n共鸣（封底）：抽两张牌",
-            "card_description": "才高八斗的曹植，隐忍终成的司马家。才华与权谋，都是改变命运的力量，却也带来了不同的结局。"
+            "bonus_action_description": "投机者的温柔\n2力：75，45，15\n共鸣（封底）：抽两张牌",
+            "card_description": ""
         },
         {
-            "id": "B06C04",
+            "id": "B07C04",
             "card_name": "古今多少事 & 都付笑谈中",
             "action_name": "古今多少事（正）",
-            "action_description": "投机者的 责任\n1力：45，23，89\n即刻：将牌库中剩余书页最少的书籍的随机书页置入弃牌堆",
+            "action_description": "投机者的温柔\n1力：45，23，89\n即刻：将牌库中剩余书页最少的书籍的随机书页置入弃牌堆",
             "bonus_action_name": "都付笑谈中（反）",
-            "bonus_action_description": "投机者的 责任\n1力：31，97\n即刻：将牌库中剩余书页最多的书籍的随机书页置入弃牌堆",
-            "card_description": "滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，古今多少事，都付笑谈中。"
+            "bonus_action_description": "投机者的温柔\n1力：31，97\n即刻：抽取牌库中剩余书页最多的书籍的随机书页",
+            "card_description": ""
+        },
+        {
+            "id": "B08C01",
+            "card_name": "策略：竞拍 & 先发优势",
+            "action_name": "策略：竞拍（正）",
+            "action_description": "朋友的自信\n1力：72，29\n代偿（封底）：在本轮次内不会施加任何影响（包括被毁）",
+            "bonus_action_name": "先发优势（反）",
+            "bonus_action_description": "朋友的自信\n1力：9275",
+            "card_description": "“记得第一次我玩这个桌游，第一回合直接叫了25块钱的总督……总督购买股票的能力就价值15-25块钱左右，他们后来才计算明白。”\n“最后我六张股票卖了150块，这就是高瞻远瞩”"
+        },
+        {
+            "id": "B08C02",
+            "card_name": "策略：船工和修船厂 & 稳中求胜",
+            "action_name": "策略：船工和修船厂（正）",
+            "action_description": "朋友的温柔\n1力：94，61\n绽放（7温柔）：在本轮次内不会施加任何影响（包括被毁）\n绽放（7责任）：在本轮次内不会施加任何影响（包括被毁）",
+            "bonus_action_name": "稳中求胜（反）",
+            "bonus_action_description": "朋友的温柔\n1力：3+2力：6",
+            "card_description": "“记得有一次看别人玩这个桌游，每次都给3级船工和3级维修工下注，但是这两种情况都极难发生，若是自身处于游戏的优势，选择稳中求胜不亏钱才是最好的策略”\n“最后被他赌中一次，但是大势已去，直接摆烂了”"
+        },
+        {
+            "id": "B08C03",
+            "card_name": "策略：领航员 & 掌握大局",
+            "action_name": "策略：领航员（正）",
+            "action_description": "朋友的责任\n3力：3\n代偿（传奇海运桌游攻略书页）：抽两张其他“朋友的”书籍的卡牌",
+            "bonus_action_name": "掌握大局（反）",
+            "bonus_action_description": "朋友的责任\n0力：963\n绽放（2坚定）：抽两张《传奇海运桌游攻略》书页卡牌",
+            "card_description": "“记得有一次看别人玩这个桌游，每一把都上领航员。但如果不想好怎么谋求自己的利益，领航员不过是为他人白白做嫁妆”\n“最后那家伙每一把都把别人的船往后拉，简直一个搅屎棍”"
+        },
+        {
+            "id": "B08C04",
+            "card_name": "策略：海盗 & 孤注一掷",
+            "action_name": "策略：海盗（正）",
+            "action_description": "朋友的坚定\n0力：5+3力：6\n绽放（3坚定）：在本轮次中，“朋友的”卡牌具有力度+3",
+            "bonus_action_name": "孤注一掷（反）",
+            "bonus_action_description": "朋友的坚定\n1力：67，238",
+            "card_description": "“记得有一次看别人玩这个桌游，每回合都上海盗。风险和收益都极高的选项，实在是有待商榷”\n“最后抢到两次，直接绝地翻盘，上辈子可能是个绝地武士”"
+        },
+        {
+            "id": "B08C05",
+            "card_name": "策略：垄断 & 反受其害",
+            "action_name": "策略：垄断（正）",
+            "action_description": "朋友的责任\n1力2+2力5+4力8\n代偿（朋友的）：《传奇海运桌游攻略》中的“本轮次”效果改为“本回合”",
+            "bonus_action_name": "反受其害（反）",
+            "bonus_action_description": "朋友的责任\n3力：852\n即刻：将所有节点上的影响翻倍（包括被毁）",
+            "card_description": "“记得有一次看别人玩这个桌游，把一种货物近乎垄断，结果现金不够永续总督，其他人又不帮他推船，反而全都烂在手里”\n“这就是资本的末路啊”"
         }
     ]
 }

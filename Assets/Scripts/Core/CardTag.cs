@@ -44,7 +44,27 @@ public enum TAGS {
     /// <summary>
     /// 封底牌
     /// </summary>
-    COVER
+    COVER,
+    /// <summary>
+    /// 共鸣
+    /// </summary>
+    VIBRATION,
+    /// <summary>
+    /// 绽放
+    /// </summary>
+    BLOSSOM,
+    /// <summary>
+    /// 抽牌
+    /// </summary>
+    DRAWCARD,
+    /// <summary>
+    /// 气场
+    /// </summary>
+    AURA,
+    /// <summary>
+    /// 代偿
+    /// </summary>
+    COMPENSATION
 }
 
 public static class CardTag {

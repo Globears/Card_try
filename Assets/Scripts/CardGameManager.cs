@@ -53,11 +53,21 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         }
         //从套牌json读取套牌到内存中
         Deck deck = DeckLoader.LoadDeckFromResources("Decks/deck");
+        //处理目标
+
+        //处理Deck
+
+        //处理认知卡
+
+        //处理封底
+
+        //把插页洗入牌库
         Library.Instance.LoadDeck(deck);
         Library.Shuffle();
 
         //回合进入抓牌阶段
         TurnStateMachine.Instance.TransitState(new StartState());
+
     }
 
     public void NextState()

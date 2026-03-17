@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 卡组 这个是储存套牌的基类，注意不要和Library混淆，后者是游戏内的牌库
+/// </summary>
 public class Deck
 {
     public string name;

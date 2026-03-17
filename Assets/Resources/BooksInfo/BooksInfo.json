@@ -3,7 +3,7 @@
         {
             "id": "01",
             "book_name": "心镇设定集",
-            "book_description": "那位叶落秋并没有解释太多，但这本书能为我提供我所想要的答案",
+            "book_description": "那位叶落秋并没有解释太多，但这本书或许能为我提供我所想要的答案",
             "book_prefix_description": "领袖的 书籍",
             "book_unlock_mission": "解锁：初始解锁",
             "cards_contain": ["B01C01", "B01C02", "B01C03", "B01C04", "B01C05"],
@@ -22,7 +22,7 @@
         },
         {
             "id": "03",
-            "book_name": "高中数学必修下",
+            "book_name": "高中数学必修教科书",
             "book_description": "数学，描绘了对世界的一种抽象的，基于逻辑推理的理解方式。而教科书，则告诉你该怎么用它来解决卷子上的问题",
             "book_prefix_description": "守护者的 书籍",
             "book_unlock_mission": "解锁：完成第一关",
@@ -42,23 +42,43 @@
         },
         {
             "id": "05",
-            "book_name": "安徒生童话",
-            "book_description": "如同幻梦一般的记忆，在手里微微颤动，仅属于孩童时代的回忆了。",
-            "book_prefix_description": "投机者的 书籍",
-            "book_unlock_mission": "解锁：初始解锁",
-            "cards_contain": ["B05C01", "B05C02", "B05C03", "B05C04"],
-            "cover_card": ["B05C04"],
+            "book_name": "传奇沙盒游戏武器录",
+            "book_description": "",
+            "book_prefix_description": "守护者的 书籍",
+            "book_unlock_mission": "解锁：完成第一关",
+            "cards_contain": ["B05C01", "B05C02", "B05C03", "B05C04", "B05C05"],
+            "cover_card": ["B05C05"],
             "cover_threshold": 3
         },
         {
             "id": "06",
-            "book_name": "《三国演义》",
-            "book_description": "滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，古今多少事，都付笑谈中。",
+            "book_name": "安徒生童话",
+            "book_description": "如同幻梦一般的记忆，在手里微微颤动，仅属于孩童时代的回忆了。",
             "book_prefix_description": "投机者的 书籍",
-            "book_unlock_mission": "解锁：完成第二关",
+            "book_unlock_mission": "",
             "cards_contain": ["B06C01", "B06C02", "B06C03", "B06C04"],
             "cover_card": ["B06C04"],
             "cover_threshold": 3
+        },
+        {
+            "id": "07",
+            "book_name": "三国演义",
+            "book_description": "四大名著之一，",
+            "book_prefix_description": "投机者的 书籍",
+            "book_unlock_mission": "",
+            "cards_contain": ["B07C01", "B07C02", "B07C03", "B07C04"],
+            "cover_card": ["B07C04"],
+            "cover_threshold": 3
+        },
+        {
+            "id": "08",
+            "book_name": "传奇海运桌游攻略",
+            "book_description": "",
+            "book_prefix_description": "朋友的 书籍",
+            "book_unlock_mission": "",
+            "cards_contain": ["B08C01", "B08C02", "B08C03", "B08C04", "B08C05"],
+            "cover_card": ["B08C05"],
+            "cover_threshold": 2
         }
     ]
 }

@@ -94,6 +94,18 @@ public class Card
         }
     }
 
+    public void SetCover() {
+        this.IsCoverCard = true;
+        cardTags.Add(TAGS.COVER);
+        action.tags.Add(TAGS.COVER);
+        bonusAction.tags.Add(TAGS.COVER);
+    }
+
+    public void AddTag(TAGS tAGS) {
+        this.cardTags.Add(tAGS);
+        this.action.tags.Add(tAGS);
+        this.bonusAction.tags.Add(tAGS);
+    }
     public virtual Card Clone()
     {
         //应当创建一个新的对象，拷贝该卡牌的各种属性

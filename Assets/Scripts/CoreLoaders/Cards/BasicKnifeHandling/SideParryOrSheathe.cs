@@ -5,20 +5,24 @@ using UnityEngine.Rendering.Universal;
 public class SideParryOrSheathe : Card
 {
     // 侧挡（正）
-    // 领袖的 自信
+    // 领袖的 坚定
     // 1力：56341
     // 绽放（2坚定）：具有+2力度
+    // tag：绽放
+
     // 收刀（反）
-    // 领袖的 自信
-    // 1力：15，25，35，45，55，65，75，85，95
+    // 领袖的 坚定
+    // 1力：51，52，54，56
     // 共鸣（领袖的）：具有力度+1
     // 共鸣（自信）：具有力度+1
+    // tag：共鸣
+
     public Effect blossom, vibration;
     public SideParryOrSheathe()
     : base("B02C02","side_parry_or_sheathe", MindPhase.Prefix.Leadership, MindPhase.Suffix.Confidence)
     {
         action.CreateDefenseSequence("1:56341");
-        bonusAction.CreateDefenseSequence("1:15, 1:25, 1:35, 1:45, 1:55, 1:65, 1:75, 1:85, 1:95");
+        bonusAction.CreateDefenseSequence("1:51,1:52,1:54,1:56");
         //绽放（2坚定）：具有+2力度
         blossom = new Instant(() => {
             if(Beacon.Instance.GetCurrentNode().MindPhases[MindPhase.Suffix.Firmness] >= 2) {
@@ -30,16 +34,18 @@ public class SideParryOrSheathe : Card
             // 共鸣（领袖的）：具有力度+1
             // 共鸣（自信）：具有力度+1
             Act lastAct = Logger.getLastAct();
-            if(lastAct != null && (lastAct.Prefix == MindPhase.Prefix.Leadership)){
+            if(lastAct != null && lastAct.HasTag(TAGS.LEADERSHIP)){
                 Debug.Log("侧挡&收刀 : 共鸣（领袖的）：具有力度+1");
                 bonusAction.AddPowerOnDefenseSequences(1);
             }
-            if(lastAct != null && (lastAct.Suffix == MindPhase.Suffix.Confidence)){
+            if(lastAct != null && lastAct.HasTag(TAGS.CONFIDENCE)){
                 Debug.Log("侧挡&收刀 : 共鸣（自信）：具有力度+1");
                 bonusAction.AddPowerOnDefenseSequences(1);
             }
         });
         action.AddEffect(blossom);
+        action.AddTag(TAGS.BLOSSOM);
         bonusAction.AddEffect(vibration);
+        bonusAction.AddTag(TAGS.VIBRATION);
     }
 }
