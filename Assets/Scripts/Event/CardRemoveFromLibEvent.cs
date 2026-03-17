@@ -1,3 +1,3 @@
-public class CardRemoveFromLibEvent : Event<CardRemoveFromLibEvent> {
+public class CardLeaveFromLibEvent : Event<CardLeaveFromLibEvent> {
     public Card card;
 }

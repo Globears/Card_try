@@ -44,11 +44,11 @@ public class CardsInfo
 {
     public static Dictionary<String, CardInfo> cardInfos = new Dictionary<String, CardInfo>();
 
-    public static CardInfo insertPageInfo = new CardInfo(){
+    public static CardInfo insertImageInfo = new CardInfo(){
         id = "B00C01",
-        card_name = "插页",
-        card_description="这是插页",
-        action_name="插页",
+        card_name = "插图",
+        card_description="这是插图",
+        action_name="插图",
         action_description="无心相\n1力：12，23，34，45，56，67，78，89",
         bonus_action_name="",
         bonus_action_description=""
@@ -57,7 +57,7 @@ public class CardsInfo
     public static void Load()
     {
         cardInfos = CardInfoLoader.LoadFromResources("CardsInfos/Cardsinfo");
-        cardInfos.Add("B00C01",insertPageInfo);
+        cardInfos.Add("B00C01",insertImageInfo);
         
         Debug.Log("Loaded card info");
 
@@ -69,9 +69,6 @@ public class CardsInfo
     }
 
     public static CardInfo GetCardInfo(string id) {
-        if(id == "B00C01") {
-            return null;
-        }
         return cardInfos[id];
     }
 }

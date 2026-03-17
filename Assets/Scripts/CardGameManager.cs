@@ -68,15 +68,21 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         }
 
         //处理封底
-        //TODO：这里需要考虑一下，有多个封底卡的问题
         if(deck.books != null) {
             foreach(Book book in deck.books) {
                 foreach(Card finishCard in book.FinalCards) {
                     CoverLibrary.Instance.Add(finishCard);
                 }
+                new FinishCardAdderEffect(book).Cast();
             }
         }
 
+        if(deck.cards.Count < 30) {
+            int insertNum = 30 - deck.cards.Count;
+            for(int i = 0;i< insertNum; i++) {
+                deck.cards.Add(Cards.GetPrototypeById("B00C01").Clone());
+            }
+        }
         //把插页洗入牌库
         Library.Instance.LoadDeck(deck);
         Library.Shuffle();

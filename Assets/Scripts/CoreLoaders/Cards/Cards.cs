@@ -16,7 +16,7 @@ public static class Cards
     }
 
     //插页
-    public static Card insertPage;
+    public static Card insertImage;
 
     //基础持刀
     public static Card slashOrResist, sideParryOrSheathe, swordHoldingOrArmTraining,
@@ -31,7 +31,7 @@ public static class Cards
     /// </summary>
     public static void Load(){
         Debug.Log("开始加载卡牌原型");
-        // 插页
+        // 插图
         LoadPublicCard();
         //《心镇设定集》
         LoadBook1();
@@ -44,11 +44,11 @@ public static class Cards
     }
 
     private static void LoadPublicCard() {
-        Debug.Log("加载插页");
-        insertPage = new Card("B00C01","insert_page",MindPhase.Prefix.NOMINDPHASE,MindPhase.Suffix.NOMINDPHASE);
-        insertPage.action.CreateDefenseSequence("1:12,1:23,1:34,1:45,1:56,1:67,1:78,1:89");
-        insertPage.bonusAction.CreateDefenseSequence("");
-        CardPrototypes.Add("B00C01","insert_page",insertPage);
+        Debug.Log("加载插图");
+        insertImage = new Card("B00C01","insert_image",MindPhase.Prefix.NOMINDPHASE,MindPhase.Suffix.NOMINDPHASE);
+        insertImage.action.CreateDefenseSequence("1:12,1:23,1:34,1:45,1:56,1:67,1:78,1:89");
+        insertImage.bonusAction.CreateDefenseSequence("");
+        CardPrototypes.Add("B00C01","insert_image",insertImage);
     }
 
     private static void LoadBook1() {

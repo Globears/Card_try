@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Book
@@ -7,7 +8,7 @@ public class Book
     public int Id;
     public String Name;
 
-    public List<Card> Cards = new List<Card>();
+    public List<Card> ContainCards = new List<Card>();
 
     /// <summary>
     /// 封底卡
@@ -21,6 +22,29 @@ public class Book
     public Book(int Id,string Name) {
         this.Id = Id;
         this.Name = Name;
+    }
+    
+    public Book(int Id,string Name,int threshold,params string[] containsCardIds) {
+        this.Id = Id;
+        this.Name = Name;
+        FinishThreshold = threshold;
+        foreach(string cardId in containsCardIds) {
+            ContainCards.Add(Cards.GetPrototypeById(cardId));
+        }
+        foreach(Card card in ContainCards) {
+            card.bookBelong = this;
+            card.bookBelongId = this.Id;
+        }
+    }
+
+    public void AddFinalCard(params string[] FinalCardIds) {
+        foreach(string cardId in FinalCardIds) {
+            FinalCards.Add(Cards.GetPrototypeById(cardId));
+        }
+        foreach(Card card in FinalCards) {
+            card.bookBelong = this;
+            card.bookBelongId = this.Id;
+        }
     }
 }
 

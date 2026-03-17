@@ -41,6 +41,12 @@ public class Card
     /// </summary>
     public List<TAGS> cardTags = new List<TAGS>();
 
+    /// <summary>
+    /// 归属的书
+    /// </summary>
+    public Book bookBelong;
+    public int bookBelongId;
+
     public bool IsCoverCard = false; //是否为封底牌
     public delegate void DrawEventHandler(DrawEvent e);
     public event DrawEventHandler DrawEvent;

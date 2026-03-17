@@ -58,8 +58,7 @@ public class EventUntilEventEffect<TListen,TUntil> : Effect where TListen : Even
         Event<TUntil>.subscriber += UntilHandler;
     }
     
-    private void Trigger(TListen e)
-    {
+    private void Trigger(TListen e) {
         if (!e.IsCancled())
         {
             TriggerAction(e);

@@ -46,7 +46,7 @@ public class Library
     public static void Remove(Card cardRemove)
     {
         Instance.cards.Remove(cardRemove);
-        CardRemoveFromLibEvent.Publish(new CardRemoveFromLibEvent() {
+        CardLeaveFromLibEvent.Publish(new CardLeaveFromLibEvent() {
             card = cardRemove
         });
     }
@@ -102,5 +102,21 @@ public class Library
         }
         Debug.Log("牌库没有符合条件的牌");
         return null;
+    }
+
+    public int CountCardByBook(int bookId) {
+        
+        if (cards.Count == 0)
+        {
+            Debug.Log("牌库无牌");
+            return 0;
+        }
+        int countNum = 0;
+        foreach(Card card in cards) {
+            if (card.bookBelongId == bookId) {
+                countNum++;
+            }
+        }
+        return countNum;
     }
 }

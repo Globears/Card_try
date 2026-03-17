@@ -30,7 +30,7 @@ public class CoverLibrary {
     public static void Remove(Card cardRemove)
     {
         Instance.cards.Remove(cardRemove);
-        CardRemoveFromLibEvent.Publish(new CardRemoveFromLibEvent() {
+        CardLeaveFromLibEvent.Publish(new CardLeaveFromLibEvent() {
             card = cardRemove
         });
     }
@@ -98,5 +98,19 @@ public class CoverLibrary {
         }
         Debug.Log("牌库没有符合条件的牌");
         return null;
+    }
+
+    public List<Card> SearchAllWithBookId(int bookId) {
+        if (cards.Count == 0) {
+            Debug.Log("牌库无牌");
+            return null;
+        }
+        List<Card> SearchList = new List<Card>();
+        foreach(Card card in cards) {
+            if (card.bookBelongId == bookId) {
+                SearchList.Add(card);
+            }
+        }
+        return SearchList;
     }
 }

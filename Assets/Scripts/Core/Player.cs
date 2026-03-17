@@ -23,6 +23,18 @@ public class Player
         
     }
 
+    public void DrawFinalCard(Book book) {
+        if(CoverLibrary.Instance.Count() == 0) {
+            Debug.Log("封底牌牌库中没有牌");
+            return;
+        }
+        foreach(Card card in CoverLibrary.Instance.SearchAllWithBookId(book.Id)) {
+            CoverLibrary.Remove(card);
+            Hand.Instance.Add(card);
+            Debug.Log($"{card.Name}封底牌加入了手牌");
+        }
+    }
+
     public void Draw(TAGS tag) {
         if(Library.Instance.Count() == 0){
             Debug.Log("No cards in library");
