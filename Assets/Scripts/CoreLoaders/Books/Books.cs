@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// 负责加载所有书籍数据的静态类
 /// </summary>
 public static class Books {
-    public static Dictionary<string, Book> books = new Dictionary<string, Book>();
+    public static MultiKeyDictionary<int, string, Book> books = new MultiKeyDictionary<int ,string, Book>();
     public static Book heartLibSet, basicKnifeHandling;
     public static void Load() {
         heartLibSet = new Book(01,"HeartLibSet");
@@ -15,6 +15,7 @@ public static class Books {
         heartLibSet.Cards.Add(Cards.GetPrototypeById("B01C04"));
         heartLibSet.FinalCards.Add(Cards.GetPrototypeById("B01C05"));
         heartLibSet.FinishThreshold = 4;
+        books.Add(01,"HeartLibSet",heartLibSet);
 
         basicKnifeHandling = new Book(02,"BasicKnifeHandling");
         basicKnifeHandling.Cards.Add(Cards.GetPrototypeById("B02C01"));
@@ -23,6 +24,7 @@ public static class Books {
         basicKnifeHandling.Cards.Add(Cards.GetPrototypeById("B02C04"));
         basicKnifeHandling.FinalCards.Add(Cards.GetPrototypeById("B02C05"));
         basicKnifeHandling.FinishThreshold = 3;
-
+        books.Add(02,"BasicKnifeHandling",basicKnifeHandling);
+        
     }
 }

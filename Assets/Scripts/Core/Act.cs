@@ -39,8 +39,8 @@ public class Act
     }
     public void AddTag(params TAGS[] tAGS) {
         foreach(TAGS tag in tAGS) {
-            this.tags.Add(tag);
-            this.owner.cardTags.Add(tag);
+            if(!tags.Contains(tag)) this.tags.Add(tag);
+            if(!owner.cardTags.Contains(tag)) this.owner.cardTags.Add(tag);
         }
     }
 

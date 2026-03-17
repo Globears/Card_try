@@ -3,6 +3,8 @@
     "supporterId": 0,
     "cogCardIds":[
     ],
+    "bookIds":[
+    ],
     "cardIds":[
         "slash_or_resist",
         "side_parry_or_sheathe",

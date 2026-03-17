@@ -15,6 +15,9 @@ public static class Cards
         return CardPrototypes.GetByKey2(card_name);
     }
 
+    //插页
+    public static Card insertPage;
+
     //基础持刀
     public static Card slashOrResist, sideParryOrSheathe, swordHoldingOrArmTraining,
         breathSkillOrDodge, crossSlashOrArmed;
@@ -27,13 +30,29 @@ public static class Cards
     /// 加载卡牌数据 其他的CoreLoader的XXXs.cs的Load也同理
     /// </summary>
     public static void Load(){
+        Debug.Log("开始加载卡牌原型");
+        // 插页
+        LoadPublicCard();
         //《心镇设定集》
         LoadBook1();
         //《基础持刀》
         LoadBook2();
+
+
+
+        Debug.Log("加载卡牌原型完毕");
+    }
+
+    private static void LoadPublicCard() {
+        Debug.Log("加载插页");
+        insertPage = new Card("B00C01","insert_page",MindPhase.Prefix.NOMINDPHASE,MindPhase.Suffix.NOMINDPHASE);
+        insertPage.action.CreateDefenseSequence("1:12,1:23,1:34,1:45,1:56,1:67,1:78,1:89");
+        insertPage.bonusAction.CreateDefenseSequence("");
+        CardPrototypes.Add("B00C01","insert_page",insertPage);
     }
 
     private static void LoadBook1() {
+        Debug.Log("加载《心镇设定集》");
         //《心镇设定集》
         //精神世界 & 心镇
         // 精神世界（正）
@@ -98,6 +117,7 @@ public static class Cards
     }
 
     public static void LoadBook2() {
+        Debug.Log("加载《基础持刀》");
         //《基础持刀》
         //直斩 & 抵剑
         // 直斩（正）

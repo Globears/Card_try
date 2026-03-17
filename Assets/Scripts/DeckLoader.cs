@@ -8,6 +8,7 @@ public class DeckJsonData
     public string deckName;
     public int supporterId;
     public string cogCardIds;
+    public int[] bookIds;
     public string[] cardIds;
 }
 
@@ -64,6 +65,9 @@ public class DeckLoader
             }
         }
 
+        foreach (int bookId in deckData.bookIds) {
+            Book book = Books.books.GetByKey1(bookId);
+        }
         //加载套牌的卡牌列表
         foreach (string cardId in deckData.cardIds) {
             // Load each card by ID

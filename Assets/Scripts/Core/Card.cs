@@ -102,9 +102,9 @@ public class Card
     }
 
     public void AddTag(TAGS tAGS) {
-        this.cardTags.Add(tAGS);
-        this.action.tags.Add(tAGS);
-        this.bonusAction.tags.Add(tAGS);
+        if(!cardTags.Contains(tAGS)) this.cardTags.Add(tAGS);
+        if(!action.tags.Contains(tAGS)) this.action.tags.Add(tAGS);
+        if(!bonusAction.tags.Contains(tAGS)) this.bonusAction.tags.Add(tAGS);
     }
     public virtual Card Clone()
     {

@@ -64,7 +64,8 @@ public enum TAGS {
     /// <summary>
     /// 代偿
     /// </summary>
-    COMPENSATION
+    COMPENSATION,
+    NOMINDPHASE
 }
 
 public static class CardTag {
@@ -80,6 +81,8 @@ public static class CardTag {
                 return TAGS.CONFIDENCE;
             case MindPhase.Suffix.Responsibility:
                 return TAGS.RESPONSIBILITY;
+            case MindPhase.Suffix.NOMINDPHASE:
+                return TAGS.NOMINDPHASE;
             default:
                 Debug.LogError(suffix + "未找到对应的CardTag");
                 return TAGS.NULL; //默认标签
@@ -95,6 +98,8 @@ public static class CardTag {
                 return TAGS.GUARDIANSHIP;
             case MindPhase.Prefix.Speculator:
                 return TAGS.SPECULATOR;
+            case MindPhase.Prefix.NOMINDPHASE:
+                return TAGS.NOMINDPHASE;
             default:
                 Debug.LogError(prefix + "未找到对应的CardTag");
                 return TAGS.NULL; //默认标签

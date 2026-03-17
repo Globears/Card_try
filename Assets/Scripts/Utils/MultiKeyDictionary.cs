@@ -11,7 +11,7 @@ public class MultiKeyDictionary<TKey1, TKey2, TValue>
         dict1[key1] = value;
         keyMapping[key2] = key1;
     }
-    
+
     public TValue GetByKey1(TKey1 key) {
         if(dict1[key] != null) return dict1[key];
         UnityEngine.Debug.LogWarning("未找到Key1: " + key);

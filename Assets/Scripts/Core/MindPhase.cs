@@ -20,7 +20,8 @@ public class MindPhase
         /// <summary>
         /// 守护者
         /// </summary>
-        Guardianship
+        Guardianship,
+        NOMINDPHASE
     }
     public enum Suffix {
         /// <summary>
@@ -42,7 +43,8 @@ public class MindPhase
         /// <summary>
         /// 责任
         /// </summary>
-        Responsibility
+        Responsibility,
+        NOMINDPHASE
     }
 }
 

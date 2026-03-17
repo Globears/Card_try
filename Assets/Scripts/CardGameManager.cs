@@ -51,6 +51,8 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
             Debug.LogError($"{this}:GameLoader未加载完成");
             return;
         }
+        GameLoadEvent.Pre.Publish(new GameLoadEvent.Pre());
+
         //从套牌json读取套牌到内存中
         Deck deck = DeckLoader.LoadDeckFromResources("Decks/deck");
         //处理目标
@@ -58,13 +60,29 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         //处理Deck
 
         //处理认知卡
+        if(deck.cogCards != null) {
+            foreach(CogCard cogCard in deck.cogCards) {
+                //调用所有认知卡的效果的Cast函数 订阅对应的事件 效果在Effect里面触发后处理Trigger函数
+                cogCard.ResloveAllEffects();
+            }
+        }
 
         //处理封底
+        //TODO：这里需要考虑一下，有多个封底卡的问题
+        if(deck.books != null) {
+            foreach(Book book in deck.books) {
+                foreach(Card finishCard in book.FinalCards) {
+                    CoverLibrary.Instance.Add(finishCard);
+                }
+            }
+        }
 
         //把插页洗入牌库
         Library.Instance.LoadDeck(deck);
         Library.Shuffle();
 
+        Debug.Log("加载完毕");
+        GameLoadEvent.Post.Publish(new GameLoadEvent.Post());
         //回合进入抓牌阶段
         TurnStateMachine.Instance.TransitState(new StartState());
 

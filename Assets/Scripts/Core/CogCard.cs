@@ -34,4 +34,14 @@ public class CogCard {
     /// 存储认知卡的效果列表
     /// </summary>
     public List<Effect> effects;
+
+    public void AddEffect(Effect effect) {
+        if(!effects.Contains(effect)) effects.Add(effect);
+    }
+
+    public void ResloveAllEffects() {
+        foreach(Effect effect in effects) {
+            effect.Cast();
+        }
+    }
 }
