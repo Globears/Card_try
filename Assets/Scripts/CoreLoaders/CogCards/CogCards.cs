@@ -31,7 +31,8 @@ public static class CogCards{
     private static void LoadLeaderPublicCard() {
         // 3责任
         // 在最后一回合中，你的所有卡牌+1力
-        Responsibility = new CogCard("PLC01","Responsibility",3);
+        // PLC = publicLeaderCogcard
+        Responsibility = new Responsibility();
         // 2自律
         // 你的“领袖的”书页同时具有“坚定”心相
         SelfDiscipline = new CogCard("PLC02","SelfDiscipline",2);

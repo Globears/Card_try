@@ -63,5 +63,7 @@ public class ClearState : TurnState
         {
             node.ClearDefense();
         }
+
+        TurnEndEvent.Publish(new TurnEndEvent());
     }
 }
