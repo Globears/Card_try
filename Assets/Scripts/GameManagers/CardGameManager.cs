@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 public class CardGameManager : SingletonBehaviour<CardGameManager>
 {
     protected bool IsStarted = false;
+    public static int currentLevelId = 1;
+    public static Level currentLevel;
+    public static int currentTurn;
     protected override void Awake() {
         base.Awake();
         GameStartEvent.subscriber += OnGameStart;
@@ -55,9 +58,12 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
 
         //从套牌json读取套牌到内存中
         Deck deck = DeckLoader.LoadDeckFromResources("Decks/deck");
-        //处理目标
+        //TODO:处理Level
+        currentLevelId = 1;
+        currentLevel = Levels.GetLevelWithId(currentLevelId);
+        //TODO:处理目标
 
-        //处理Deck
+        //TODO:处理Deck
 
         //处理认知卡
         if(deck.cogCards != null) {

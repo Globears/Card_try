@@ -12,10 +12,10 @@ public static class Enemies {
     public static Enemy GetEnemy(string Key) {
         Enemy result;
         try {
-            result = EnemyPrototypes.GetByKey1(Key);
+            result = EnemyPrototypes.GetByKey1(Key).Clone();
         } catch{
             try {
-                result = EnemyPrototypes.GetByKey2(Key);
+                result = EnemyPrototypes.GetByKey2(Key).Clone();
             } catch {
                 Debug.LogError($"{Key}未找到");
                 return null;
