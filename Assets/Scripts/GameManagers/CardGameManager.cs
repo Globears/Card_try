@@ -87,6 +87,9 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         Library.Instance.LoadDeck(deck);
         Library.Shuffle();
 
+        //处理关卡
+        
+
         Debug.Log("加载完毕");
         GameLoadEvent.Post.Publish(new GameLoadEvent.Post());
         //回合进入抓牌阶段

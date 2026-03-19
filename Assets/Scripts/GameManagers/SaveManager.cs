@@ -4,8 +4,11 @@ using Newtonsoft.Json;
 
 public class SaveData {
     // 所有已保存的套牌
+    Dictionary<int,Deck> decks;
     //     启用的套牌
+    int EnableDeck;
     // 所有已解锁的关卡的进度
+    Dictionary<Level,bool> levels;
     //     关卡是否完成
     //     关卡的进度是否完成
     // 所有已解锁的书本
@@ -29,7 +32,7 @@ public class SaveManager : SingletonBehaviour<SaveManager> {
     public void Load() {
         
     }
-    
+
     public void LoadSaveData() {
         //从本地文件读存档分别保存为SaveData和PermanentSaveData
     }
