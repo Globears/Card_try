@@ -7,28 +7,35 @@ using UnityEngine;
 /// </summary>
 public class Enemy
 {
-    public String Id;
-
+    public string Id;
+    public string name;
     /// <summary>
     /// 危险等级，用于随机出怪
     /// </summary>
-    public int dangerLevel = 0;
+    //public int dangerLevel = 0;
 
     //索引表示轮次
-    public List<String> attackSequences = new List<String>();
+    public List<string> attackSequences = new List<string>();
     //每个轮次的攻击用字符串可以表示为
     //"1:2589"  "2:3698"  "1:145+2:69"  冒号前的数字表示攻击力度，冒号后的数字表示攻击目标
     //加号用来连接两段攻击，这样可以实现同一轮次的攻击中有力度的变化
     
 
-    public Enemy(String id, int dangerLevel)
+    public Enemy(string id,string name)
     {
         this.Id = id;
-        this.dangerLevel = dangerLevel;
+        this.name = name;
+    }
+    
+    public Enemy(string id,string name, string attackSequences)
+    {
+        this.Id = id;
+        this.name = name;
+        this.attackSequences = new List<string> { attackSequences };
     }
 
     public Enemy Clone(){
-        return new Enemy(this.Id, this.dangerLevel)
+        return new Enemy(this.Id,this.name)
         {
             attackSequences = new List<string>(this.attackSequences)
         };
