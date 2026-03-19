@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -14,12 +15,34 @@ public class SaveData {
     //     还不知道存啥
 }
 
+public class PermanentSaveData {
+    // 包含游戏设置 存档数量等
+    public static int BGM_VOLUME;
+    public static int SFX_VOLUME;
+    public static bool BGM_SWITCH;
+    public static bool SFX_SWITCH;
+    public static Dictionary<int,bool> SAVESLOTSSWITCH;
+}
+
 public class SaveManager : SingletonBehaviour<SaveManager> {
-    public void LoadSave() {
+
+    public void Load() {
+        
+    }
+    
+    public void LoadSaveData() {
+        //从本地文件读存档分别保存为SaveData和PermanentSaveData
+    }
+
+    public void LoadPermanentSaveData() {
         
     }
 
-    public void WriteSave() {
-        
+    public void WriteSaveData() {
+        //保存当前的存档
+    }
+
+    public void WritePermanentSaveData() {
+        //保存当前的永久存档
     }
 }
