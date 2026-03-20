@@ -39,6 +39,7 @@ public class Enemy
 
     public int GetRounds()
     {
+        Debug.Log($"{name}的GetRounds()返回值是{attackSequences.Count}");
         return attackSequences.Count;
     }
 
@@ -51,7 +52,7 @@ public class Enemy
 
         string seq = null;
 
-        seq = attackSequences[round];
+        seq = attackSequences[0];
         
 
         if (string.IsNullOrEmpty(seq))
@@ -61,6 +62,7 @@ public class Enemy
 
         // 攻击序列可能包含用+连接的多段，例如 "1:145+2:69"
         string[] parts = seq.Split('+');
+        Debug.Log($"{name}的seq如下:{seq}");
         foreach (string part in parts)
         {
             if (string.IsNullOrWhiteSpace(part)) continue;

@@ -37,7 +37,7 @@ public class CombatState : TurnState
         //从第0波次开始
         int rounds = 0;
         //战斗核心流程，最多6波
-        for(rounds = 0; rounds < 3; rounds++)
+        for(rounds = 0; rounds < enemies.Count; rounds++)
         {
             //对于每个敌人的波次，先结算卡牌效果，再结算卡牌的防御，再令敌人攻击
 
@@ -70,18 +70,21 @@ public class CombatState : TurnState
             bonusActionCard?.ResolveBonusActionDefence();
 
             //令该轮次的敌人攻击
-            int elapsedRounds = 0;
-            foreach(Enemy enemy in enemies)
-            {
-                if(elapsedRounds + enemy.GetRounds() > rounds)
-                {
-                    enemy.Attack(rounds - elapsedRounds);
-                }
-                else
-                {
-                    elapsedRounds += enemy.GetRounds();
-                }
-            }
+            //int elapsedRounds = 0;
+
+            enemies[rounds].Attack(rounds);
+
+            // foreach(Enemy enemy in enemies)
+            // {
+            //     if(elapsedRounds + enemy.GetRounds() > rounds)
+            //     {
+            //         enemy.Attack(rounds - elapsedRounds);
+            //     }
+            //     else
+            //     {
+            //         elapsedRounds += enemy.GetRounds();
+            //     }
+            // }
 
             //清除节点上的所有防御，为下一轮做准备
             foreach(Node node in GridManager.Instance.Nodes)
