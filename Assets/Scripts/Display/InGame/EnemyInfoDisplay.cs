@@ -18,7 +18,7 @@ public class EnemyInfoDisplay : MonoBehaviour
         string displayText = "";
         foreach (Enemy enemy in enemies)
         {
-            displayText += $"Name: {enemy.Id}, Danger Level: {enemy.dangerLevel}, Rounds: {enemy.GetRounds()}\n";
+            displayText += $"Name: {enemy.Id}, Rounds: {enemy.GetRounds()}\n";
         }
         text.text = displayText;
     }

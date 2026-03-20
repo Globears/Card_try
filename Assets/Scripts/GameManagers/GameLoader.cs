@@ -39,7 +39,7 @@ public class GameLoader : SingletonBehaviour<GameLoader>
         //加载协助者
         Supporters.Load();
         //加载关卡数据
-        Levels.Load();
+        //Levels.Load();
 
         //初始化日志
         Logger.Init();

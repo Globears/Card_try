@@ -19,6 +19,7 @@ public static class Levels {
     public static void AddLevels(Level level) {
         LevelsPrototypes.Add(level.levelId,level.levelName,level);
     }
+
     public static void Load() {
         level1 = new Level(1,(1,4,5),(2,4,5));
         level1.AddEnemies(("M01T01",2),("M01T02",2));
