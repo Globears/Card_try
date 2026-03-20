@@ -40,8 +40,9 @@ public class Level {
     /// </summary>
     public List<Effect> effects = new List<Effect>();
 
-    public Level(int levelId,params (int TurnNum, int MinDanger, int MaxDanger)[] triples) {
+    public Level(int levelId,string levelName,params (int TurnNum, int MinDanger, int MaxDanger)[] triples) {
         this.levelId = levelId;
+        this.levelName = levelName;
         AddWave(triples);
     }
 
@@ -67,6 +68,14 @@ public class Level {
             }
         }
         return result;
+    }
+
+    public void AddLevelInfo(LevelInfo levelInfo) {
+        this.levelName = levelInfo.levelName;
+        this.passiveEffectDescription = levelInfo.passiveEffectDescription;
+        foreach(var description in levelInfo.missonsDescription) {
+            this.roundMissons.Add(roundMissons.Count,description);
+        }
     }
 
     public virtual Level Clone()

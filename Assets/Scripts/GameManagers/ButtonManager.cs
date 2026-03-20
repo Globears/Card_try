@@ -11,7 +11,7 @@ public class ButtonManager : SingletonBehaviour<ButtonManager>{
     //TODO：
     
     public void NewGameButton() {
-        
+        SceneChangeManager.Instance.ChangeToCardGame();
     }
 
     public void ContinueGameButton() {

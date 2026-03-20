@@ -75,7 +75,7 @@ public class DeckLoader
             if (card != null)
             {
                 deck.cards.Add(card);
-                Debug.Log($"Card added to deck: {card.Id}");
+                Debug.Log($"Card added to deck: {card.Id},{card.Name}");
             }
         }
 

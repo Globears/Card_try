@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 public class CardGameManager : SingletonBehaviour<CardGameManager>
 {
     protected bool IsStarted = false;
-    public static int currentLevelId = 1;
+    public static int currentLevelId;
     public static Level currentLevel;
-    public static int currentTurn;
+    public static int currentTurn = 1;
     protected override void Awake() {
         base.Awake();
         GameStartEvent.subscriber += OnGameStart;
+        TurnBeginEvent.subscriber += OnTurnStart;
     }
     void Start() {
         StartGame();
@@ -31,6 +32,11 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
 
     public void OnGameStart(GameStartEvent e) {
         StartGame();
+    }
+
+    public void OnTurnStart(TurnBeginEvent e) {
+        currentTurn ++;
+        Debug.Log($"CurrentTurn被+1 现在是：{currentTurn}");
     }
 
     public void StartGame() {
@@ -60,6 +66,7 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         Deck deck = DeckLoader.LoadDeckFromResources("Decks/deck");
         //TODO:处理Level
         currentLevelId = 1;
+        currentTurn = 0;
         currentLevel = Levels.GetLevelWithId(currentLevelId);
         //TODO:处理目标
 
@@ -98,7 +105,7 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
 
         Debug.Log("加载完毕");
         GameLoadEvent.Post.Publish(new GameLoadEvent.Post());
-        //回合进入抓牌阶段
+        //回合进入开始阶段
         TurnStateMachine.Instance.TransitState(new StartState());
 
     }

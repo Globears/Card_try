@@ -16,9 +16,12 @@ public class EnemyInfoDisplay : MonoBehaviour
     {
         List<Enemy> enemies = EnemyManager.Instance.GetEnemies();
         string displayText = "";
-        foreach (Enemy enemy in enemies)
-        {
-            displayText += $"Name: {enemy.Id}, Rounds: {enemy.GetRounds()}\n";
+        foreach (Enemy enemy in enemies){
+            string atkSesDisplay = "";
+            foreach (string atk in enemy.attackSequences) {
+                atkSesDisplay += atk;
+            }
+            displayText += $"Name:{enemy.name} Atk:{atkSesDisplay}\n";
         }
         text.text = displayText;
     }

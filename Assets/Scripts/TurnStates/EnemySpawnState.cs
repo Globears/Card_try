@@ -32,7 +32,6 @@ public class EnemySpawnState : TurnState
     public void EnemySpawn() {
         //这里需要随机抽取敌人
         //在剩余危险等级内的范围内随机取敌人，重复直到剩余等级小于所有可能刷的敌人的危险等级
-
         List<Enemy> enemiesToSpawn = new List<Enemy>();
         //拿到当前关卡
         Level level = CardGameManager.currentLevel;

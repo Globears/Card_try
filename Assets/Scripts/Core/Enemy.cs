@@ -9,10 +9,6 @@ public class Enemy
 {
     public string Id;
     public string name;
-    /// <summary>
-    /// 危险等级，用于随机出怪
-    /// </summary>
-    //public int dangerLevel = 0;
 
     //索引表示轮次
     public List<string> attackSequences = new List<string>();
@@ -84,7 +80,7 @@ public class Enemy
                     Node node = GridManager.Instance.GetNodeByIndex(idx);
                     if (node != null)
                     {
-                        Debug.Log("Enemy attacking node at index " + idx);
+                        Debug.Log($"{name}以{power}力度攻击{idx}");
                         node.takeDamage(power);
                         if (!node.isDefeated())
                         {

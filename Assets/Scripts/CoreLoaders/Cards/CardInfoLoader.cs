@@ -14,7 +14,7 @@ public class CardInfoJsonData
 }
 
 [System.Serializable]
-public class RootJsonData
+public class RootCardJsonData
 {
     public CardInfoJsonData[] cardsInfo;
 }
@@ -36,7 +36,18 @@ public class CardInfoLoader
         }
 
         string jsonString = textAsset.text;
-        RootJsonData rootData = JsonUtility.FromJson<RootJsonData>(jsonString);
+        RootCardJsonData rootData = JsonUtility.FromJson<RootCardJsonData>(jsonString);
+
+        if (rootData == null)
+        {
+            Debug.LogError($"Failed to parse JSON (rootData==null) from Resources: {cardsInfoPath}\nJSON:\n{jsonString}");
+            return null;
+        }
+        if (rootData.cardsInfo == null || rootData.cardsInfo.Length == 0)
+        {
+            Debug.LogError($"No 'rootInfos' found or empty in JSON: {cardsInfoPath}\nJSON:\n{jsonString}");
+            return null;
+        }
 
         Dictionary<string, CardInfo> cardInfos = new Dictionary<string, CardInfo>();
         foreach (var cardInfo in rootData.cardsInfo)

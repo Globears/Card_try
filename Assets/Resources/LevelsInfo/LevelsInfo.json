@@ -1,7 +1,7 @@
 {
     "levelsInfo": [
         {
-            "levelId": "1_1",
+            "levelId": 1,
             "levelName":"一触即溃的追逐",
             "passiveEffectDescription": "无",
             "missonsDescription": [
@@ -10,7 +10,7 @@
             ]
         },
         {
-            "levelId": "1_2",
+            "levelId": 2,
             "levelName":"未有目标的迷茫",
             "passiveEffectDescription": "无",
             "missonsDescription": [
@@ -19,7 +19,7 @@
             ]
         },
         {
-            "levelId": "1_3",
+            "levelId": 3,
             "levelName":"无法信任的神明",
             "passiveEffectDescription": "初始手牌-1",
             "missonsDescription": [
