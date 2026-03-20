@@ -70,9 +70,12 @@ public class GridManager
 
     public Node GetNodeByIndex(int index)
     {
-        //将单一的数字映射到2维的坐标，方法是按照小键盘上的数字布局来映射
-        int x = ((index - 1) % 3) - 1;
-        int y = ((index - 1) / 3) - 1;
+        //将单一的数字映射到2维的坐标，方法是按照
+        //1 2 3
+        //4 5 6
+        //7 8 9
+        int x = ((index - 1) % 3) - 1;      // -1,0,1
+        int y = 1 - ((index - 1) / 3);      // 1,0,-1
         return nodes[new Vector2Int(x, y)];
     }
 }

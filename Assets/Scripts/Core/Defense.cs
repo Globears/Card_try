@@ -93,7 +93,7 @@ public class DefenseSequence
                     if (char.IsWhiteSpace(ch)) continue;
                     if (ch < '1' || ch > '9') continue; // 只接受 1-9
 
-                    var pos = NumpadToPosition(ch);
+                    var pos = NumToPosition(ch);
                     var d = new Defense(owner, prefix, suffix)
                     {
                         Power = power,
@@ -109,25 +109,24 @@ public class DefenseSequence
         return result;
     }
 
-    // 将小键盘数字（'1'..'9'）映射到局部坐标，5 -> (0,0)
-    private static Vector2Int NumpadToPosition(char d)
+    public static Vector2Int NumToPosition(char d)
     {
-        // 小键盘布局（视觉化）：
-        // 7 8 9
-        // 4 5 6
+        // 布局（视觉化）：
         // 1 2 3
-        // 对应的坐标系：以 5 为 (0,0)，向右 x+，向上 y+
+        // 4 5 6
+        // 7 8 9
+        // 5为0，0 向右 x+，向上 y+
         switch (d)
         {
-            case '7': return new Vector2Int(-1, 1);
-            case '8': return new Vector2Int(0, 1);
-            case '9': return new Vector2Int(1, 1);
+            case '1': return new Vector2Int(-1, 1);
+            case '2': return new Vector2Int(0, 1);
+            case '3': return new Vector2Int(1, 1);
             case '4': return new Vector2Int(-1, 0);
             case '5': return new Vector2Int(0, 0);
             case '6': return new Vector2Int(1, 0);
-            case '1': return new Vector2Int(-1, -1);
-            case '2': return new Vector2Int(0, -1);
-            case '3': return new Vector2Int(1, -1);
+            case '7': return new Vector2Int(-1, -1);
+            case '8': return new Vector2Int(0, -1);
+            case '9': return new Vector2Int(1, -1);
             default: return new Vector2Int(0, 0);
         }
     }

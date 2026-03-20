@@ -41,10 +41,8 @@ public class Node
                 this.Defense.Power += 1;
             }
         }
-        else
-        {
-            //如果附赠和动作重合，则使它+1力
-            this.Defense.Power += 1;
+        else {
+            //this.Defense.Power += 1;
         }
     }
 
