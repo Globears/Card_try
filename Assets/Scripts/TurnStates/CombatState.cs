@@ -53,6 +53,8 @@ public class CombatState : TurnState
                 CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = actionCard});
                 actionCard?.ResolveActionEffects();
                 CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = actionCard});
+                Logger.historyActs.Add(actionCard.action);
+                Logger.historyCards.Add(actionCard);
             } else { Debug.Log("无主要行动卡牌！"); }
             //结算额外卡牌效果
             if(bonusActionCard != null) {
@@ -60,6 +62,7 @@ public class CombatState : TurnState
                 CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = bonusActionCard});
                 bonusActionCard?.ResolveBonusActionEffects();
                 CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = bonusActionCard});
+                Logger.historyCards.Add(bonusActionCard);
             } else { Debug.Log("无附赠行动卡牌！"); }
 
             //结算卡牌防御

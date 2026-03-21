@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Defense
@@ -48,6 +49,30 @@ public class DefenseSequence
             }
     }
 
+    public bool IsDefenseSequenceContainPosition(Vector2Int vector2Int) {
+        foreach(Defense def in Sequence) {
+            if(def.Position == vector2Int) return true;
+        }
+        return false;
+    }
+
+    /// <summary>
+    /// 从给定的位置 切割防御序列
+    /// </summary>
+    /// <param name="vector2Int">提供一个节点内的位置</param>
+    /// <returns>返回被切割后的位置（含提供的位置） 如 12345 提供3 切割为345</returns>
+    public DefenseSequence CutDefenseSequenceWithPosition(Vector2Int pos) {
+        int idx = Sequence.FindIndex(d => d.Position == pos);
+        if (idx < 0) return new DefenseSequence(new List<Defense>());
+        var sub = Sequence.GetRange(idx, Sequence.Count - idx);
+        return new DefenseSequence(sub);
+    }
+
+    public DefenseSequence(List<Defense> defenses) {
+        this.Sequence = defenses;
+    }
+    public DefenseSequence() {
+    }
     public static List<DefenseSequence> CreateDefenseSequences(
         string config, 
         Act owner, 
