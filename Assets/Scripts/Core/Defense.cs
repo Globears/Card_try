@@ -16,8 +16,8 @@ public class Defense
     public Act owner;   // 防守来自哪个动作
 
     //心相
-    public List<MindPhase.Prefix> Prefix;
-    public List<MindPhase.Suffix> Suffix;
+    public List<MindPhase.Prefix> Prefix = new List<MindPhase.Prefix>();
+    public List<MindPhase.Suffix> Suffix = new List<MindPhase.Suffix>();
 
     
     public Vector2Int Position; //设防位置

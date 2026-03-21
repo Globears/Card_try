@@ -20,12 +20,12 @@ public class Card
     /// <summary>
     /// 卡牌的前缀心相
     /// </summary>
-    public List<MindPhase.Prefix> Prefixs;
+    public List<MindPhase.Prefix> Prefixs = new List<MindPhase.Prefix>();
     
     /// <summary>
     /// 卡牌的后缀心相
     /// </summary>
-    public List<MindPhase.Suffix> Suffixs;
+    public List<MindPhase.Suffix> Suffixs = new List<MindPhase.Suffix>();
 
     /// <summary>
     /// 卡牌的动作
