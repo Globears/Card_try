@@ -21,6 +21,18 @@ public class Defense
 
     
     public Vector2Int Position; //设防位置
+
+    public Defense Clone(Act newOwner)
+    {
+        var d = new Defense(newOwner,
+            this.Prefix.Count > 0 ? this.Prefix[0] : newOwner.Prefix,
+            this.Suffix.Count > 0 ? this.Suffix[0] : newOwner.Suffix);
+        d.Power = this.Power;
+        d.Position = this.Position;
+        d.Prefix = new List<MindPhase.Prefix>(this.Prefix);
+        d.Suffix = new List<MindPhase.Suffix>(this.Suffix);
+        return d;
+    }
 }
 
 public class DefenseSequence
@@ -69,6 +81,16 @@ public class DefenseSequence
         var sub = Sequence.GetRange(idx, Sequence.Count - idx);
         Debug.Log($"切割得到{sub}");
         return new DefenseSequence(sub);
+    }
+    
+    public DefenseSequence Clone(Act newOwner)
+    {
+        var newDefs = new List<Defense>();
+        foreach (var def in this.Sequence)
+        {
+            newDefs.Add(def.Clone(newOwner));
+        }
+        return new DefenseSequence(newDefs);
     }
 
     public DefenseSequence(List<Defense> defenses) {

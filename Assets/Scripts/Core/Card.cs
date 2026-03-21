@@ -118,7 +118,6 @@ public class Card
         Card clone = (Card)this.MemberwiseClone();
         clone.action = action.Clone();
         clone.bonusAction = bonusAction.Clone();
-
         return clone;
     }
 }
