@@ -20,12 +20,12 @@ public class Card
     /// <summary>
     /// 卡牌的前缀心相
     /// </summary>
-    public MindPhase.Prefix Prefix;
+    public List<MindPhase.Prefix> Prefixs;
     
     /// <summary>
     /// 卡牌的后缀心相
     /// </summary>
-    public MindPhase.Suffix Suffix;
+    public List<MindPhase.Suffix> Suffixs;
 
     /// <summary>
     /// 卡牌的动作
@@ -74,8 +74,8 @@ public class Card
     {
         this.Id = Id;
         this.Name = Name;
-        this.Prefix = Prefix;
-        this.Suffix = Suffix;
+        this.Prefixs.Add(Prefix);
+        this.Suffixs.Add(Suffix);
         action = new Act(this, Prefix, Suffix);
         bonusAction = new BonusAct(this, Prefix, Suffix);
         cardTags.Add(CardTag.PrefixToTag(Prefix));
@@ -86,8 +86,8 @@ public class Card
     {
         this.Id = Id;
         this.Name = Name;
-        this.Prefix = Prefix;
-        this.Suffix = Suffix;
+        this.Prefixs.Add(Prefix);
+        this.Suffixs.Add(Suffix);
         action = new Act(this, Prefix, Suffix, actTags);
         bonusAction = new BonusAct(this, Prefix, Suffix,bonusActTags);
         cardTags.Add(CardTag.PrefixToTag(Prefix));

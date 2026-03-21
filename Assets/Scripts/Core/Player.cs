@@ -79,6 +79,12 @@ public class Player
         Hand.Instance.Add(card);
     }
 
+    public void Draw(int num) {
+        for(int i = 0; i < num; i++) {
+            Draw();
+        }
+    }
+
     public void Discard(Card card)
     {
         if (Hand.Instance.Contains(card))

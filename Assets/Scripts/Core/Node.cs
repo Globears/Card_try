@@ -18,6 +18,7 @@ public class Node
     public Defense Defense;
 
     public int damage = 0;
+    public const int MAXDAMAGE = 3;
 
     /// <summary>
     /// 初始化节点的心相状态，默认为0
@@ -56,27 +57,45 @@ public class Node
         this.Position = new Vector2Int(x, y);
     }
 
-    public void ClearDefense()
-    {
+    public void ClearDefense() {
+        //根据defense的power和心相获得影响
+        if(Defense.Power > 0 && !Defense.Suffix.Contains(MindPhase.Suffix.NOMINDPHASE)) {
+            foreach(MindPhase.Suffix suffix in Defense.Suffix) {
+                Debug.Log($"{this.Position}节点获得了{suffix}影响{Defense.Power}个");
+                this.MindPhases[suffix] += Defense.Power;
+            }
+        }
         this.Defense = null;
     }
 
     public void takeDamage(int damage)
     {
-
         if(Defense == null)
         {
-            this.damage += damage;
+            AddDamageAndDestroy(damage);
             return;
         }
 
         this.Defense.Power -= damage;
         if (this.Defense.Power <= 0)
         {
-            damage = -Defense.Power;
+            AddDamageAndDestroy(-Defense.Power);
             this.Defense.Power = 0;
         }
+    }
 
+    public void AddDamageAndDestroy(int damageDealt) {
+        //责任Responsibility节点：增加“被毁”层数时，有10*x%的概率，减少一层所增加的层数
+        if (damageDealt > 0 && this.MindPhases[MindPhase.Suffix.Responsibility] > 0) {
+            if(Random.Range(1,101) > this.MindPhases[MindPhase.Suffix.Responsibility]*10) {
+                Debug.Log("责任生效 减少1层被毁");
+                damageDealt --;
+            }
+        }
+        if (damageDealt > 0) {
+        this.damage = Mathf.Min(this.damage + damageDealt, MAXDAMAGE);
+        MindPhases[MindPhase.Suffix.Destoryed] = Mathf.Min(MindPhases[MindPhase.Suffix.Destoryed] + damageDealt, MAXDAMAGE);
+    }
     }
 
     public bool isDefeated()

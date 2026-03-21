@@ -65,5 +65,16 @@ public class ClearState : TurnState
         }
 
         TurnEndEvent.Publish(new TurnEndEvent());
+        
+        //温柔Tenderness节点：回合结束时，如果心灵信标位于该节点上，有10*x%的概率，减少1层“被毁”层数
+        if(Beacon.Instance.GetCurrentNode().MindPhases[MindPhase.Suffix.Tenderness] > 0) {
+            int rand = Random.Range(1,101);
+            if(rand <= Beacon.Instance.GetCurrentNode().MindPhases[MindPhase.Suffix.Tenderness] * 10) {
+                Debug.Log("温柔触发");
+                if(Beacon.Instance.GetCurrentNode().MindPhases[MindPhase.Suffix.Destoryed] > 0) {
+                    Beacon.Instance.GetCurrentNode().MindPhases[MindPhase.Suffix.Destoryed]--;
+                }
+            }
+        }
     }
 }

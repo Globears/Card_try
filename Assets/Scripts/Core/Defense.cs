@@ -7,8 +7,8 @@ public class Defense
     public Defense(Act owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix)
     {
         this.owner = owner;
-        this.Prefix = prefix;
-        this.Suffix = suffix;
+        this.Prefix.Add(prefix);
+        this.Suffix.Add(suffix);
     }
     
     public int Power = 0;   //防守的力度
@@ -16,8 +16,8 @@ public class Defense
     public Act owner;   // 防守来自哪个动作
 
     //心相
-    public MindPhase.Prefix Prefix;
-    public MindPhase.Suffix Suffix;
+    public List<MindPhase.Prefix> Prefix;
+    public List<MindPhase.Suffix> Suffix;
 
     
     public Vector2Int Position; //设防位置

@@ -90,8 +90,7 @@ public class CombatState : TurnState
             // }
 
             //清除节点上的所有防御，为下一轮做准备
-            foreach(Node node in GridManager.Instance.Nodes)
-            {
+            foreach(Node node in GridManager.Instance.Nodes) {
                 node.ClearDefense();
             }
 
