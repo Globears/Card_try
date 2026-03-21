@@ -45,9 +45,9 @@ public static class Cards
 
     private static void LoadPublicCard() {
         Debug.Log("加载插图");
-        insertImage = new Card("B00C01","insert_image",MindPhase.Prefix.NOMINDPHASE,MindPhase.Suffix.NOMINDPHASE);
-        insertImage.action.CreateDefenseSequence("1:12,1:23,1:34,1:45,1:56,1:67,1:78,1:89");
-        insertImage.bonusAction.CreateDefenseSequence("");
+        insertImage = new InsertImage();
+        //insertImage.action.CreateDefenseSequence("1:12,1:23,1:34,1:45,1:56,1:67,1:78,1:89");
+        //insertImage.bonusAction.CreateDefenseSequence("");
         CardPrototypes.Add("B00C01","insert_image",insertImage);
     }
 

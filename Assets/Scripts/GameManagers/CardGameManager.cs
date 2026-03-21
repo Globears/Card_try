@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +11,29 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     protected bool IsStarted = false;
     public static int currentLevelId;
     public static Level currentLevel;
+    /// <summary>
+    /// 当前回合数，注意从1开始
+    /// </summary>
     public static int currentTurn = 1;
+    /// <summary>
+    /// 当前回合的轮次数，注意从0开始
+    /// </summary>
+    public static int currentRound = 0;
+    /// <summary>
+    /// 所有在格子里的卡牌的List（按照轮次1行动 轮次1附赠 轮次2行动……来排列）
+    /// </summary>
+    public static List<Card> allSlotCards;
+    /// <summary>
+    /// 当前正在结算的卡牌在allSlotCards中的Index
+    /// </summary>
+    public static int currentResolveCardIndex = 0;
     protected override void Awake() {
         base.Awake();
         GameStartEvent.subscriber += OnGameStart;
         TurnBeginEvent.subscriber += OnTurnStart;
+        RoundStartEvent.subscriber += OnRoundStart;
+        CombatStartEvent.subscriber += OnCombatStart;
+        CardResolveEvent.Pre.subscriber += OnCardResolvePre;
     }
     void Start() {
         StartGame();
@@ -37,6 +57,40 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     public void OnTurnStart(TurnBeginEvent e) {
         currentTurn ++;
         Debug.Log($"CurrentTurn被+1 现在是：{currentTurn}");
+    }
+
+    public void OnRoundStart(RoundStartEvent e) {
+        currentRound = e.roundNum;
+        Debug.Log($"CurrentNum被更新,现在是{currentRound}");
+    }
+
+    public void OnCombatStart(CombatStartEvent e) {
+        allSlotCards = SlotManager.Instance.GetAllCardInSlots();
+    }
+
+    public void OnCardResolvePre(CardResolveEvent.Pre e) {
+        currentResolveCardIndex = e.index;
+    }
+
+    public Card GetNextCard() {
+        Debug.Log($"寻找{currentResolveCardIndex}的下一张牌");
+        for(int i = currentResolveCardIndex+1;i < allSlotCards.Count; i++) {
+            if(allSlotCards[i] != null) return allSlotCards[i];
+        }
+        Debug.Log("没有找到下一张牌!");
+        return null;
+    }
+
+    public Act GetNextAction() {
+        Debug.Log($"寻找{currentResolveCardIndex}的下一张牌的行动");
+        for(int i = currentResolveCardIndex+1;i < allSlotCards.Count; i++) {
+            if(allSlotCards[i] != null) {
+                if(i%2 == 0) return allSlotCards[i].action;
+                if(i%2 == 1) return allSlotCards[i].bonusAction;
+            }
+        }
+        Debug.Log("没有找到下一张牌!");
+        return null;
     }
 
     public void StartGame() {

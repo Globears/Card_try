@@ -48,6 +48,7 @@ public class Act
     {
         foreach (Effect effect in Effects)
         {
+            Debug.Log($"{effect}效果结算");
             effect.Cast();
         }
     }
@@ -90,8 +91,8 @@ public class Act
         }
     }
     
-    public void CreateDefenseSequence(string config)
-    {
+    public void CreateDefenseSequence(string config){
+        Debug.Log($"尝试创建防御序列{config}");
         DefenseSequences = DefenseSequence.CreateDefenseSequences(config, this, Prefix, Suffix);
     }
 
@@ -109,14 +110,23 @@ public class Act
     {
         Act clone = (Act)this.MemberwiseClone();
         clone.DefenseSequences = new List<DefenseSequence>(DefenseSequences);
-        clone.Effects = new List<Effect>(Effects);
-        foreach (Effect effect in Effects)
-        {
-            clone.AddEffect(effect);
+        clone.Effects = new List<Effect>();
+        foreach (Effect effect in Effects) {
+            clone.AddEffect(effect.Clone());
         }
 
         return clone;
     }
 
-
+    public string DefenseToString() {
+        string result = "";
+        foreach (DefenseSequence defenseSequence in DefenseSequences) {
+            foreach(Defense defense in defenseSequence.Sequence) {
+                result += defense.Power;
+                result += defense.Position;
+                result += " ";
+            }
+        }
+        return result;
+    }
 }

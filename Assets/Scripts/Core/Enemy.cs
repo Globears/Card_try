@@ -86,7 +86,8 @@ public class Enemy
                         node.takeDamage(power);
                         if (!node.isDefeated())
                         {
-                            //break;
+                            Debug.Log($"{name}在节点{node.Position}（{idx}）被打败,不会发动后续攻击");
+                            break;
                         }
                     }
                 }

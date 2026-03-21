@@ -59,10 +59,12 @@ public class Node
 
     public void ClearDefense() {
         //根据defense的power和心相获得影响
-        if(Defense.Power > 0 && !Defense.Suffix.Contains(MindPhase.Suffix.NOMINDPHASE)) {
-            foreach(MindPhase.Suffix suffix in Defense.Suffix) {
-                Debug.Log($"{this.Position}节点获得了{suffix}影响{Defense.Power}个");
-                this.MindPhases[suffix] += Defense.Power;
+        if(Defense?.Power > 0) {
+            if(!Defense.Suffix.Contains(MindPhase.Suffix.NOMINDPHASE)) {
+                foreach(MindPhase.Suffix suffix in Defense.Suffix) {
+                    Debug.Log($"{this.Position}节点获得了{suffix}影响{Defense.Power}个");
+                    this.MindPhases[suffix] += Defense.Power;
+                }
             }
         }
         this.Defense = null;

@@ -16,7 +16,7 @@ public class KnowledgeOrBook : Card
         action.CreateDefenseSequence("1:5");
         bonusAction.CreateDefenseSequence("1:521");
 
-        instantEffect = new Instant(() => {
+        instantEffect = new Instant(e => {
             Debug.Log("知识 & 书籍 即刻效果：抽一张牌");
             Player.Instance.Draw();
         });

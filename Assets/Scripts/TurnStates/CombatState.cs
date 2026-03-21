@@ -31,16 +31,15 @@ public class CombatState : TurnState
     }
 
     public void Combat() {
+        CombatStartEvent.Publish(new CombatStartEvent());
         //获取所有敌人
         List<Enemy> enemies = EnemyManager.Instance.GetEnemies();
-
         //从第0波次开始
-        int rounds = 0;
+        List<Card> allSlotCards = SlotManager.Instance.GetAllCardInSlots();
         //战斗核心流程，最多6波
-        for(rounds = 0; rounds < enemies.Count; rounds++)
-        {
+        for(int rounds = 0; rounds < enemies.Count; rounds++) {
             //对于每个敌人的波次，先结算卡牌效果，再结算卡牌的防御，再令敌人攻击
-
+            RoundStartEvent.Publish(new RoundStartEvent{roundNum = rounds});
             //获取该轮次对应的Slot上的卡牌
             Slot actionSlot = SlotManager.Instance.GetActionSlot(rounds);
             Slot bonusActionSlot = SlotManager.Instance.GetBonusActionSlot(rounds);
@@ -50,18 +49,18 @@ public class CombatState : TurnState
             //结算卡牌效果
             if(actionCard != null) {
                 Debug.Log("主要行动卡牌："+actionCard.Name);
-                CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = actionCard});
+                CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = actionCard,index = rounds*2});
                 actionCard?.ResolveActionEffects();
-                CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = actionCard});
+                CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = actionCard,index = rounds*2});
                 Logger.historyActs.Add(actionCard.action);
                 Logger.historyCards.Add(actionCard);
             } else { Debug.Log("无主要行动卡牌！"); }
             //结算额外卡牌效果
             if(bonusActionCard != null) {
                 Debug.Log("附赠行动卡牌："+bonusActionCard.Name);
-                CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = bonusActionCard});
+                CardResolveEvent.Pre.Publish(new CardResolveEvent.Pre{card = bonusActionCard,index = rounds*2+1});
                 bonusActionCard?.ResolveBonusActionEffects();
-                CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = bonusActionCard});
+                CardResolveEvent.Post.Publish(new CardResolveEvent.Post{card = bonusActionCard,index = rounds*2+1});
                 Logger.historyCards.Add(bonusActionCard);
             } else { Debug.Log("无附赠行动卡牌！"); }
 

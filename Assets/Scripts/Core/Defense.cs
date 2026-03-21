@@ -43,6 +43,7 @@ public class DefenseSequence
     {
         foreach(Defense def in Sequence)
             {
+            Debug.Log($"结算防御序列{def.Position} 以{def.Power}力");
                 Beacon.Instance.MoveTo(def.Position);
                 Node node = GridManager.Instance.GetNodeAt(def.Position);
                 node.ApplyDefense(def);
@@ -62,9 +63,11 @@ public class DefenseSequence
     /// <param name="vector2Int">提供一个节点内的位置</param>
     /// <returns>返回被切割后的位置（含提供的位置） 如 12345 提供3 切割为345</returns>
     public DefenseSequence CutDefenseSequenceWithPosition(Vector2Int pos) {
+        Debug.Log($"在{pos}处对{Sequence}进行切割");
         int idx = Sequence.FindIndex(d => d.Position == pos);
         if (idx < 0) return new DefenseSequence(new List<Defense>());
         var sub = Sequence.GetRange(idx, Sequence.Count - idx);
+        Debug.Log($"切割得到{sub}");
         return new DefenseSequence(sub);
     }
 
@@ -88,7 +91,7 @@ public class DefenseSequence
 
         var result = new List<DefenseSequence>();
         if (string.IsNullOrWhiteSpace(config)) return result;
-
+        //Debug.Log("断点1");
         var sequences = config.Split(',');
         foreach (var seqRaw in sequences)
         {
@@ -96,7 +99,7 @@ public class DefenseSequence
             if (string.IsNullOrEmpty(seqTrim)) continue;
 
             var defSeq = new DefenseSequence();
-
+            //Debug.Log("断点2");
             // 每个序列可以包含多个 "power:positions" 段，用 '-' 分隔
             var segments = seqTrim.Split('-');
             foreach (var segRaw in segments)
@@ -117,20 +120,21 @@ public class DefenseSequence
                 {
                     if (char.IsWhiteSpace(ch)) continue;
                     if (ch < '1' || ch > '9') continue; // 只接受 1-9
-
+                    //Debug.Log("断点3");
                     var pos = NumToPosition(ch);
                     var d = new Defense(owner, prefix, suffix)
                     {
                         Power = power,
                         Position = pos
                     };
+                    //Debug.Log("断点4");
                     defSeq.Sequence.Add(d);
                 }
             }
-
+        //Debug.Log("断点5");
             if (defSeq.Sequence.Count > 0) result.Add(defSeq);
         }
-
+        //Debug.Log("断点6");
         return result;
     }
 

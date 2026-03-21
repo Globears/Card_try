@@ -24,13 +24,13 @@ public class SideParryOrSheathe : Card
         action.CreateDefenseSequence("1:56341");
         bonusAction.CreateDefenseSequence("1:51,1:52,1:54,1:56");
         //绽放（2坚定）：具有+2力度
-        blossom = new Instant(() => {
+        blossom = new Instant(e => {
             if(Beacon.Instance.GetCurrentNode().MindPhases[MindPhase.Suffix.Firmness] >= 2) {
                 Debug.Log("侧挡&收刀 : 绽放（2坚定）：具有+2力度");
                 action.AddPowerOnDefenseSequences(2);
             }
         });
-        vibration = new Instant(() => {
+        vibration = new Instant(e => {
             // 共鸣（领袖的）：具有力度+1
             // 共鸣（自信）：具有力度+1
             Act lastAct = Logger.getLastAct();

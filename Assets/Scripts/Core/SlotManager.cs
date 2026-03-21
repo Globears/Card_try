@@ -54,5 +54,15 @@ public class SlotManager
     {
         return bonusActionSlots;
     }
-
+    
+    public List<Card> GetAllCardInSlots() {
+        List<Card> interleaved = new List<Card>();
+        int max = Mathf.Max(actionSlots.Count, bonusActionSlots.Count);
+        for (int i = 0; i < max; i++)
+        {
+            if (i < actionSlots.Count) interleaved.Add(actionSlots[i].GetCard());
+            if (i < bonusActionSlots.Count) interleaved.Add(bonusActionSlots[i].GetCard());
+        }
+        return interleaved;
+    }
 }

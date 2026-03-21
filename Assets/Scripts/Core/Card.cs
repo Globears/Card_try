@@ -51,22 +51,22 @@ public class Card
     public delegate void DrawEventHandler(DrawEvent e);
     public event DrawEventHandler DrawEvent;
 
-    public virtual void ResolveActionEffects()
-    {
+    public virtual void ResolveActionEffects() {
+        Debug.Log($"卡牌{Name}结算主要动作");
         action.ResolveEffects();
     }
-    public virtual void ResolveBonusActionEffects()
-    {
+    public virtual void ResolveBonusActionEffects() {
+        Debug.Log($"卡牌{Name}结算附赠动作");
         bonusAction.ResolveEffects();
     }
 
-    public virtual void ResolveActionDefence()
-    {
+    public virtual void ResolveActionDefence() {
+        Debug.Log($"卡牌{Name}结算主要动作的防御{DefenseStringTranslator.DefenseSequencesToString(action.DefenseSequences)}");
         action.ResolveDefence();
     }
 
-    public virtual void ResolveBonusActionDefence()
-    {
+    public virtual void ResolveBonusActionDefence() {
+        Debug.Log($"卡牌{Name}结算附赠动作的防御{DefenseStringTranslator.DefenseSequencesToString(action.DefenseSequences)}");
         bonusAction.ResolveDefence();
     }
 
