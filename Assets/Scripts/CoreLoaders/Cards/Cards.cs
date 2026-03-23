@@ -70,32 +70,32 @@ public static class Cards
         knowledgeOrBook = new KnowledgeOrBook();
         CardPrototypes.Add("B01C02", "knowledge_or_book", knowledgeOrBook);
 
-        //羁绊关系 & 协助者
         // 羁绊关系（正）
         // 领袖的 温柔
-        // 1力：536842
+        // 1力：536841
+        // tag：
+
         // 协助者（反）
         // 领袖的 温柔
         // 3力：5
+        // tag：
         bondOrSupporter = new Card("B01C03","bond_or_supporter", MindPhase.Prefix.Leadership, MindPhase.Suffix.Tenderness);
-        bondOrSupporter.action.CreateDefenseSequence("1:536842");
+        bondOrSupporter.action.CreateDefenseSequence("1:536841");
         bondOrSupporter.bonusAction.CreateDefenseSequence("3:5");
         CardPrototypes.Add("B01C03", "bond_or_supporter", bondOrSupporter);
 
-        //改变 & 关卡
         // 改变（正）
         // 领袖的 责任
-        // 2力：15，26，48，59
+        // 2力：152，678
         // tag：
 
         // 关卡（反）
         // 领袖的 责任
-        // 2力：24，86
+        // 1力：254，896
         // tag：
-
         changeOrLevel = new Card("B01C04","change_or_level", MindPhase.Prefix.Leadership, MindPhase.Suffix.Responsibility);
-        changeOrLevel.action.CreateDefenseSequence("2:15,2:26,2:48,2:59");
-        changeOrLevel.bonusAction.CreateDefenseSequence("2:24,2:86");
+        changeOrLevel.action.CreateDefenseSequence("2:152,2:678");
+        changeOrLevel.bonusAction.CreateDefenseSequence("1:254,1:896");
         CardPrototypes.Add("B01C04", "change_or_level", changeOrLevel);
 
         // 封底（4/4）
@@ -118,8 +118,6 @@ public static class Cards
 
     public static void LoadBook2() {
         Debug.Log("加载《基础持刀》");
-        //《基础持刀》
-        //直斩 & 抵剑
         // 直斩（正）
         // 领袖的 坚定
         // 2力：258
@@ -130,32 +128,32 @@ public static class Cards
         // 1力：168，348
         // tag：
 
+
         slashOrResist = new Card("B02C01","slash_or_resist", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness);
         slashOrResist.action.CreateDefenseSequence("2:258");
         slashOrResist.bonusAction.CreateDefenseSequence("1:168, 1:348,");
         CardPrototypes.Add("B02C01", "slash_or_resist", slashOrResist);
 
-        //侧挡 & 收刀
-        //  侧挡（正）
+        // 侧挡（正）
         // 领袖的 坚定
         // 1力：56341
-        // 绽放（2坚定）：具有+2力度
+        // 绽放（1坚定）：具有+2力度
         // tag：绽放
 
         // 收刀（反）
         // 领袖的 坚定
-        // 1力：51，52，54，56
+        // 1力：812，476
         // 共鸣（领袖的）：具有力度+1
         // 共鸣（自信）：具有力度+1
         // tag：共鸣
 
+
         sideParryOrSheathe = new SideParryOrSheathe();
         CardPrototypes.Add("B02C02", "side_parry_or_sheathe", sideParryOrSheathe);
 
-        //握剑姿态 & 臂力训练
         // 握剑姿态（正）
         // 领袖的 温柔
-        // 1力：2-3力：8
+        // 2力：38
         // 即刻：抽一张“领袖的”卡牌
         // tag：抽牌
 
@@ -165,26 +163,26 @@ public static class Cards
         // 气场：“领袖的”卡牌具有力度+1
         // tag：气场
 
+
         swordHoldingOrArmTraining = new SwordHoldingOrArmTraining();
         CardPrototypes.Add("B02C03", "sword_holding_or_arm_training", swordHoldingOrArmTraining);
 
-        //呼吸法 & 闪避步伐
         // 呼吸法（正）
         // 领袖的 责任
-        // 0力：5
+        // 1力：72，34
         // 即刻：抽两张牌
         // tag：抽牌
 
         // 闪避步伐（反）
         // 领袖的 责任
-        // 3力：687，489
+        // 3力：687，159
         // 气场：你的卡牌具有力度-1
         // tag：气场
+
 
         breathSkillOrDodge = new BreathSkillOrDodge();
         CardPrototypes.Add("B02C04", "breath_skill_or_dodge", breathSkillOrDodge);
 
-        //封底牌：十字力斩 & 付诸武力
         // 封底（3/4）
         // 十字力斩（正）
         // 领袖的坚定
@@ -197,6 +195,7 @@ public static class Cards
         // 3力：5
         // 即刻：在本局游戏中，你的卡牌具有力度+1
         // tag：封底
+
 
         crossSlashOrArmed = new CrossSlashOrArmed();
         crossSlashOrArmed.SetCover(); //设定为封底牌

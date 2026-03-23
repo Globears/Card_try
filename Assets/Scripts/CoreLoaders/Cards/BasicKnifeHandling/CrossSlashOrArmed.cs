@@ -16,6 +16,7 @@ public class CrossSlashOrArmed : Card
     // tag：封底
 
 
+
     public static Effect instantEffect,aruaEffect;
     public CrossSlashOrArmed()
     : base("B02C05","cross_slash_or_armed", MindPhase.Prefix.Leadership, MindPhase.Suffix.Firmness)
