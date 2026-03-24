@@ -44,4 +44,11 @@ public class CogCard {
             effect.Cast();
         }
     }
+
+    public CogCard Clone() {
+        //应当创建一个新的对象，拷贝该卡牌的各种属性
+        CogCard clone = (CogCard)this.MemberwiseClone();
+        clone.effects = this.effects;
+        return clone;
+    }
 }

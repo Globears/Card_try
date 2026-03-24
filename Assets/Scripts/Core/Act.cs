@@ -8,8 +8,8 @@ public class Act
     public Card owner; //防守来自哪个卡牌
 
     //心相
-    public MindPhase.Prefix Prefix;
-    public MindPhase.Suffix Suffix;
+    public List<MindPhase.Prefix> Prefixes = new List<MindPhase.Prefix>();
+    public List<MindPhase.Suffix> Suffixes = new List<MindPhase.Suffix>();
     public List<TAGS> tags = new List<TAGS>();
 
     public List<DefenseSequence> DefenseSequences = new List<DefenseSequence>();
@@ -19,15 +19,15 @@ public class Act
     public Act(Card owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix)
     {
         this.owner = owner;
-        Prefix = prefix;
-        Suffix = suffix;
+        Prefixes.Add(prefix);
+        Suffixes.Add(suffix);
     }
 
     public Act(Card owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix,List<TAGS> tAGS)
     {
         this.owner = owner;
-        Prefix = prefix;
-        Suffix = suffix;
+        Prefixes.Add(prefix);
+        Suffixes.Add(suffix);
         tags = tAGS;
         tags.Add(CardTag.PrefixToTag(prefix));
         tags.Add(CardTag.SuffixToTag(suffix));
@@ -41,6 +41,20 @@ public class Act
         foreach(TAGS tag in tAGS) {
             if(!tags.Contains(tag)) this.tags.Add(tag);
             if(!owner.cardTags.Contains(tag)) this.owner.cardTags.Add(tag);
+        }
+    }
+
+    public void AddPrefix(MindPhase.Prefix prefix) {
+        if(!Prefixes.Contains(prefix)) this.Prefixes.Add(prefix);
+        foreach(DefenseSequence defenseSequence in DefenseSequences) {
+            defenseSequence.AddPrefix(prefix);
+        }
+    }
+
+    public void AddSuffix(MindPhase.Suffix suffix) {
+        if(!Suffixes.Contains(suffix)) this.Suffixes.Add(suffix);
+        foreach(DefenseSequence defenseSequence in DefenseSequences) {
+            defenseSequence.AddSuffix(suffix);
         }
     }
 
@@ -93,7 +107,8 @@ public class Act
     
     public void CreateDefenseSequence(string config){
         Debug.Log($"尝试创建防御序列{config}");
-        DefenseSequences = DefenseSequence.CreateDefenseSequences(config, this, Prefix, Suffix);
+        //TODO
+        DefenseSequences = DefenseSequence.CreateDefenseSequences(config, this, Prefixes, Suffixes);
     }
 
     public void AddEffect(Effect effect)

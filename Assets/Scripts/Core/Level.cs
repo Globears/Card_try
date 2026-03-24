@@ -24,11 +24,11 @@ public class Level {
     /// </summary>
     public Dictionary<int,EnemyDangerPairs> enemies = new Dictionary<int, EnemyDangerPairs>();
     /// <summary>
-    /// 关卡的轮次数
+    /// 关卡的回合
     /// </summary>
     public int roundCount = 0;
     /// <summary>
-    /// 关卡的轮次数对应其的危险等级，用于随机出怪
+    /// 关卡的回合数对应其的危险等级，用于随机出怪
     /// </summary>
     public Dictionary<int , WaveConfig> roundDangerLevels = new Dictionary<int , WaveConfig>();
     /// <summary>

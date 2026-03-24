@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -9,7 +11,7 @@ public class Library
 {
     //游戏中只有一个牌库，牌库是所有牌的集合
     private static Library instance;  
-    private List<Card> cards = new List<Card>();
+    public List<Card> cards = new List<Card>();
 
     public static Library Instance
     {
@@ -118,5 +120,23 @@ public class Library
             }
         }
         return countNum;
+    }
+
+    public void GiveMindPhasePrefixTAGToAllCard(params MindPhase.Prefix[] prefixes) {
+        foreach(MindPhase.Prefix prefix in prefixes) {
+            TAGS tAGS = CardTag.PrefixToTag(prefix);
+            foreach(Card card in cards) {
+                card.AddTag(tAGS);
+            }
+        }
+    }
+    
+    public void GiveMindPhaseSuffixTAGToAllCard(params MindPhase.Suffix[] suffixes) {
+        foreach(MindPhase.Suffix suffix in suffixes) {
+            TAGS tAGS = CardTag.SuffixToTag(suffix);
+            foreach(Card card in cards) {
+                card.AddTag(tAGS);
+            }
+        }
     }
 }

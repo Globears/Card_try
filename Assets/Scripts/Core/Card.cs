@@ -20,12 +20,12 @@ public class Card
     /// <summary>
     /// 卡牌的前缀心相
     /// </summary>
-    public List<MindPhase.Prefix> Prefixs = new List<MindPhase.Prefix>();
+    public List<MindPhase.Prefix> Prefixes = new List<MindPhase.Prefix>();
     
     /// <summary>
     /// 卡牌的后缀心相
     /// </summary>
-    public List<MindPhase.Suffix> Suffixs = new List<MindPhase.Suffix>();
+    public List<MindPhase.Suffix> Suffixes = new List<MindPhase.Suffix>();
 
     /// <summary>
     /// 卡牌的动作
@@ -74,8 +74,8 @@ public class Card
     {
         this.Id = Id;
         this.Name = Name;
-        this.Prefixs.Add(Prefix);
-        this.Suffixs.Add(Suffix);
+        this.Prefixes.Add(Prefix);
+        this.Suffixes.Add(Suffix);
         action = new Act(this, Prefix, Suffix);
         bonusAction = new BonusAct(this, Prefix, Suffix);
         cardTags.Add(CardTag.PrefixToTag(Prefix));
@@ -86,8 +86,8 @@ public class Card
     {
         this.Id = Id;
         this.Name = Name;
-        this.Prefixs.Add(Prefix);
-        this.Suffixs.Add(Suffix);
+        this.Prefixes.Add(Prefix);
+        this.Suffixes.Add(Suffix);
         action = new Act(this, Prefix, Suffix, actTags);
         bonusAction = new BonusAct(this, Prefix, Suffix,bonusActTags);
         cardTags.Add(CardTag.PrefixToTag(Prefix));
@@ -112,6 +112,21 @@ public class Card
         if(!action.tags.Contains(tAGS)) this.action.tags.Add(tAGS);
         if(!bonusAction.tags.Contains(tAGS)) this.bonusAction.tags.Add(tAGS);
     }
+
+    public void AddPrefix(MindPhase.Prefix prefix) {
+        if(!Prefixes.Contains(prefix)) this.Prefixes.Add(prefix);
+        this.AddTag(CardTag.PrefixToTag(prefix));
+        this.action.AddPrefix(prefix);
+        this.bonusAction.AddPrefix(prefix);
+    }
+    
+    public void AddSuffix(MindPhase.Suffix suffix) {
+        if(!Suffixes.Contains(suffix)) this.Suffixes.Add(suffix);
+        this.AddTag(CardTag.SuffixToTag(suffix));
+        this.action.AddSuffix(suffix);
+        this.bonusAction.AddSuffix(suffix);
+    }
+
     public virtual Card Clone()
     {
         //应当创建一个新的对象，拷贝该卡牌的各种属性

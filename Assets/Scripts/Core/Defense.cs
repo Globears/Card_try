@@ -7,8 +7,14 @@ public class Defense
     public Defense(Act owner, MindPhase.Prefix prefix, MindPhase.Suffix suffix)
     {
         this.owner = owner;
-        this.Prefix.Add(prefix);
-        this.Suffix.Add(suffix);
+        this.Prefixes.Add(prefix);
+        this.Suffixes.Add(suffix);
+    }
+
+    public Defense(Act owner, List<MindPhase.Prefix> prefixes,List<MindPhase.Suffix> suffixes) {
+        this.owner = owner;
+        this.Prefixes = prefixes;
+        this.Suffixes = suffixes;
     }
     
     public int Power = 0;   //防守的力度
@@ -16,8 +22,8 @@ public class Defense
     public Act owner;   // 防守来自哪个动作
 
     //心相
-    public List<MindPhase.Prefix> Prefix = new List<MindPhase.Prefix>();
-    public List<MindPhase.Suffix> Suffix = new List<MindPhase.Suffix>();
+    public List<MindPhase.Prefix> Prefixes = new List<MindPhase.Prefix>();
+    public List<MindPhase.Suffix> Suffixes = new List<MindPhase.Suffix>();
 
     
     public Vector2Int Position; //设防位置
@@ -25,12 +31,12 @@ public class Defense
     public Defense Clone(Act newOwner)
     {
         var d = new Defense(newOwner,
-            this.Prefix.Count > 0 ? this.Prefix[0] : newOwner.Prefix,
-            this.Suffix.Count > 0 ? this.Suffix[0] : newOwner.Suffix);
+            this.Prefixes.Count > 0 ? this.Prefixes : newOwner.Prefixes,
+            this.Suffixes.Count > 0 ? this.Suffixes : newOwner.Suffixes);
         d.Power = this.Power;
         d.Position = this.Position;
-        d.Prefix = new List<MindPhase.Prefix>(this.Prefix);
-        d.Suffix = new List<MindPhase.Suffix>(this.Suffix);
+        d.Prefixes = new List<MindPhase.Prefix>(this.Prefixes);
+        d.Suffixes = new List<MindPhase.Suffix>(this.Suffixes);
         return d;
     }
 }
@@ -69,6 +75,18 @@ public class DefenseSequence
         return false;
     }
 
+    public void AddPrefix(MindPhase.Prefix prefix) {
+        foreach(Defense defense in Sequence) {
+            defense.Prefixes.Add(prefix);
+        }
+    }
+
+    public void AddSuffix(MindPhase.Suffix suffix) {
+        foreach(Defense defense in Sequence) {
+            defense.Suffixes.Add(suffix);
+        }
+    }
+
     /// <summary>
     /// 从给定的位置 切割防御序列
     /// </summary>
@@ -101,8 +119,8 @@ public class DefenseSequence
     public static List<DefenseSequence> CreateDefenseSequences(
         string config, 
         Act owner, 
-        MindPhase.Prefix prefix, 
-        MindPhase.Suffix suffix
+        List<MindPhase.Prefix> prefixes, 
+        List<MindPhase.Suffix> suffixes
     )
     {
         // 支持的字符串格式示例：
@@ -113,7 +131,7 @@ public class DefenseSequence
 
         var result = new List<DefenseSequence>();
         if (string.IsNullOrWhiteSpace(config)) return result;
-        //Debug.Log("断点1");
+        
         var sequences = config.Split(',');
         foreach (var seqRaw in sequences)
         {
@@ -121,7 +139,6 @@ public class DefenseSequence
             if (string.IsNullOrEmpty(seqTrim)) continue;
 
             var defSeq = new DefenseSequence();
-            //Debug.Log("断点2");
             // 每个序列可以包含多个 "power:positions" 段，用 '-' 分隔
             var segments = seqTrim.Split('-');
             foreach (var segRaw in segments)
@@ -142,21 +159,17 @@ public class DefenseSequence
                 {
                     if (char.IsWhiteSpace(ch)) continue;
                     if (ch < '1' || ch > '9') continue; // 只接受 1-9
-                    //Debug.Log("断点3");
                     var pos = NumToPosition(ch);
-                    var d = new Defense(owner, prefix, suffix)
+                    var d = new Defense(owner, prefixes, suffixes)
                     {
                         Power = power,
                         Position = pos
                     };
-                    //Debug.Log("断点4");
                     defSeq.Sequence.Add(d);
                 }
             }
-        //Debug.Log("断点5");
             if (defSeq.Sequence.Count > 0) result.Add(defSeq);
         }
-        //Debug.Log("断点6");
         return result;
     }
 
