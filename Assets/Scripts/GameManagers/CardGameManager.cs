@@ -27,6 +27,12 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     /// 当前正在结算的卡牌在allSlotCards中的Index
     /// </summary>
     public static int currentResolveCardIndex = 0;
+    /// <summary>
+    /// 最大“摧毁”影响值
+    /// </summary>
+    public static int HEALTH = DEFAULT_HEALTH;
+    public const int DEFAULT_HEALTH = 7;
+
     protected override void Awake() {
         base.Awake();
         GameStartEvent.subscriber += OnGameStart;
@@ -122,6 +128,8 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         currentLevelId = 1;
         currentTurn = 0;
         currentLevel = Levels.GetLevelWithId(currentLevelId);
+        //TODO:初始化数值
+        HEALTH = DEFAULT_HEALTH;
         //TODO:处理目标
 
         //TODO:处理Deck

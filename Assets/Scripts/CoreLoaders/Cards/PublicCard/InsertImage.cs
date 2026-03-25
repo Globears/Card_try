@@ -29,7 +29,6 @@ public class InsertImage : Card
             var nextAct = CardGameManager.Instance.GetNextAction();
             if (nextAct != null && nextAct.DefenseSequences != null && nextAct.DefenseSequences.Count > 0 && nextAct.DefenseSequences[0].Begin != null)
                 nextPosNum = NumPositionTranslator.PositionToNum(nextAct.DefenseSequences[0].Begin.Position);
-
             act.CreateDefenseSequence("1:" + beaconCurrentPosition.ToString() + nextPosNum.ToString());
         });
         action.AddEffect(instantEffect);
