@@ -34,7 +34,7 @@ public class GameLoader : SingletonBehaviour<GameLoader>
         //加载书籍描述数据
 
         //加载认知卡
-        CogCards.Load();
+        CogCardLoader.Load();
 
         //加载协助者
         Supporters.Load();

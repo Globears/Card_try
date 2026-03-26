@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using CogCards;
 
 [System.Serializable]
 public class DeckJsonData
@@ -51,7 +51,7 @@ public class DeckLoader
             //添加认知卡
             int cogLevelAmount = 0;
             foreach(string cogCardId in deckData.cogCardIds) {
-                CogCard cogCard = CogCards.GetCogCard(cogCardId);
+                CogCard cogCard = CogCardLoader.GetCogCard(cogCardId);
                 if(cogCard != null) {
                     deck.cogCards.Add(cogCard);
                     Debug.Log($"加入了认知卡{cogCard.Name},认知等级为{cogCard.CogLevel}");
