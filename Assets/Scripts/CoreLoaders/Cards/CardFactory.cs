@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Cards;
 
 public class CardFactory
 {
     public static Card CreateCard(string cardId)
     {
-        Card prototype = Cards.GetPrototypeById(cardId);
-        if(prototype == null) prototype = Cards.GetPrototypeByName(cardId);
+        Card prototype = CardLoader.GetPrototypeById(cardId);
+        if(prototype == null) prototype = CardLoader.GetPrototypeByName(cardId);
         if(prototype != null)
         {
             Card card = (Card)prototype.Clone();

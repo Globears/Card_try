@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cards;
 
 /// <summary>
 /// 负责加载所有卡牌数据的静态类
 /// </summary>
-public static class Cards
+public static class CardLoader
 {
     private static MultiKeyDictionary<string, string, Card> CardPrototypes = new MultiKeyDictionary<string, string, Card>();
     public static Card GetPrototypeById(string id){
