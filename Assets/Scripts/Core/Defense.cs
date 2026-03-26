@@ -59,13 +59,21 @@ public class DefenseSequence
 
     public void Apply()
     {
-        foreach(Defense def in Sequence)
-            {
-            Debug.Log($"结算防御序列{def.Position} 以{def.Power}力");
-                Beacon.Instance.MoveTo(def.Position);
-                Node node = GridManager.Instance.GetNodeAt(def.Position);
-                node.ApplyDefense(def);
-            }
+        foreach(Defense def in Sequence) {
+            ApplyDefenseEvent.Pre.Publish(new ApplyDefenseEvent.Pre {
+                node = GridManager.Instance.GetNodeAt(def.Position),
+                defense = def
+            });
+            Debug.Log($"结算防御{def.Position} 以{def.Power}力");
+            Beacon.Instance.MoveTo(def.Position);
+            Node node = GridManager.Instance.GetNodeAt(def.Position);
+            node.ApplyDefense(def);
+
+            ApplyDefenseEvent.Post.Publish(new ApplyDefenseEvent.Post {
+                node = GridManager.Instance.GetNodeAt(def.Position),
+                defense = def
+            });
+        }
     }
 
     public bool IsDefenseSequenceContainPosition(Vector2Int vector2Int) {

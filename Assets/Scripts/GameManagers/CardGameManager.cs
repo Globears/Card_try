@@ -32,6 +32,7 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     /// </summary>
     public static int HEALTH = DEFAULT_HEALTH;
     public const int DEFAULT_HEALTH = 7;
+    public static Deck currentDeck = new Deck();
 
     protected override void Awake() {
         base.Awake();
@@ -123,7 +124,7 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         GameLoadEvent.Pre.Publish(new GameLoadEvent.Pre());
 
         //从套牌json读取套牌到内存中
-        Deck deck = DeckLoader.LoadDeckFromResources("Decks/deck");
+        currentDeck = DeckLoader.LoadDeckFromResources("Decks/deck");
         //TODO:处理Level
         currentLevelId = 1;
         currentTurn = 0;
@@ -135,16 +136,16 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
         //TODO:处理Deck
 
         //处理认知卡
-        if(deck.cogCards != null) {
-            foreach(CogCard cogCard in deck.cogCards) {
+        if(currentDeck.cogCards != null) {
+            foreach(CogCard cogCard in currentDeck.cogCards) {
                 //调用所有认知卡的效果的Cast函数 订阅对应的事件 效果在Effect里面触发后处理Trigger函数
                 cogCard.ResloveAllEffects();
             }
         }
 
         //处理封底
-        if(deck.books != null) {
-            foreach(Book book in deck.books) {
+        if(currentDeck.books != null) {
+            foreach(Book book in currentDeck.books) {
                 foreach(Card finishCard in book.FinalCards) {
                     CoverLibrary.Instance.Add(finishCard);
                 }
@@ -152,14 +153,14 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
             }
         }
 
-        if(deck.cards.Count < 30) {
-            int insertNum = 30 - deck.cards.Count;
+        if(currentDeck.cards.Count < 30) {
+            int insertNum = 30 - currentDeck.cards.Count;
             for(int i = 0;i< insertNum; i++) {
-                deck.cards.Add(Cards.GetPrototypeById("B00C01").Clone());
+                currentDeck.cards.Add(CardLoader.GetPrototypeById("B00C01").Clone());
             }
         }
         //把插页洗入牌库
-        Library.Instance.LoadDeck(deck);
+        Library.Instance.LoadDeck(currentDeck);
         Library.Shuffle();
 
         //处理关卡
@@ -180,6 +181,10 @@ public class CardGameManager : SingletonBehaviour<CardGameManager>
     protected override void OnDestroy() {
         IsStarted = false;
         GameStartEvent.subscriber -= OnGameStart;
+        TurnBeginEvent.subscriber -= OnTurnStart;
+        RoundStartEvent.subscriber -= OnRoundStart;
+        CombatStartEvent.subscriber -= OnCombatStart;
+        CardResolveEvent.Pre.subscriber -= OnCardResolvePre;
         base.OnDestroy();
     }
 }

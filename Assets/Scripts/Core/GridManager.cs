@@ -78,4 +78,8 @@ public class GridManager
         int y = 1 - ((index - 1) / 3);      // 1,0,-1
         return nodes[new Vector2Int(x, y)];
     }
+
+    public void ApplyAffectOnNodeByIndex(int index,MindPhase.Suffix suffix,int affectAmount) {
+        GetNodeByIndex(index).MindPhases[suffix] += affectAmount;
+    }
 }

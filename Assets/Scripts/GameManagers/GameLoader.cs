@@ -22,7 +22,7 @@ public class GameLoader : SingletonBehaviour<GameLoader>
         }
         Debug.Log("GameLoader: 开始加载游戏");
         //初始化所有卡牌
-        Cards.Load();
+        CardLoader.Load();
         //从json加载卡牌的描述信息
         CardsInfo.Load();
         //初始化所有敌人

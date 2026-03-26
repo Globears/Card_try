@@ -7,7 +7,7 @@ public class DeckJsonData
 {
     public string deckName;
     public int supporterId;
-    public string cogCardIds;
+    public string[] cogCardIds;
     public int[] bookIds;
     public string[] cardIds;
 }
@@ -50,8 +50,8 @@ public class DeckLoader
 
             //添加认知卡
             int cogLevelAmount = 0;
-            foreach (int cogCardId in deckData.cogCardIds) {
-                CogCard cogCard = CogCards.cogCards[cogCardId];
+            foreach(string cogCardId in deckData.cogCardIds) {
+                CogCard cogCard = CogCards.GetCogCard(cogCardId);
                 if(cogCard != null) {
                     deck.cogCards.Add(cogCard);
                     Debug.Log($"加入了认知卡{cogCard.Name},认知等级为{cogCard.CogLevel}");

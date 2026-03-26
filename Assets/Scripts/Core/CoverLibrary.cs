@@ -7,8 +7,7 @@ using UnityEngine;
 /// </summary>
 public class CoverLibrary {
     private static CoverLibrary instance;  
-    private List<Card> cards = new List<Card>();
-
+    public List<Card> cards = new List<Card>();
     public static CoverLibrary Instance
     {
         get

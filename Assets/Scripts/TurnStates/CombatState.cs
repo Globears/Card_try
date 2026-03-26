@@ -66,7 +66,9 @@ public class CombatState : TurnState
 
             //结算卡牌防御
             if(actionCard != null) {
+                //ApplyDefenseEvent.pre和.post在Act内实现
                 actionCard?.ResolveActionDefence();
+
                 ActResolveEvent.Publish(new ActResolveEvent{act = actionCard.action});
             }
             bonusActionCard?.ResolveBonusActionDefence();
@@ -88,6 +90,9 @@ public class CombatState : TurnState
             //     }
             // }
 
+            RoundEndEvent.Publish(new RoundEndEvent
+            {roundNum = rounds,ActionCard = actionCard,BonusActionCard = bonusActionCard});
+            
             //清除节点上的所有防御，为下一轮做准备
             foreach(Node node in GridManager.Instance.Nodes) {
                 node.ClearDefense();
